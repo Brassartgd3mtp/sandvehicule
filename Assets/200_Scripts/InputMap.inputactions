@@ -1,0 +1,67 @@
+{
+    "name": "InputMap",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "92db921a-dd2d-4ebf-b22c-e44170c7a514",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Button",
+                    "id": "71250447-2788-43f4-96d2-034ea43dadc5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "4a8272c5-8ea2-4857-bee3-af5ad770b201",
+                    "path": "<Keyboard>/#(Z)",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7327f757-ec00-4935-9015-dd1a85b95ee9",
+                    "path": "<Keyboard>/#(Q)",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "065901e1-a523-4f1b-a9fb-24ff8f0ff6ca",
+                    "path": "<Keyboard>/#(S)",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "062eca59-f3f7-4400-afef-02b0f16825f5",
+                    "path": "<Keyboard>/#(D)",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
