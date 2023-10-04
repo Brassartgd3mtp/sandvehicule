@@ -193,6 +193,8 @@ MonoBehaviour:
   rotationSpeed: 0
   minRotationSpeed: -90
   maxRotationSpeed: 90
+  turret: {fileID: 0}
+  turretRotationSpeed: 0
 --- !u!114 &766553745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,6 +285,30 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: c66a062d-7164-43d0-8289-a1ff486664fd
     m_ActionName: Player/TurnRight[/Keyboard/w]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fbd44624-94b8-4a3d-bd47-30f6c0f13fa6
+    m_ActionName: Player/TurnTurretLeft[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3e63e2df-5cd6-4f48-9a0d-e052a52029a6
+    m_ActionName: Player/TurnTurretRight[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 766553744}
+        m_TargetAssemblyTypeName: Movement, Assembly-CSharp
+        m_MethodName: ChangeState
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e5f9ac35-c34f-4c45-a219-d2d3b1611103
+    m_ActionName: Player/ChangeState[/Keyboard/backquote]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -294,6 +320,19 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1202798080}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &766553747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766553739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcf9284180442e949b6ce45349b20746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  states: 0
 --- !u!1 &873109191
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,6 +890,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 766553745}
+    - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: 3d210b2be9d4b9144b53828dfc2e73e3,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 766553747}
   m_SourcePrefab: {fileID: 100100000, guid: 3d210b2be9d4b9144b53828dfc2e73e3, type: 3}
 --- !u!1 &1514449576
 GameObject:
@@ -1030,7 +1073,7 @@ Transform:
   m_GameObject: {fileID: 1792358279}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.19, y: 8.27, z: -8.42}
+  m_LocalPosition: {x: -0.19, y: 4.5, z: -8.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

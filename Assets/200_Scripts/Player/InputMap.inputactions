@@ -40,6 +40,33 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "TurnTurretLeft",
+                    "type": "Button",
+                    "id": "fbd44624-94b8-4a3d-bd47-30f6c0f13fa6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TurnTurretRight",
+                    "type": "Button",
+                    "id": "3e63e2df-5cd6-4f48-9a0d-e052a52029a6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ChangeState",
+                    "type": "Button",
+                    "id": "e5f9ac35-c34f-4c45-a219-d2d3b1611103",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -84,6 +111,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "TurnRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c3a4cd5a-c355-4fba-98e1-6f61faa395d8",
+                    "path": "<Keyboard>/#(A)",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TurnTurretLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1a17cdbd-9c29-434b-be46-cfd1060da468",
+                    "path": "<Keyboard>/#(E)",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TurnTurretRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "57d23ddc-e31c-4e74-9650-95ed27648030",
+                    "path": "<Keyboard>/#(²)",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeState",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
