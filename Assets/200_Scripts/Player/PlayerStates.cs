@@ -13,23 +13,29 @@ public class PlayerStates : MonoBehaviour
     void Awake()
     {
         states = States.Exploring;
-        CameraScript.ChangeCameraForExploring();
+
     }
 
-    // permet de changer de states pour les tests avec la touche "²"
-    public void ChangeState(InputAction.CallbackContext context)
+    // permet de changer de states pour les tests avec les touches "& et é"
+    public void ChangeStateForFighting(InputAction.CallbackContext context)
     {
-        if (context.performed && states == PlayerStates.States.Fifhting)
+        switch (context.phase)
         {
-            states = PlayerStates.States.Exploring;
-            CameraScript.ChangeCameraForExploring();
-            return;
-        }
-        if (context.performed && states == PlayerStates.States.Exploring)
+            case InputActionPhase.Performed:
+                states = PlayerStates.States.Fifhting;
+                CameraScript.CameraForFighting();
+                break;
+        };
+    }
+
+    public void ChangeStateForExploring(InputAction.CallbackContext context)
+    {
+        switch (context.phase)
         {
-            states = PlayerStates.States.Fifhting;
-            CameraScript.ChangeCameraForFighting();
-            return;
+            case InputActionPhase.Performed:
+                states = PlayerStates.States.Exploring;
+                CameraScript.CameraForExploring();
+                break;
         }
     }
 

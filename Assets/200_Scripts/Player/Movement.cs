@@ -91,18 +91,7 @@ public class Movement : MonoBehaviour
     }
     #endregion
 
-    // permet de changer de states pour les tests avec la touche "²"
-    public void ChangeState(InputAction.CallbackContext context)
-    {
-        if (context.performed && playerStates.states == PlayerStates.States.Fifhting)
-        {
-            playerStates.states = PlayerStates.States.Exploring;
-        }
-        if (context.performed && playerStates.states == PlayerStates.States.Exploring)
-        {
-            playerStates.states = PlayerStates.States.Fifhting;
-        }
-    }
+
     public void RotateTurretLeft(InputAction.CallbackContext context)
     {
         switch (context.phase)

@@ -60,9 +60,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ChangeState",
+                    "name": "ChangeForFight",
                     "type": "Button",
                     "id": "e5f9ac35-c34f-4c45-a219-d2d3b1611103",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ChangeForExplore",
+                    "type": "Button",
+                    "id": "c51012c5-0445-433b-9dc6-35d44d1ce421",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -139,11 +148,22 @@
                 {
                     "name": "",
                     "id": "57d23ddc-e31c-4e74-9650-95ed27648030",
-                    "path": "<Keyboard>/#(²)",
+                    "path": "<Keyboard>/#(&)",
                     "interactions": "Press",
                     "processors": "",
                     "groups": "",
-                    "action": "ChangeState",
+                    "action": "ChangeForFight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "00372ccf-fe5b-4997-a095-ba96f74ea00e",
+                    "path": "<Keyboard>/#(É)",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeForExplore",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
