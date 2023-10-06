@@ -13,7 +13,8 @@ public class Movement : MonoBehaviour
     [SerializeField] private float minRotationSpeed, maxRotationSpeed;
 
     [SerializeField] private GameObject turret;
-    [SerializeField] private float turretRotationSpeed = 30;
+    [SerializeField] private float turretRotationSpeed;
+    [SerializeField] private float turretRotationSpeedMax;
 
     private Rigidbody rb;
 
@@ -37,7 +38,7 @@ public class Movement : MonoBehaviour
             turret.transform.Rotate(Vector3.up * turretRotationSpeed * Time.deltaTime);
         }
     }
-    #region Inputs
+    #region Movement Inputs 
     public void MoveForward(InputAction.CallbackContext context)
     {
         switch (context.phase)
@@ -97,8 +98,23 @@ public class Movement : MonoBehaviour
         switch (context.phase)
         {
             case InputActionPhase.Performed:
+                turretRotationSpeed = -turretRotationSpeedMax;
                 break;
             case InputActionPhase.Canceled:
+                turretRotationSpeed = 0;
+                break;
+        }
+    }
+
+    public void RotateTurretRight(InputAction.CallbackContext context)
+    {
+        switch (context.phase)
+        {
+            case InputActionPhase.Performed:
+                turretRotationSpeed = turretRotationSpeedMax;
+                break;
+            case InputActionPhase.Canceled:
+                turretRotationSpeed = 0;
                 break;
         }
     }

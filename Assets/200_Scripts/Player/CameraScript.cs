@@ -1,10 +1,15 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
+    public CinemachineVirtualCamera VirtualCameraExploring;
+    public CinemachineVirtualCamera VirtualCameraFighting;
+    public CinemachineVirtualCamera[] virtualCamera;
 
+    
     public GameObject Target = null;
     public GameObject T = null;
     public float speed;
@@ -13,32 +18,35 @@ public class CameraScript : MonoBehaviour
     public PlayerStates playerStates;
     void Start()
     {
-        playerStates.GetComponent<PlayerStates>();
-
-        Target = GameObject.FindGameObjectWithTag("Player");
-        T = GameObject.FindGameObjectWithTag("Target");
+        SwitchToCamera(VirtualCameraExploring);
     }
 
     void Update()
 
     {
-        // Ce qui permet de faire en sorte que la caméra suive le joueur avec une sorte d'offset
-            this.transform.LookAt(Target.transform);
-            float carMove = Mathf.Abs(Vector3.Distance(this.transform.position, T.transform.position) * speed);
-            this.transform.position = Vector3.MoveTowards(this.transform.position, T.transform.position, carMove * Time.deltaTime);
+
 
     }
 
+    #region Camera Swiitching
     public void CameraForExploring()
     {
-
+        CinemachineVirtualCamera targetCamera = VirtualCameraExploring;
+        SwitchToCamera(targetCamera);
     }
 
     public void CameraForFighting()
     {
-        // Met la caméra dans une position au dessus de la carte pour la phase de combat.
-            this.transform.LookAt(Target.transform);
-            T.transform.position = new Vector3(this.transform.position.x, 50, this.transform.position.z);
-            return;
+        CinemachineVirtualCamera targetCamera = VirtualCameraFighting;
+        SwitchToCamera(targetCamera);
     }
+
+    public void SwitchToCamera(CinemachineVirtualCamera targetCamera)
+    {
+        foreach (CinemachineVirtualCamera camera in virtualCamera)
+        {
+            camera.enabled = camera == targetCamera;
+        }
+    }
+    #endregion
 }
