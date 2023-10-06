@@ -33,6 +33,7 @@ public class Movement : MonoBehaviour
             transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
         }
 
+        // Using turret if player is in "Fighting" State  
         if (playerStates.states == PlayerStates.States.Fifhting)
         {
             turret.transform.Rotate(Vector3.up * turretRotationSpeed * Time.deltaTime);
@@ -92,7 +93,7 @@ public class Movement : MonoBehaviour
     }
     #endregion
 
-
+    #region Rotation Tourelle
     public void RotateTurretLeft(InputAction.CallbackContext context)
     {
         switch (context.phase)
@@ -118,5 +119,7 @@ public class Movement : MonoBehaviour
                 break;
         }
     }
+    #endregion 
+
 
 }

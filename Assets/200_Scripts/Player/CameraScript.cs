@@ -28,19 +28,23 @@ public class CameraScript : MonoBehaviour
 
     }
 
-    #region Camera Swiitching
+    #region Camera Switching
+
+    // Changing for the Exploring View
     public void CameraForExploring()
     {
         CinemachineVirtualCamera targetCamera = VirtualCameraExploring;
         SwitchToCamera(targetCamera);
     }
-
+    
+    // Changing for fighting view
     public void CameraForFighting()
     {
         CinemachineVirtualCamera targetCamera = VirtualCameraFighting;
         SwitchToCamera(targetCamera);
     }
 
+    // Method for switching camera in a list
     public void SwitchToCamera(CinemachineVirtualCamera targetCamera)
     {
         foreach (CinemachineVirtualCamera camera in virtualCamera)
