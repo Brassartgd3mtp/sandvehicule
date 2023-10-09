@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class BulletParent : MonoBehaviour
 {
-    public int damage = 0;
-    public int speed = 0;
-
+    public int speed;
+    public float damageAmount;
 
     // Start is called before the first frame update
     void Start()

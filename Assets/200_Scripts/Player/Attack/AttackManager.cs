@@ -8,27 +8,29 @@ public class AttackManager : MonoBehaviour
 
     public GameObject shootingPos;
     public GameObject BaseProjectile;
+    public PlayerStates playerStates;
 
     public int speed;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        playerStates = GetComponent<PlayerStates>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
 
-    public void BasicShoot(InputAction.CallbackContext context)
+    public void BasicShoot(InputAction.CallbackContext context) //Méthode qui permet de tirer
     {
         switch (context.phase)
         {
             case InputActionPhase.Performed:
-                Instantiate(BaseProjectile, shootingPos.transform.position, shootingPos.transform.rotation);
+                if (playerStates.states == PlayerStates.States.Fifhting) // permet de tirer uniquement pendant le mode de combat 
+                {
+                    Instantiate(BaseProjectile, shootingPos.transform.position, shootingPos.transform.rotation);
+                }
                 
                 //projectile.transform.position += transform.forward * Time.deltaTime * speed;
                 break;
