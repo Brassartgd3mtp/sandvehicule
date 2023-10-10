@@ -19,7 +19,10 @@ public class AttackManager : MonoBehaviour
 
     void Update()
     {
-        
+        if (playerStates.states == PlayerStates.States.Fifhting)
+        {
+
+        }
     }
 
     public void BasicShoot(InputAction.CallbackContext context) //Méthode qui permet de tirer

@@ -17,6 +17,7 @@ public class PlayerStates : MonoBehaviour
     {
         states = States.Exploring;
         AttackManager = GetComponent<AttackManager>();
+        
     }
 
     // permet de changer de states pour les tests avec les touches "& et é"

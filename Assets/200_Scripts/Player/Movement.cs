@@ -12,11 +12,20 @@ public class Movement : MonoBehaviour
     [SerializeField] private float rotationSpeed;
     [SerializeField] private float minRotationSpeed, maxRotationSpeed;
 
+    [SerializeField] private float targetSteerAngle = 45;
+    [SerializeField] private float turnSpeed = 5f;
+
     [SerializeField] private GameObject turret;
     [SerializeField] private float turretRotationSpeed;
     [SerializeField] private float turretRotationSpeedMax;
 
+    [SerializeField] private WheelCollider[] frontWheels;
+    [SerializeField] private int Torque;
+    [SerializeField] private int counterTorque;
+
     private Rigidbody rb;
+
+    [SerializeField] private Vector2 inputDirection;
 
     void Start()
     {
@@ -31,6 +40,13 @@ public class Movement : MonoBehaviour
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
 
             transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
+
+            LerpToSteerAngle();
+
+            //for (int i = 0; i < frontWheels.Length; i++) // Permet d'augmenter la vitesse avec les 2 roues avant 
+            //{
+            //    frontWheels[i].steerAngle = targetSteerAngle * inputDirection.x;
+            //}
         }
 
         // Using turret if player is in "Fighting" State  
@@ -40,16 +56,50 @@ public class Movement : MonoBehaviour
         }
     }
     #region Movement Inputs 
+    
+    public void Move(InputAction.CallbackContext context)
+    {
+        inputDirection = context.ReadValue<Vector2>();
+    }
+
+    private void LerpToSteerAngle()
+    {
+        for (int i = 0; i < frontWheels.Length; i++)
+        {
+            frontWheels[i].steerAngle = Mathf.MoveTowards(frontWheels[i].steerAngle, targetSteerAngle * inputDirection.x, Time.deltaTime * turnSpeed);
+        }
+    }
+    
     public void MoveForward(InputAction.CallbackContext context)
     {
+        //switch (context.phase)
+        //{
+        //    case InputActionPhase.Performed:
+        //        speed = 10f;
+        //        break;
+        //    case InputActionPhase.Canceled:
+        //        speed = 0; break;
+        //}
         switch (context.phase)
         {
             case InputActionPhase.Performed:
-                speed = 10f;
+                for (int i = 0; i < frontWheels.Length; i++)
+                {
+                    frontWheels[i].brakeTorque = 0;
+                }
+                ApplyTorque(Torque); 
                 break;
             case InputActionPhase.Canceled:
-                speed = 0; break;
+                
+                ApplyTorque(0); 
+                for (int i = 0; i < frontWheels.Length; i++)
+                {
+                    frontWheels[i].brakeTorque = counterTorque;
+                }
+                break;
         }
+
+
     }
 
     public void MoveBackward(InputAction.CallbackContext context)
@@ -92,6 +142,14 @@ public class Movement : MonoBehaviour
         }
     }
     #endregion
+
+    void ApplyTorque(float _value)
+    {
+        for (int i = 0; i < frontWheels.Length; i++)
+        {
+            frontWheels[i].motorTorque = _value;
+        }
+    }
 
     #region Rotation Tourelle
     public void RotateTurretLeft(InputAction.CallbackContext context)
