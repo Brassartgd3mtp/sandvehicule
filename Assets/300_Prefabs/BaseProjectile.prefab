@@ -119,10 +119,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a773d55dad4e34bb33191bc408d586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
   speed: 17
+  damageAmount: 0
   rb: {fileID: 0}
-  ShootPos: {fileID: 0}
+  sparkParticuleBase: {fileID: 9422420567204335, guid: ea84adb8f0b0d254caca6cf40cdb65ee,
+    type: 3}
 --- !u!54 &1361554814851956271
 Rigidbody:
   m_ObjectHideFlags: 0

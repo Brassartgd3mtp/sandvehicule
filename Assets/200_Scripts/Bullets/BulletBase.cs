@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletBase : BulletParent
 {
     [SerializeField] Rigidbody rb;
-
+    [SerializeField] ParticleSystem sparkParticuleBase;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +26,7 @@ public class BulletBase : BulletParent
         if (collision.gameObject.TryGetComponent<EnnemiParent>(out EnnemiParent enemyComponent)) // je récupère le composant de l'ennemi pour lui enlever le montant de damage
         {
             enemyComponent.TakeDamage(damageAmount);
+            Instantiate(sparkParticuleBase, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }
