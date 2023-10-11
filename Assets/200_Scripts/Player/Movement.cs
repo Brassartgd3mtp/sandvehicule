@@ -49,28 +49,25 @@ public class Movement : MonoBehaviour
         // Movement if the player is in "Exploring" State (ref in script "PlayerState")
         if (playerStates.states == PlayerStates.States.Exploring)
         {
-            //transform.Translate(Vector3.forward * speed * Time.deltaTime);
-
             transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
 
             LerpToSteerAngle();
 
-            //for (int i = 0; i < frontWheels.Length; i++) // Permet d'augmenter la vitesse avec les 2 roues avant 
-            //{
-            //    frontWheels[i].steerAngle = targetSteerAngle * inputDirection.x;
-            //}
+            if (rb.velocity.magnitude > maxSpeed)
+            {
+                rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
+            }
         }
 
         // Using turret if player is in "Fighting" State  
         if (playerStates.states == PlayerStates.States.Fifhting)
         {
             turret.transform.Rotate(Vector3.up * turretRotationSpeed * Time.deltaTime);
+            ApplyTorque(0);
+            rb.velocity = new Vector3(0,0,0);
         }
 
-        if (rb.velocity.magnitude > maxSpeed)
-        {
-            rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
-        }
+
     }
     #region Movement Inputs 
     
@@ -89,14 +86,6 @@ public class Movement : MonoBehaviour
     
     public void MoveForward(InputAction.CallbackContext context)
     {
-        //switch (context.phase)
-        //{
-        //    case InputActionPhase.Performed:
-        //        speed = 10f;
-        //        break;
-        //    case InputActionPhase.Canceled:
-        //        speed = 0; break;
-        //}
         switch (context.phase)
         {
             case InputActionPhase.Performed:
@@ -115,49 +104,7 @@ public class Movement : MonoBehaviour
                 }
                 break;
         }
-
-
     }
-
-    //public void MoveBackward(InputAction.CallbackContext context)
-    //{
-    //    switch (context.phase)
-    //    {
-    //        case InputActionPhase.Performed:
-    //            speed = -0.1f;
-    //            break;
-    //        case InputActionPhase.Canceled:
-    //            speed = 0; break;
-    //    }
-    //}
-
-    //public void RotateLeft(InputAction.CallbackContext context)
-    //{
-    //    switch (context.phase)
-    //    {
-    //        case InputActionPhase.Performed:
-    //            rotationSpeed = minRotationSpeed;                
-    //            break;
-    //                   
-    //        case InputActionPhase.Canceled:
-    //            rotationSpeed = 0;
-    //            break;  
-    //    }
-    //}
-    //
-    //public void RotateRight(InputAction.CallbackContext context)
-    //{
-    //    switch (context.phase)
-    //    {
-    //        case InputActionPhase.Performed:
-    //            rotationSpeed = maxRotationSpeed;
-    //            break;
-    //
-    //        case InputActionPhase.Canceled:
-    //            rotationSpeed = 0;
-    //            break;
-    //    }
-    //}
     #endregion
 
     void ApplyTorque(float _value)

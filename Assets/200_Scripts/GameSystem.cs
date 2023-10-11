@@ -14,33 +14,32 @@ public class GameSystem : MonoBehaviour
 
     public Slider timerSlider;
     public float timeBeforeStorm;
+    public float sliderValue;
 
-    private bool stopTimer;
+
+    //private bool stopTimer;
 
     void Start()
     {
         waveSystem = GetComponent<WaveSystem>();
 
         stormIsActive = false;
-        stopTimer = false;
+        //stopTimer = false;
 
         //timeBeforeStorm = 10;
         //timerOfStorm = 20;
 
         timerSlider.maxValue = timeBeforeStorm;
-        timerSlider.value = timeBeforeStorm;
+
     }
     void Update()
     {
-        if (stormIsActive == false) // Si il n'y a pas de tempête le timer avant activation de la tempête continu
+        if (stormIsActive == false && waveSystem.enemyCount <=0) // Si il n'y a pas de tempête le timer avant activation de la tempête continu
         {
             timeBeforeStorm -= Time.deltaTime;
         }
-
-        if (stopTimer == false) // ce qui relie le slider au temps avant la tempête 
-        {
-            timerSlider.value = timeBeforeStorm;
-        }
+        
+        timerSlider.value = timeBeforeStorm;        // ce qui relie le slider au temps avant la tempête 
 
         if (timeBeforeStorm <= 0) // la tempête s'active
         {
@@ -51,10 +50,17 @@ public class GameSystem : MonoBehaviour
         {
             timerOfStorm -= Time.deltaTime;
         }
-        if (timerOfStorm < 0)
+        if (timerOfStorm <= 0)
+        {
+            stormIsActive = false;
+        }
+
+        if (timerOfStorm < 0 && waveSystem.enemyCount <= 0)
         {
             EndWave();
         }
+        
+
     }
 
     public void ActiveWave() // lance la vague d'ennemi à la fin du timer de "timeBeforeThe Storm"
@@ -62,13 +68,14 @@ public class GameSystem : MonoBehaviour
         stormIsActive = true;
         waveSystem.StartCoroutine("EnemyDrop");
         timeBeforeStorm = 10;
-        stopTimer = true;
+        //stopTimer = true;
     }
 
     public void EndWave() // Fin de la wave, reset les valeurs pour repartir en exploration
     {
+        Debug.Log("EndWave");
         stormIsActive = false;
         timerOfStorm = 20;
-        stopTimer = false;
+        //stopTimer = false;
     }
 }

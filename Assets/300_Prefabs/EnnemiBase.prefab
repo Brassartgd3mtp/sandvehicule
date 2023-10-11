@@ -150,5 +150,7 @@ MonoBehaviour:
   maxHealth: 10
   Damage: 0
   Level: 0
+  gameManager: {fileID: 0}
+  waveSystem: {fileID: 0}
   speed: 2
   player: {fileID: 0}

@@ -6,12 +6,16 @@ public class EnnemiParent : MonoBehaviour
 {
     public float curretHealth, maxHealth;
     public int Damage;
-    public int Level; 
+    public int Level;
+
+    public GameObject gameManager;
+    public WaveSystem waveSystem;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = GameObject.Find("GameManager");
+        waveSystem = gameManager.GetComponent<WaveSystem>();
     }
 
     // Update is called once per frame
@@ -26,7 +30,10 @@ public class EnnemiParent : MonoBehaviour
 
         if (curretHealth <= 0)
         {
+            waveSystem.enemyCount--;
             Destroy(gameObject);
         }
     }
+
+
 }

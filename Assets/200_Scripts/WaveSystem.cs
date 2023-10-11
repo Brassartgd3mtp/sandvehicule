@@ -13,6 +13,7 @@ public class WaveSystem : MonoBehaviour
     public float valueForRandomX, valueForRandomZ;
     public GameSystem gameSystem;
     public GameObject player;
+    public int enemyCount;
 
     public void Awake()
     {
@@ -54,7 +55,8 @@ public class WaveSystem : MonoBehaviour
                 randomZ = zPos1;
             } else if (valueForRandomZ < 0.5) { randomZ = zPos2; } 
 
-            Instantiate (enemy, new Vector3((player.transform.position.x + randomX),player.transform.position.y, player.transform.position.z + randomZ), Quaternion.identity);
+            Instantiate (enemy, new Vector3((player.transform.position.x + randomX),1, player.transform.position.z + randomZ), Quaternion.identity);
+            enemyCount++;
             yield return new WaitForSeconds(3);
         }
     }
