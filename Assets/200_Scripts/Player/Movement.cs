@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour
 
     private Vector3 movement = Vector3.zero;
     [SerializeField] private float speed;
+    [SerializeField] private float maxSpeed;
     [SerializeField] private float rotationSpeed;
     [SerializeField] private float minRotationSpeed, maxRotationSpeed;
 
@@ -20,6 +21,9 @@ public class Movement : MonoBehaviour
     [SerializeField] private float turretRotationSpeedMax;
 
     [SerializeField] private WheelCollider[] frontWheels;
+    [SerializeField] private WheelCollider[] backWheels;
+    [SerializeField] private WheelCollider[] wheels;
+
     [SerializeField] private int Torque;
     [SerializeField] private int counterTorque;
 
@@ -30,6 +34,14 @@ public class Movement : MonoBehaviour
     void Start()
     {
         playerStates = GetComponent<PlayerStates>();
+        rb = GetComponent<Rigidbody>();
+    }
+
+
+
+    private void Update()
+    {
+        StartCoroutine(CalculateSpeed());
     }
 
     void FixedUpdate()
@@ -37,7 +49,7 @@ public class Movement : MonoBehaviour
         // Movement if the player is in "Exploring" State (ref in script "PlayerState")
         if (playerStates.states == PlayerStates.States.Exploring)
         {
-            transform.Translate(Vector3.forward * speed * Time.deltaTime);
+            //transform.Translate(Vector3.forward * speed * Time.deltaTime);
 
             transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
 
@@ -53,6 +65,11 @@ public class Movement : MonoBehaviour
         if (playerStates.states == PlayerStates.States.Fifhting)
         {
             turret.transform.Rotate(Vector3.up * turretRotationSpeed * Time.deltaTime);
+        }
+
+        if (rb.velocity.magnitude > maxSpeed)
+        {
+            rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
         }
     }
     #region Movement Inputs 
@@ -83,18 +100,18 @@ public class Movement : MonoBehaviour
         switch (context.phase)
         {
             case InputActionPhase.Performed:
-                for (int i = 0; i < frontWheels.Length; i++)
+                for (int i = 0; i < wheels.Length; i++)
                 {
-                    frontWheels[i].brakeTorque = 0;
+                    wheels[i].brakeTorque = 0;
                 }
                 ApplyTorque(Torque); 
                 break;
             case InputActionPhase.Canceled:
                 
                 ApplyTorque(0); 
-                for (int i = 0; i < frontWheels.Length; i++)
+                for (int i = 0; i < wheels.Length; i++)
                 {
-                    frontWheels[i].brakeTorque = counterTorque;
+                    wheels[i].brakeTorque = counterTorque;
                 }
                 break;
         }
@@ -102,53 +119,60 @@ public class Movement : MonoBehaviour
 
     }
 
-    public void MoveBackward(InputAction.CallbackContext context)
-    {
-        switch (context.phase)
-        {
-            case InputActionPhase.Performed:
-                speed = -0.1f;
-                break;
-            case InputActionPhase.Canceled:
-                speed = 0; break;
-        }
-    }
+    //public void MoveBackward(InputAction.CallbackContext context)
+    //{
+    //    switch (context.phase)
+    //    {
+    //        case InputActionPhase.Performed:
+    //            speed = -0.1f;
+    //            break;
+    //        case InputActionPhase.Canceled:
+    //            speed = 0; break;
+    //    }
+    //}
 
-    public void RotateLeft(InputAction.CallbackContext context)
-    {
-        switch (context.phase)
-        {
-            case InputActionPhase.Performed:
-                rotationSpeed = minRotationSpeed;                
-                break;
-                       
-            case InputActionPhase.Canceled:
-                rotationSpeed = 0;
-                break;  
-        }
-    }
-
-    public void RotateRight(InputAction.CallbackContext context)
-    {
-        switch (context.phase)
-        {
-            case InputActionPhase.Performed:
-                rotationSpeed = maxRotationSpeed;
-                break;
-
-            case InputActionPhase.Canceled:
-                rotationSpeed = 0;
-                break;
-        }
-    }
+    //public void RotateLeft(InputAction.CallbackContext context)
+    //{
+    //    switch (context.phase)
+    //    {
+    //        case InputActionPhase.Performed:
+    //            rotationSpeed = minRotationSpeed;                
+    //            break;
+    //                   
+    //        case InputActionPhase.Canceled:
+    //            rotationSpeed = 0;
+    //            break;  
+    //    }
+    //}
+    //
+    //public void RotateRight(InputAction.CallbackContext context)
+    //{
+    //    switch (context.phase)
+    //    {
+    //        case InputActionPhase.Performed:
+    //            rotationSpeed = maxRotationSpeed;
+    //            break;
+    //
+    //        case InputActionPhase.Canceled:
+    //            rotationSpeed = 0;
+    //            break;
+    //    }
+    //}
     #endregion
 
     void ApplyTorque(float _value)
     {
-        for (int i = 0; i < frontWheels.Length; i++)
+        for (int i = 0; i < wheels.Length; i++)
         {
-            frontWheels[i].motorTorque = _value;
+            wheels[i].motorTorque = _value;
         }
+    }
+
+    IEnumerator CalculateSpeed()
+    {
+        Vector3 _lastPosition = transform.position; 
+        yield return new WaitForFixedUpdate();
+        speed = Mathf.RoundToInt(Vector3.Distance(transform.position,_lastPosition) / Time.deltaTime);
     }
 
     #region Rotation Tourelle

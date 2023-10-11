@@ -11,7 +11,6 @@ public class CameraScript : MonoBehaviour
 
     
     public GameObject Target = null;
-    public GameObject T = null;
     public float speed;
     public bool isExploring = true;
 
