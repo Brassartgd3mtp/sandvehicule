@@ -1848,8 +1848,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1514449576}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.624682, y: 0.000000048908166, z: -0.00000003912519, w: 0.7808793}
-  m_LocalPosition: {x: 0, y: 28.44, z: -6.4}
+  m_LocalRotation: {x: 0.11223367, y: 1e-45, z: 0, w: 0.99368185}
+  m_LocalPosition: {x: 0, y: 3.9, z: -8.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7598,6 +7598,8 @@ MonoBehaviour:
   BaseProjectile: {fileID: 8513764813605114113, guid: 7979df0cefe35834885c19d26e975d5d,
     type: 3}
   playerStates: {fileID: 0}
+  isShooting: 0
+  attackSpeed: 2
   speed: 10
 --- !u!33 &8849521606656148658
 MeshFilter:
