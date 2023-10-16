@@ -30,9 +30,9 @@ Transform:
   m_GameObject: {fileID: 1438930604405971603}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.64, z: 15.52}
-  m_LocalScale: {x: 1.63, y: 1.63, z: 1.63}
-  m_ConstrainProportionsScale: 1
+  m_LocalPosition: {x: 0, y: 1.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -148,9 +148,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curretHealth: 10
   maxHealth: 10
-  Damage: 0
+  Damage: 1
   Level: 0
+  attackSpeed: 1
+  atRangeOfPlayer: 0
   gameManager: {fileID: 0}
   waveSystem: {fileID: 0}
   speed: 2
   player: {fileID: 0}
+  playerTakeDamage: {fileID: 0}

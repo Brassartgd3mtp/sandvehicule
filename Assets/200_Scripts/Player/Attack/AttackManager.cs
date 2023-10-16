@@ -6,13 +6,14 @@ using UnityEngine.InputSystem;
 
 public class AttackManager : MonoBehaviour
 {
+    public Stats stats;
+
 
     public GameObject shootingPos;
     public GameObject BaseProjectile;
     public PlayerStates playerStates;
 
     public bool isShooting;
-    public float attackSpeed;
     public float cooldownAttack;
 
     public int speed;
@@ -21,14 +22,16 @@ public class AttackManager : MonoBehaviour
     {
         cooldownAttack = 0;
         playerStates = GetComponent<PlayerStates>();
+        stats = GetComponent<Stats>();
     }
 
     void Update()
     {
+        // Systeme de CoolDown de tir
         if (isShooting == true && cooldownAttack <= 0) 
         {
             Instantiate(BaseProjectile, shootingPos.transform.position, shootingPos.transform.rotation);
-            cooldownAttack = 1 / attackSpeed;
+            cooldownAttack = 1 / stats.attackSpeed;
         }
         if (cooldownAttack > 0)
         {
@@ -58,20 +61,6 @@ public class AttackManager : MonoBehaviour
                 break;
 
         }
-    }
-
-    public IEnumerator ShootInContinue()
-    {
-        do
-        {
-          
-          if (isShooting == false)
-            {
-               StopCoroutine(ShootInContinue());
-            }
-          yield return new WaitForSeconds(1/ attackSpeed);
-        }
-        while (isShooting == true) ;
     }
 
 }

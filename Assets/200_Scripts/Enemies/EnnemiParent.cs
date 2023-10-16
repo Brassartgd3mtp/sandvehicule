@@ -5,8 +5,10 @@ using UnityEngine;
 public class EnnemiParent : MonoBehaviour
 {
     public float curretHealth, maxHealth;
-    public int Damage;
+    public float Damage;
     public int Level;
+    public float attackSpeed;
+    public bool atRangeOfPlayer;
 
     public GameObject gameManager;
     public WaveSystem waveSystem;

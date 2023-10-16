@@ -6,10 +6,10 @@ using UnityEngine.InputSystem;
 public class Movement : MonoBehaviour
 {
     private PlayerStates playerStates;
+    private Stats stats;
 
     private Vector3 movement = Vector3.zero;
     [SerializeField] private float speed;
-    [SerializeField] private float maxSpeed;
     [SerializeField] private float rotationSpeed;
     [SerializeField] private float minRotationSpeed, maxRotationSpeed;
 
@@ -34,6 +34,7 @@ public class Movement : MonoBehaviour
     void Start()
     {
         playerStates = GetComponent<PlayerStates>();
+        stats = GetComponent<Stats>();
         rb = GetComponent<Rigidbody>();
     }
 
@@ -53,9 +54,9 @@ public class Movement : MonoBehaviour
 
             LerpToSteerAngle();
 
-            if (rb.velocity.magnitude > maxSpeed)
+            if (rb.velocity.magnitude > stats.maxSpeed)
             {
-                rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
+                rb.velocity = Vector3.ClampMagnitude(rb.velocity, stats.maxSpeed);
             }
         }
 
