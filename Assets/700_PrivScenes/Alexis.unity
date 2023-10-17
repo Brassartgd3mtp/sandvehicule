@@ -441,6 +441,10 @@ MonoBehaviour:
   timerSlider: {fileID: 1582745310}
   timeBeforeStorm: 2
   sliderValue: 0
+  minTimerBeforeStorm: 5
+  maxTimerBeforeStorm: 10
+  minTimerOfStorm: 10
+  maxTimerOfStorm: 15
 --- !u!114 &104647067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8064,6 +8068,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 873109193}
+  - {fileID: 104647068}
   - {fileID: 5006512735956538650}
   - {fileID: 926778884}
   - {fileID: 1514449579}
@@ -8071,5 +8076,4 @@ SceneRoots:
   - {fileID: 1393256604}
   - {fileID: 316881161}
   - {fileID: 1248956110}
-  - {fileID: 104647068}
   - {fileID: 1526022161}

@@ -16,6 +16,9 @@ public class GameSystem : MonoBehaviour
     public float timeBeforeStorm;
     public float sliderValue;
 
+    [SerializeField] private float minTimerBeforeStorm, maxTimerBeforeStorm;
+    [SerializeField] private float minTimerOfStorm, maxTimerOfStorm;
+
 
     //private bool stopTimer;
 
@@ -29,7 +32,7 @@ public class GameSystem : MonoBehaviour
         //timeBeforeStorm = 10;
         //timerOfStorm = 20;
 
-        timerSlider.maxValue = timeBeforeStorm;
+        
 
     }
     void Update()
@@ -67,15 +70,14 @@ public class GameSystem : MonoBehaviour
     {
         stormIsActive = true;
         waveSystem.StartCoroutine("EnemyDrop");
-        timeBeforeStorm = 10;
-        //stopTimer = true;
+        timeBeforeStorm = Random.Range(minTimerBeforeStorm, maxTimerBeforeStorm);
+        timerSlider.maxValue = timeBeforeStorm;
     }
 
     public void EndWave() // Fin de la wave, reset les valeurs pour repartir en exploration
     {
         Debug.Log("EndWave");
         stormIsActive = false;
-        timerOfStorm = 20;
-        //stopTimer = false;
+        timerOfStorm = Random.Range(minTimerOfStorm, maxTimerOfStorm);
     }
 }

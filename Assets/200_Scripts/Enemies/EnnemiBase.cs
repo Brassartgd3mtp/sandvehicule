@@ -9,16 +9,20 @@ public class EnnemiBase : EnnemiParent
     public GameObject player;
     public PlayerTakeDamage playerTakeDamage;
 
+    public Rigidbody rb;
+
 
     public void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        rb = GetComponent<Rigidbody>();
     }
     void FixedUpdate()
     {
         if (atRangeOfPlayer == false)
         {
-            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+            rb.velocity = transform.forward * speed;
+            transform.LookAt(player.transform.position);    
         }
     }
 
