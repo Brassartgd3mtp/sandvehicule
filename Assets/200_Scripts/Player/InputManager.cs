@@ -8,6 +8,8 @@ public class InputManager : MonoBehaviour
     [SerializeField] private GameObject UIStats;
     [SerializeField] private bool UIStatsIsActive;
 
+    [SerializeField] private Harpoon harpoon;
+
     public void Start()
     {
         UIStatsIsActive = false;
@@ -33,4 +35,10 @@ public class InputManager : MonoBehaviour
         }        
 
     }
+
+    public void ThrowHarpoon(InputAction.CallbackContext context) 
+    {
+    
+    }
+
 }
