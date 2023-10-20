@@ -5,24 +5,27 @@ using UnityEngine;
 
 public class EnnemiBase : EnnemiParent
 {
-    public float speed;
     public GameObject player;
     public PlayerTakeDamage playerTakeDamage;
 
-    public Rigidbody rb;
+    public GameObject mesh;
+
+    public bool atRangeOfPlayer;
 
 
-    public void Awake()
+
+    public void Start()
     {
+        enemyControl = GetComponent<EnemyControl>();
         player = GameObject.FindGameObjectWithTag("Player");
-        rb = GetComponent<Rigidbody>();
+
     }
     void FixedUpdate()
     {
         if (atRangeOfPlayer == false)
         {
-            rb.velocity = transform.forward * speed;
-            transform.LookAt(player.transform.position);    
+            rb.velocity = transform.forward * enemyControl.speed;
+            transform.LookAt(player.transform.position);
         }
     }
 
@@ -41,8 +44,10 @@ public class EnnemiBase : EnnemiParent
     {
         do
         {
-            playerTakeDamage.TakeDamage(Damage);
-            yield return new WaitForSeconds(1 / attackSpeed);
+            playerTakeDamage.TakeDamage(enemyControl.damage);
+            yield return new WaitForSeconds(1 / enemyControl.attackSpeed);
         } while (atRangeOfPlayer == true);
     }
+
+
 }

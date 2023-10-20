@@ -4,33 +4,26 @@ using UnityEngine;
 
 public class EnnemiParent : MonoBehaviour
 {
-    public float curretHealth, maxHealth;
-    public float Damage;
-    public int Level;
-    public float attackSpeed;
-    public bool atRangeOfPlayer;
+    public EnemyControl enemyControl;
 
     public GameObject gameManager;
     public WaveSystem waveSystem;
 
-    // Start is called before the first frame update
-    void Start()
+    public Rigidbody rb;
+
+    void Awake()
     {
+        enemyControl = GetComponent<EnemyControl>();
         gameManager = GameObject.Find("GameManager");
         waveSystem = gameManager.GetComponent<WaveSystem>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
     public void TakeDamage(float damageAmount) // système de prise de dommages de l'ennemi
     {
-        curretHealth -= damageAmount;
+        enemyControl.health -= damageAmount;
 
-        if (curretHealth <= 0)
+        if (enemyControl.health <= 0)
         {
             waveSystem.enemyCount--;
             Destroy(gameObject);

@@ -459,7 +459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80f78fa829d964040bb218e0f90f7523, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 1438930604405971603, guid: 86e0c86e060e5124da921e6bd1a5c775, type: 3}
+  enemy: {fileID: 3370896236820436003, guid: 058c50a41297b3b4b9328e56d1a03e75, type: 3}
   xPos1: 0
   xPos2: 0
   zPos1: 0
@@ -9242,7 +9242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5a33727afef9734fac04cd8bf80128c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 100
   currentHealth: 0
   damage: 0
   attackSpeed: 2

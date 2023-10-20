@@ -26,11 +26,15 @@ public class Harpoon : MonoBehaviour
     public void Update()
 
     {
-        GetMousePosition();
-        Aim();
+        if (isShooted == false)
+        {
+            GetMousePosition();
+            Aim();
+        }
+
     }
 
-    private (bool success, Vector3 position) GetMousePosition()
+    private (bool success, Vector3 position) GetMousePosition() // recupère la position de la souris dans l'espace
     {
         var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
 
