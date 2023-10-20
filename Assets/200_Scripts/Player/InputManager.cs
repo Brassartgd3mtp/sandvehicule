@@ -36,9 +36,21 @@ public class InputManager : MonoBehaviour
 
     }
 
-    public void ThrowHarpoon(InputAction.CallbackContext context) 
+    public void ThrowHarpoon(InputAction.CallbackContext context)
     {
-    
+        switch (context.phase)
+        {
+            case InputActionPhase.Performed:
+                if (harpoon.harpoonIsReady == true)
+                {
+                    harpoon.shootHarpoon();
+                }
+            break;
+        }
+
+
     }
+
+
 
 }

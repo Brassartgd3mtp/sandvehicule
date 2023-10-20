@@ -112,6 +112,15 @@
                     "processors": "",
                     "interactions": "Press",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ShootHarpoon",
+                    "type": "Button",
+                    "id": "c27d0ac0-477d-4a78-a15a-d28d183ca2ab",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -288,6 +297,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "OpenUIStats",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f7e2ff14-e1e8-4f68-8ea5-75225435cc7b",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ShootHarpoon",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
