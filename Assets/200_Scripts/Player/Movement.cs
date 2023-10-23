@@ -16,7 +16,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private float targetSteerAngle = 45;
     [SerializeField] private float turnSpeed = 5f;
 
-    [SerializeField] private GameObject turret;
+    [SerializeField] private UnityEngine.GameObject turret;
     [SerializeField] private float turretRotationSpeed;
     [SerializeField] private float turretRotationSpeedMax;
 

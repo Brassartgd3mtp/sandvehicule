@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class EnnemiBase : EnnemiParent
 {
-    public GameObject player;
+    public UnityEngine.GameObject player;
     public PlayerTakeDamage playerTakeDamage;
 
-    public GameObject mesh;
+    public UnityEngine.GameObject mesh;
 
     public bool atRangeOfPlayer;
 
@@ -17,7 +17,7 @@ public class EnnemiBase : EnnemiParent
     public void Start()
     {
         enemyControl = GetComponent<EnemyControl>();
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = UnityEngine.GameObject.FindGameObjectWithTag("Player");
 
     }
     void FixedUpdate()

@@ -10,7 +10,7 @@ public class CameraScript : MonoBehaviour
     public CinemachineVirtualCamera[] virtualCamera;
 
     
-    public GameObject Target = null;
+    public UnityEngine.GameObject Target = null;
     public float speed;
     public bool isExploring = true;
 

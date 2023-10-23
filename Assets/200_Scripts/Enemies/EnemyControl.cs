@@ -10,7 +10,7 @@ public class EnemyControl : MonoBehaviour
     public EnemyData enemyData;
 
     public Text enemyName;
-    public GameObject enemyModel;
+    public UnityEngine.GameObject enemyModel;
     public float health = 10;
     public float speed = 1.5f;
     public int damage;
