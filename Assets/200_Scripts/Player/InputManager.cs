@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
-    [SerializeField] private GameObject UIStats;
+    [SerializeField] private UnityEngine.GameObject UIStats;
     [SerializeField] private bool UIStatsIsActive;
 
     [SerializeField] private Harpoon harpoon;

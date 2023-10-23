@@ -15,9 +15,9 @@ public class Harpoon : MonoBehaviour
     public RaycastHit hitPerma;
     public RaycastHit hitOnClick;
 
-    [SerializeField] GameObject harpoonStart;
+    [SerializeField] UnityEngine.GameObject harpoonStart;
 
-    [SerializeField] private GameObject mainCameraPrefab;
+    [SerializeField] private UnityEngine.GameObject mainCameraPrefab;
 
     public bool isShooted;
     public bool harpoonReadyToBack = false;
@@ -30,6 +30,11 @@ public class Harpoon : MonoBehaviour
     public LineRenderer LR;
 
     public Rigidbody rb;
+
+    public GameObject StickyPoint;
+    public GameObject itemHooked;
+
+
 
     
 
@@ -151,6 +156,7 @@ public class Harpoon : MonoBehaviour
 
     public void ResetHarpoon()
     {
+
         isShooted = false;
         harpoonReadyToBack = false;
         harpoonIsReady = true;
@@ -158,12 +164,23 @@ public class Harpoon : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider)
+        if (collision.gameObject.tag == "Ground")
         {
            
             Debug.Log("touched");
             isShooted = false;
             harpoonReadyToBack = true;
         }
+
+        if (collision.gameObject.tag == "Item") 
+        {
+            Debug.Log("detectobj");
+            isShooted = false;
+            harpoonReadyToBack = true;
+            itemHooked = collision.gameObject;            
+            itemHooked.transform.parent = StickyPoint.transform;
+        }
     }
+
+
 }

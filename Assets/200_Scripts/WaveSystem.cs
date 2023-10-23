@@ -5,20 +5,20 @@ using UnityEngine.InputSystem;
 
 public class WaveSystem : MonoBehaviour
 {
-    public GameObject enemy;
+    public UnityEngine.GameObject enemy;
     
     public int xPos1, xPos2;
     public int zPos1, zPos2;
     public int randomX, randomZ;
     public float valueForRandomX, valueForRandomZ;
     public GameSystem gameSystem;
-    public GameObject player;
+    public UnityEngine.GameObject player;
     public int enemyCount;
 
     public void Awake()
     {
         gameSystem = GetComponent<GameSystem>();
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = UnityEngine.GameObject.FindGameObjectWithTag("Player");
     }
 
     void Start()

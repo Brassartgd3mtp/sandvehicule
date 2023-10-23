@@ -11,6 +11,6 @@ public class EnemyData : ScriptableObject
     public float speed = 1.5f;
     public int damage;
     public float attackSpeed;
-    public GameObject player;
+    public UnityEngine.GameObject player;
 
 }

@@ -9,8 +9,8 @@ public class AttackManager : MonoBehaviour
     public Stats stats;
 
 
-    public GameObject shootingPos;
-    public GameObject BaseProjectile;
+    public UnityEngine.GameObject shootingPos;
+    public UnityEngine.GameObject BaseProjectile;
     public PlayerStates playerStates;
 
     public bool isShooting;

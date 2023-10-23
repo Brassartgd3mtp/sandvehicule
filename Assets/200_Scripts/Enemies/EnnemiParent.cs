@@ -6,7 +6,7 @@ public class EnnemiParent : MonoBehaviour
 {
     public EnemyControl enemyControl;
 
-    public GameObject gameManager;
+    public UnityEngine.GameObject gameManager;
     public WaveSystem waveSystem;
 
     public Rigidbody rb;
@@ -14,7 +14,7 @@ public class EnnemiParent : MonoBehaviour
     void Awake()
     {
         enemyControl = GetComponent<EnemyControl>();
-        gameManager = GameObject.Find("GameManager");
+        gameManager = UnityEngine.GameObject.Find("GameManager");
         waveSystem = gameManager.GetComponent<WaveSystem>();
         rb = GetComponent<Rigidbody>();
     }
