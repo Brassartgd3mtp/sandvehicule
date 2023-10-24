@@ -236,6 +236,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: InvetorySlot_UI (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6292525777035401246, guid: 9daea7d837c46e34f897f6913c1d5cce,
+        type: 3}
+      propertyPath: m_TagString
+      value: UI
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1503,7 +1508,7 @@ GameObject:
   - component: {fileID: 448459553}
   m_Layer: 5
   m_Name: ItemCount
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1638,7 +1643,7 @@ GameObject:
   - component: {fileID: 627819456}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2396,6 +2401,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: InvetorySlot_UI (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6292525777035401246, guid: 9daea7d837c46e34f897f6913c1d5cce,
+        type: 3}
+      propertyPath: m_TagString
+      value: UI
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2553,7 +2563,7 @@ GameObject:
   - component: {fileID: 923801200}
   m_Layer: 5
   m_Name: PlayerHotBar
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2901,7 +2911,7 @@ GameObject:
   - component: {fileID: 1080386628}
   m_Layer: 5
   m_Name: MouseObjects
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3967,7 +3977,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1393256602}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.624682, y: -0.000000048908166, z: 0.00000003912519, w: 0.7808793}
+  m_LocalRotation: {x: 0.624682, y: 0.000000048908166, z: -0.00000003912519, w: 0.7808793}
   m_LocalPosition: {x: 0, y: 28.44, z: -6.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4395,7 +4405,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1514449576}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.624682, y: -0.000000048908166, z: 0.00000003912519, w: 0.7808793}
+  m_LocalRotation: {x: 0.624682, y: 0.000000048908166, z: -0.00000003912519, w: 0.7808793}
   m_LocalPosition: {x: 0, y: 28.44, z: -6.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5138,7 +5148,7 @@ GameObject:
   - component: {fileID: 1602938931}
   m_Layer: 5
   m_Name: Image
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11526,6 +11536,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: InvetorySlot_UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 6292525777035401246, guid: 9daea7d837c46e34f897f6913c1d5cce,
+        type: 3}
+      propertyPath: m_TagString
+      value: UI
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
