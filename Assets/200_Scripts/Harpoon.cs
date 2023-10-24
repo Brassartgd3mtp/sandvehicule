@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 using Cinemachine;
 using TreeEditor;
 using UnityEngine.Rendering;
+using UnityEngine.EventSystems;
 
 public class Harpoon : MonoBehaviour
 {
@@ -117,13 +118,13 @@ public class Harpoon : MonoBehaviour
         Debug.Log("ShootHarpon");
 
         var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-
         var (success, position) = GetMousePosition();
 
         if (Physics.Raycast(ray, out hitOnClick, Mathf.Infinity))
-        {
-            isShooted = true;
-            harpoonTarget = position;
+        {       
+            
+                isShooted = true;
+                harpoonTarget = position;
         }
     }
 

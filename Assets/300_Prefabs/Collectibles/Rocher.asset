@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0011f4ba0be7304459488b1e5f7599aa, type: 3}
   m_Name: Rocher
   m_EditorClassIdentifier: 
-  id: 2
-  itemName: Pierre
-  iconItem: {fileID: 21300000, guid: 366c2f9a47cbd984d82dbf25327f17d5, type: 3}
+  ID: 0
+  Name: Pierre
+  Description: 'C''est de la pierre '
+  Icon: {fileID: 21300000, guid: 366c2f9a47cbd984d82dbf25327f17d5, type: 3}
+  MaxStackSize: 3
