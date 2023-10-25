@@ -21,11 +21,11 @@ public class ItemPickUp : MonoBehaviour
     {   
         if (collision.gameObject.tag == "Player")
         {
-            var inventory = collision.transform.GetComponent<InventoryHolder>();
+            var inventory = collision.transform.GetComponent<PlayerInventoryHolder>();
 
             if (!inventory) return;
 
-            if (inventory.InventorySystem.AddToInventory(itemSO, 1))
+            if (inventory.AddToInventory(itemSO, 1))
             {
                 Destroy(this.gameObject);
             }
