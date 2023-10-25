@@ -730,17 +730,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 3370896236820436003, guid: 058c50a41297b3b4b9328e56d1a03e75, type: 3}
-  xPos1: 0
-  xPos2: 0
-  zPos1: 0
-  zPos2: 0
-  randomX: 0
-  randomZ: 0
-  valueForRandomX: 0
-  valueForRandomZ: 0
   gameSystem: {fileID: 0}
   player: {fileID: 0}
   enemyCount: 0
+  Radius: 10
 --- !u!4 &104647068
 Transform:
   m_ObjectHideFlags: 0
@@ -2466,7 +2459,7 @@ GameObject:
   - component: {fileID: 627819457}
   - component: {fileID: 627819456}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: CanvasInventory
   m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
