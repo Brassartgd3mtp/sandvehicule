@@ -15,7 +15,7 @@ public class InventorySystem
 
     public UnityAction<InventorySlots> OnInventorySlotChanged;
 
-    public InventorySystem(int size)
+    public InventorySystem(int size) // Constructor qui set la somme de slot
     {
         inventorySlots = new List<InventorySlots>(size);
 
@@ -25,13 +25,13 @@ public class InventorySystem
         }
     }
 
-    public bool AddToInventory(ItemSO itemToAdd, int amountToAdd)  //Check whether item exists in inventory
+    public bool AddToInventory(ItemSO itemToAdd, int amountToAdd)  
     {
-        if (ContainsItem(itemToAdd, out List<InventorySlots> invSlots))
+        if (ContainsItem(itemToAdd, out List<InventorySlots> invSlots)) //Check whether item exists in inventory
         {
             foreach (var slot in invSlots)
             {
-                if (slot.RoomLeftInStack(amountToAdd))
+                if (slot.EnoughRoomLeftInStack(amountToAdd))
                 {
                     slot.AddToStack(amountToAdd);
                     OnInventorySlotChanged?.Invoke(slot);
@@ -42,23 +42,25 @@ public class InventorySystem
         }
         if (HasFreeSlot(out InventorySlots freeSlots)) // Gets the first available slot
         {
-            freeSlots.UpdateInventorySlots(itemToAdd, amountToAdd);
-            OnInventorySlotChanged?.Invoke(freeSlots);
-            return true;
+            if (freeSlots.EnoughRoomLeftInStack(amountToAdd))
+            {
+                freeSlots.UpdateInventorySlots(itemToAdd, amountToAdd);
+                OnInventorySlotChanged?.Invoke(freeSlots);
+                return true;
+            }             
         }
         return false;
     }
 
-    public bool ContainsItem(ItemSO itemToAdd, out List<InventorySlots> invSlots)
+    public bool ContainsItem(ItemSO itemToAdd, out List<InventorySlots> invSlots) // L'un de nos emplacements contient-il l'élément à ajouter ?
     {
-        invSlots = InventorySlots.Where(i => i.ItemSO == itemToAdd).ToList();
-        Debug.Log(invSlots.Count);
-        return invSlots == null ? false : true;
+        invSlots = InventorySlots.Where(i => i.ItemSO == itemToAdd).ToList(); // Si oui, récupère la list
+        return invSlots == null ? false : true; // Si oui return True, si non return False
     }
 
     public bool HasFreeSlot(out InventorySlots freeSlots) 
     {
-        freeSlots = InventorySlots.FirstOrDefault(i => i.ItemSO == null); 
+        freeSlots = InventorySlots.FirstOrDefault(i => i.ItemSO == null); //Donne le premier slot vide 
         return freeSlots
             == null ? false : true;
     }

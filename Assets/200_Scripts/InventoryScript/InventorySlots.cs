@@ -6,54 +6,54 @@ using UnityEngine;
 [System.Serializable]
 public class InventorySlots
 {
-    [SerializeField] private ItemSO itemSO;
-    [SerializeField] private int stackSize;
+    [SerializeField] private ItemSO itemSO; // reference aux data de l'item
+    [SerializeField] private int stackSize; // Actuel nombre d'item sur le stack
 
     public ItemSO ItemSO => itemSO;
     public int StackSize => stackSize;  
 
-    public InventorySlots(ItemSO source, int amount)
+    public InventorySlots(ItemSO source, int amount) // Constructor pour faire un slot occupé
     {
         itemSO = source;
         stackSize = amount;
     }
 
-    public InventorySlots() 
+    public InventorySlots() // Constructor pour faire un slot vide
     {
         ClearSlot();
     }
 
-    public void ClearSlot()
+    public void ClearSlot() // Pour vider un slot 
     {
         itemSO = null;
         stackSize = -1;
     }
 
-    public void AssignItem(InventorySlots invSlot)
+    public void AssignItem(InventorySlots invSlot) // Assigne un item à un slot 
     {
-        if (itemSO == invSlot.itemSO) AddToStack(invSlot.stackSize);
-        else
+        if (itemSO == invSlot.itemSO) AddToStack(invSlot.stackSize); // Demande si le slot contient le même item, si oui l'ajoute au slot 
+        else // Overwrite slot with the inventory slot what we re passing in 
         {
             itemSO = invSlot.itemSO;
             stackSize = 0;
             AddToStack(invSlot.stackSize);
         }
     }
-    public void UpdateInventorySlots(ItemSO data, int amount)
+    public void UpdateInventorySlots(ItemSO data, int amount) // Updates l'état du slot 
     {
         itemSO = data;
         stackSize = amount;
     }
 
-    public bool RoomLeftInStack(int amountToAdd, out int amountRemaining)
+    public bool EnoughRoomLeftInStack(int amountToAdd, out int amountRemaining) // Est ce qu'il y a assez de place pour stack la somme que l'on essaie d'ajouter 
     {
         amountRemaining = itemSO.MaxStackSize - stackSize;
-        return RoomLeftInStack(amountToAdd);
+        return EnoughRoomLeftInStack(amountToAdd);
     }
 
-    public bool RoomLeftInStack(int amountToAdd) 
+    public bool EnoughRoomLeftInStack(int amountToAdd)   
     {
-        if(stackSize + amountToAdd <= itemSO.MaxStackSize) return true;
+        if( itemSO == null || itemSO != null && stackSize + amountToAdd <= itemSO.MaxStackSize) return true;
         else return false;
     }
 
@@ -67,18 +67,18 @@ public class InventorySlots
         stackSize -= amount;
     }
 
-    public bool SplitStack(out InventorySlots splitStack)
+    public bool SplitStack(out InventorySlots splitStack) 
     {
-        if (stackSize <= 1)
+        if (stackSize <= 1) // est ce qu'il y en a assez pour split? si non return false et rien ne se passe
         {
             splitStack = null;
             return false;
         }
 
-        int halfStack = Mathf.RoundToInt(stackSize / 2);
+        int halfStack = Mathf.RoundToInt(stackSize / 2); // Donne la moitié du stack
         RemoveFromStack(halfStack);
 
-        splitStack = new InventorySlots(itemSO, halfStack);
+        splitStack = new InventorySlots(itemSO, halfStack); // créé un copie de ce slot avec la moitié du la taille du stack
 
         return true;
 
