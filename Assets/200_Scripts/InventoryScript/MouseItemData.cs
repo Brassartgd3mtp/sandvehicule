@@ -20,6 +20,7 @@ public class MouseItemData : MonoBehaviour
 
     public void UpdateMouseSlot(InventorySlots invSlot)
     {
+
         AssignedInventorySlot.AssignItem(invSlot);
         ItemSprite.sprite = invSlot.ItemSO.Icon;
         ItemCount.text = invSlot.StackSize.ToString();
@@ -28,7 +29,7 @@ public class MouseItemData : MonoBehaviour
 
     private void Update()
     {
-        if(AssignedInventorySlot.ItemSO != null) 
+        if(AssignedInventorySlot.ItemSO != null) // Si il y a un item, il follow la position de la souris 
         {
             transform.position = Mouse.current.position.ReadValue();
             
