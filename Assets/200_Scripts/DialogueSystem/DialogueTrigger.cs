@@ -5,25 +5,33 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    public Message[] messages;
-    public Actor[] actors;
+    // Référence au gestionnaire de dialogue que vous avez créé.
+    public DialogueManager dialogueManager;
 
+    // Appelé lorsque le bouton est cliqué.
     public void StartDialogue()
     {
-        FindObjectOfType<DialogueManager>().OpenDialogue(messages, actors);
+        DialogueManager dialogueManager = FindObjectOfType<DialogueManager>();
+
+        if (dialogueManager != null)
+        {
+            List<Dialogue> dialogues = dialogueManager.dialogues;
+
+            Debug.Log(dialogues);
+
+            if (dialogues.Count > 0)
+            {
+                dialogueManager.ShowDialogue(dialogues[0]);
+            }
+            else
+            {
+                Debug.LogError("Aucun dialogue n'est disponible.");
+            }
+        }
+        else
+        {
+            Debug.LogError("Référence au gestionnaire de dialogue non définie. Assurez-vous de l'attribuer dans l'inspecteur Unity.");
+        }
+
     }
-}
-
-[System.Serializable]
-public class Message
-{
-    public int actorID;
-    public string message;
-}
-
-[System.Serializable]
-public class Actor
-{
-    public string name;
-    public Sprite sprite;
 }

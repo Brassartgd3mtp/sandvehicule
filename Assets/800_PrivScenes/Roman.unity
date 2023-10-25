@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 121530071}
   - component: {fileID: 121530070}
   m_Layer: 5
-  m_Name: NameAndRole
+  m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -294,8 +294,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 500, y: 200}
+  m_AnchoredPosition: {x: 505, y: 442}
+  m_SizeDelta: {x: 400, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &155369518
 MonoBehaviour:
@@ -403,19 +403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d051127b661b40243b68ac963e2eb543, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messages:
-  - actorID: 0
-    message: "\" Vous ouvrez les yeux, comme chaque jour depuis 5 ans. R\xE9veill\xE9
-      par la douce odeur du sable de Dozelan-Hepta. \""
-  - actorID: 0
-    message: "\" Vous sortez du dortoir, \xE9quip\xE9 pour une nouvelle journ\xE9e
-      de travail. \""
-  - actorID: 0
-    message: '" Une silhouette au loin vous fait de grand geste avant de venir vous
-      aborder. "'
-  actors:
-  - name: Narrateur
-    sprite: {fileID: 0}
+  dialogueManager: {fileID: 0}
 --- !u!1 &224372451
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,7 +416,7 @@ GameObject:
   - component: {fileID: 224372454}
   - component: {fileID: 224372453}
   m_Layer: 5
-  m_Name: Message
+  m_Name: DialogueText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -473,7 +461,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Message
+  m_text: Text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -725,7 +713,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Test \nDialogue"
+  m_text: "D\xE9marrer le dialogue\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -752,8 +740,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -814,7 +802,7 @@ GameObject:
   - component: {fileID: 792169459}
   - component: {fileID: 792169458}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Response3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -859,7 +847,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 'Response3
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -948,7 +938,7 @@ GameObject:
   - component: {fileID: 803239008}
   - component: {fileID: 803239007}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Response1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -993,7 +983,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Response1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1083,7 +1073,7 @@ GameObject:
   - component: {fileID: 1016791096}
   - component: {fileID: 1016791095}
   m_Layer: 5
-  m_Name: ButtonAnswer (1)
+  m_Name: ResponseButton2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1152,7 +1142,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1016791096}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: SelectResponse
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1016791096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1203,7 +1205,7 @@ GameObject:
   - component: {fileID: 1061445122}
   - component: {fileID: 1061445121}
   m_Layer: 5
-  m_Name: MessageBox
+  m_Name: DialogueTextBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1444,7 +1446,7 @@ GameObject:
   - component: {fileID: 1270557634}
   - component: {fileID: 1270557633}
   m_Layer: 5
-  m_Name: ButtonAnswer
+  m_Name: ResponseButton1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1467,7 +1469,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 498.49, y: 272.82}
+  m_AnchoredPosition: {x: 498.49, y: -70.364}
   m_SizeDelta: {x: 918.01, y: 137.27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1270557633
@@ -1513,7 +1515,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1270557634}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: SelectResponse
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1270557634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1564,7 +1578,7 @@ GameObject:
   - component: {fileID: 1360005078}
   - component: {fileID: 1360005077}
   m_Layer: 5
-  m_Name: NameAndRoleBox
+  m_Name: CharacterBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1640,7 +1654,6 @@ GameObject:
   - component: {fileID: 1380826773}
   - component: {fileID: 1380826772}
   - component: {fileID: 1380826771}
-  - component: {fileID: 1380826774}
   m_Layer: 5
   m_Name: DialogueBox
   m_TagString: Untagged
@@ -1733,22 +1746,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &1380826774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1380826769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76127dabc86597d4dbe278145d783af3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actorImage: {fileID: 1261999111}
-  actorNameAndRole: {fileID: 121530070}
-  messageText: {fileID: 224372453}
-  backgroundBox: {fileID: 1380826770}
 --- !u!1 &1562178247
 GameObject:
   m_ObjectHideFlags: 0
@@ -1762,7 +1759,7 @@ GameObject:
   - component: {fileID: 1562178250}
   - component: {fileID: 1562178249}
   m_Layer: 5
-  m_Name: AnswerBoxes
+  m_Name: ResponseBoxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1866,7 +1863,7 @@ GameObject:
   - component: {fileID: 1641065966}
   - component: {fileID: 1641065965}
   m_Layer: 5
-  m_Name: ButtonAnswer (2)
+  m_Name: ResponseButton3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1889,7 +1886,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 498.49, y: -70.364}
+  m_AnchoredPosition: {x: 498.49, y: 272.82}
   m_SizeDelta: {x: 918.01, y: 137.27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1641065965
@@ -1935,7 +1932,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1641065966}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: SelectResponse
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1641065966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2226,7 +2235,7 @@ GameObject:
   - component: {fileID: 1862026932}
   - component: {fileID: 1862026931}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Response2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2271,7 +2280,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Response2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2360,7 +2369,8 @@ GameObject:
   - component: {fileID: 2033234803}
   - component: {fileID: 2033234802}
   - component: {fileID: 2033234801}
-  - component: {fileID: 2033234800}
+  - component: {fileID: 2033234804}
+  - component: {fileID: 2033234805}
   m_Layer: 5
   m_Name: DialogueInterface
   m_TagString: Untagged
@@ -2384,27 +2394,11 @@ RectTransform:
   - {fileID: 1380826770}
   m_Father: {fileID: 1800857774}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 960, y: 540}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2033234800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2033234798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76127dabc86597d4dbe278145d783af3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actorImage: {fileID: 0}
-  actorNameAndRole: {fileID: 0}
-  messageText: {fileID: 0}
-  backgroundBox: {fileID: 0}
 --- !u!114 &2033234801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2468,6 +2462,38 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &2033234804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033234798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76127dabc86597d4dbe278145d783af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 121530070}
+  dialogueText: {fileID: 224372453}
+  responseButton1: {fileID: 1270557633}
+  responseButton2: {fileID: 1016791095}
+  responseButton3: {fileID: 1641065965}
+  dialogues: []
+--- !u!114 &2033234805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033234798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5670a38880bf8cf49ba5d4decfd5dd63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  csvFile: {fileID: 4900000, guid: d8eda822e74532f41a6e8c0ddc1adf40, type: 3}
+  dialogues: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
