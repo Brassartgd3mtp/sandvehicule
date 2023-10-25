@@ -35,30 +35,21 @@ public class Harpoon : MonoBehaviour
     public GameObject StickyPoint;
     public GameObject itemHooked;
 
-
-
-    
-
     public void Start()
     {
         mainCamera = Camera.main;
         isShooted = false;
 
         harpoonIsReady = true;
-
-
     }
 
     public void Update()
-
     {
         if (isShooted == false)
         {
             GetMousePosition();
             Aim();
-        }
-
-   
+        }  
 
         if(isShooted) 
         { 
@@ -81,8 +72,6 @@ public class Harpoon : MonoBehaviour
             LR.SetPosition(0, harpoonStart.transform.position);
             LR.SetPosition(1, transform.position);
         }
-        
-
     }
 
     private (bool success, Vector3 position) GetMousePosition() // recupère la position de la souris dans l'espace
@@ -97,7 +86,6 @@ public class Harpoon : MonoBehaviour
         {
             return (success: false, position: Vector3.zero);
         }
-
     }
 
     private void Aim()
@@ -130,14 +118,10 @@ public class Harpoon : MonoBehaviour
 
     public void HarpoonMoveToSpot()
     {
-        if(isShooted) 
-            //rb.velocity = transform.forward * harpoonSpeed;
-
-            //transform.LookAt(harpoonTarget);
-
+        if (isShooted)
+        {
             transform.position = Vector3.Lerp(transform.position, harpoonTarget, harpoonSpeed * Time.deltaTime / Vector3.Distance(transform.position, harpoonTarget));
-
-
+        }
     }
 
     public void harpoonBack()
@@ -157,7 +141,6 @@ public class Harpoon : MonoBehaviour
 
     public void ResetHarpoon()
     {
-
         isShooted = false;
         harpoonReadyToBack = false;
         harpoonIsReady = true;
@@ -182,6 +165,4 @@ public class Harpoon : MonoBehaviour
             itemHooked.transform.parent = StickyPoint.transform;
         }
     }
-
-
 }

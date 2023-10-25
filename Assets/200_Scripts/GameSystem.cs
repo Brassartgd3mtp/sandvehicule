@@ -25,16 +25,9 @@ public class GameSystem : MonoBehaviour
     void Start()
     {
         waveSystem = GetComponent<WaveSystem>();
-
-        stormIsActive = false;
-        //stopTimer = false;
-
-        //timeBeforeStorm = 10;
-        //timerOfStorm = 20;
-
-        
-
+        stormIsActive = false;       
     }
+        
     void Update()
     {
         if (stormIsActive == false && waveSystem.enemyCount <=0) // Si il n'y a pas de tempête le timer avant activation de la tempête continu
@@ -61,9 +54,7 @@ public class GameSystem : MonoBehaviour
         if (timerOfStorm < 0 && waveSystem.enemyCount <= 0)
         {
             EndWave();
-        }
-        
-
+        }       
     }
 
     public void ActiveWave() // lance la vague d'ennemi à la fin du timer de "timeBeforeThe Storm"
