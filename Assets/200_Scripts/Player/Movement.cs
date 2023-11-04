@@ -8,7 +8,7 @@ public class Movement : MonoBehaviour
     private PlayerStates playerStates;
     private Stats stats;
 
-    private Vector3 movement = Vector3.zero;
+    //private Vector3 movement = Vector3.zero;
     [SerializeField] private float speed;
     [SerializeField] private float rotationSpeed;
     [SerializeField] private float minRotationSpeed, maxRotationSpeed;
@@ -30,19 +30,22 @@ public class Movement : MonoBehaviour
     private Rigidbody rb;
 
     [SerializeField] private Vector2 inputDirection;
+    [SerializeField] private Vector3 movement;
+    [SerializeField] private bool isMoving;
 
     void Start()
     {
         playerStates = GetComponent<PlayerStates>();
         stats = GetComponent<Stats>();
         rb = GetComponent<Rigidbody>();
+        isMoving = false;
     }
 
 
 
     private void Update()
     {
-        StartCoroutine(CalculateSpeed());
+        //StartCoroutine(CalculateSpeed());
     }
 
     void FixedUpdate()
@@ -50,9 +53,9 @@ public class Movement : MonoBehaviour
         // Movement if the player is in "Exploring" State (ref in script "PlayerState")
         if (playerStates.states == PlayerStates.States.Exploring)
         {
-            transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
+            //transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
 
-            LerpToSteerAngle();
+            //LerpToSteerAngle();
 
             if (rb.velocity.magnitude > stats.maxSpeed)
             {
@@ -61,67 +64,93 @@ public class Movement : MonoBehaviour
         }
 
         // Using turret if player is in "Fighting" State  
-        if (playerStates.states == PlayerStates.States.Fifhting)
-        {
-            turret.transform.Rotate(Vector3.up * turretRotationSpeed * Time.deltaTime);
-            ApplyTorque(0);
-            rb.velocity = new Vector3(0,0,0);
-        }
-
+        //if (playerStates.states == PlayerStates.States.Fifhting)
+        //{
+        //    turret.transform.Rotate(Vector3.up * turretRotationSpeed * Time.deltaTime);
+        //    ApplyTorque(0);
+        //    rb.velocity = new Vector3(0,0,0);
+        //}
+        MovePlayer();
+        
 
     }
     #region Movement Inputs 
     
-    public void Move(InputAction.CallbackContext context)
-    {
-        inputDirection = context.ReadValue<Vector2>();
-    }
-
-    private void LerpToSteerAngle()
-    {
-        for (int i = 0; i < frontWheels.Length; i++)
-        {
-            frontWheels[i].steerAngle = Mathf.MoveTowards(frontWheels[i].steerAngle, targetSteerAngle * inputDirection.x, Time.deltaTime * turnSpeed);
-        }
-    }
-    
-    public void MoveForward(InputAction.CallbackContext context)
+    public void OnMove(InputAction.CallbackContext context)
     {
         switch (context.phase)
         {
             case InputActionPhase.Performed:
-                for (int i = 0; i < wheels.Length; i++)
-                {
-                    wheels[i].brakeTorque = 0;
-                }
-                ApplyTorque(Torque); 
+                isMoving = true;
                 break;
             case InputActionPhase.Canceled:
-                
-                ApplyTorque(0); 
-                for (int i = 0; i < wheels.Length; i++)
-                {
-                    wheels[i].brakeTorque = counterTorque;
-                }
+                isMoving = false;
                 break;
+
         }
+
+
+        inputDirection = context.ReadValue<Vector2>();
+        
     }
+
+    public void MovePlayer()
+    {
+        movement = new Vector3(inputDirection.x, 0f, inputDirection.y);
+
+        if (isMoving == true)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15f);
+        }
+
+        transform.Translate(movement * speed * Time.deltaTime, Space.World);
+    }
+
+    //private void LerpToSteerAngle()
+    //{
+    //    for (int i = 0; i < frontWheels.Length; i++)
+    //    {
+    //        frontWheels[i].steerAngle = Mathf.MoveTowards(frontWheels[i].steerAngle, targetSteerAngle * inputDirection.x, Time.deltaTime * turnSpeed);
+    //    }
+    //}
+    
+    //public void MoveForward(InputAction.CallbackContext context)
+    //{
+    //    switch (context.phase)
+    //    {
+    //        case InputActionPhase.Performed:
+    //            for (int i = 0; i < wheels.Length; i++)
+    //            {
+    //                wheels[i].brakeTorque = 0;
+    //            }
+    //            ApplyTorque(Torque); 
+    //            break;
+    //        case InputActionPhase.Canceled:
+    //            
+    //            ApplyTorque(0); 
+    //            for (int i = 0; i < wheels.Length; i++)
+    //            {
+    //                wheels[i].brakeTorque = counterTorque;
+    //            }
+    //            break;
+    //    }
+    //}
     #endregion
 
-    void ApplyTorque(float _value)
-    {
-        for (int i = 0; i < wheels.Length; i++)
-        {
-            wheels[i].motorTorque = _value;
-        }
-    }
+    //void ApplyTorque(float _value)
+    //{
+    //    for (int i = 0; i < wheels.Length; i++)
+    //    {
+    //        wheels[i].motorTorque = _value;
+    //    }
+    //}
 
-    IEnumerator CalculateSpeed()
-    {
-        Vector3 _lastPosition = transform.position; 
-        yield return new WaitForFixedUpdate();
-        speed = Mathf.RoundToInt(Vector3.Distance(transform.position,_lastPosition) / Time.deltaTime);
-    }
+    //IEnumerator CalculateSpeed()
+    //{
+    //    Vector3 _lastPosition = transform.position; 
+    //    yield return new WaitForFixedUpdate();
+    //    speed = Mathf.RoundToInt(Vector3.Distance(transform.position,_lastPosition) / Time.deltaTime);
+    //}
 
     #region Rotation Tourelle
     public void RotateTurretLeft(InputAction.CallbackContext context)
