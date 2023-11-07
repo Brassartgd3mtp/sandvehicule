@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Item
   - UI
+  - Orbital
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - Harpoon
   - Collectible
   - Interactible
-  - 
+  - Orbital
   - 
   - 
   - 

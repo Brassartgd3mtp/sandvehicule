@@ -94,6 +94,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "ForceHarpoonBack",
+                    "type": "Button",
+                    "id": "6943b5af-c585-49a3-9bcb-8e2addc41c98",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -294,6 +303,17 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "731e3426-ab76-4c8e-9223-1f9abb4a40ef",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ForceHarpoonBack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
