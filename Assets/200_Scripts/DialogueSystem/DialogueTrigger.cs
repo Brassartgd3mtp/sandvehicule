@@ -6,23 +6,24 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     // Référence au gestionnaire de dialogue que vous avez créé.
+    public DialogueDataLoader dialogueDataLoader;
     public DialogueManager dialogueManager;
 
     // Appelé lorsque le bouton est cliqué.
     public void StartDialogue()
     {
-        DialogueManager dialogueManager = FindObjectOfType<DialogueManager>();
+        dialogueDataLoader = FindObjectOfType<DialogueDataLoader>();
+        dialogueManager = FindObjectOfType<DialogueManager>();
 
-        if (dialogueManager != null)
+        if (dialogueDataLoader != null)
         {
-            List<Dialogue> dialogues = dialogueManager.dialogues;
+            Debug.Log(dialogueDataLoader.dialogues);
 
-            Debug.Log(dialogues);
-
-            if (dialogues.Count > 0)
+            if (dialogueDataLoader.dialogues.Count > 0)
             {
-                dialogueManager.ShowDialogue(dialogues[0]);
+                dialogueManager.ShowDialogue(dialogueDataLoader.dialogues[0]);
             }
+
             else
             {
                 Debug.LogError("Aucun dialogue n'est disponible.");

@@ -15,12 +15,12 @@ public class DialogueDataLoader : MonoBehaviour
 
     private void LoadDialogueData()
     {
-        string[] lines = csvFile.text.Split(new char[] { '\n' });
+        string[] lines = csvFile.text.Split('\n');
 
         for (int i = 1; i < lines.Length; i++)
         {
-            string[] values = lines[i].Split(',');
-            if (values.Length == 9)
+            string[] values = lines[i].Split('\t');
+            if (values.Length == 10)
             {
                 int dialogueID = SafeParseInt(values[0]);
                 string character = values[1];
@@ -31,8 +31,9 @@ public class DialogueDataLoader : MonoBehaviour
                 int nextDialogueID1 = SafeParseInt(values[6]);
                 int nextDialogueID2 = SafeParseInt(values[7]);
                 int nextDialogueID3 = SafeParseInt(values[8]);
+                int nextDialogueID4 = SafeParseInt(values[9]);
 
-                Dialogue dialogue = new Dialogue(dialogueID, character, text, response1, response2, response3, nextDialogueID1, nextDialogueID2, nextDialogueID3);
+                Dialogue dialogue = new Dialogue(dialogueID, character, text, response1, response2, response3, nextDialogueID1, nextDialogueID2, nextDialogueID3, nextDialogueID4);
                 dialogues.Add(dialogue);
             }
             else
@@ -45,14 +46,14 @@ public class DialogueDataLoader : MonoBehaviour
     private int SafeParseInt(string input)
     {
         int result = 0;
-        if (int.TryParse(input, out result))
+        if (int.TryParse(input, out result) && input != "-1")
         {
             return result;
         }
         else
         {
             // Gérer la validation ou l'erreur ici (par exemple, journalisation, renvoyer une valeur par défaut, etc.).
-            Debug.LogError("La valeur '" + input + "' n'est pas un entier valide.");
+            //Debug.LogWarning("La valeur '" + input + "' n'est pas un entier valide.");
             return -1;
         }
     }

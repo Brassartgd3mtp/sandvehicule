@@ -18,8 +18,9 @@ public class Dialogue
     public int nextDialogueID1;
     public int nextDialogueID2;
     public int nextDialogueID3;
+    public int nextDialogueID4;
 
-    public Dialogue(int id, string chara, string txt, string resp1, string resp2, string resp3, int next1, int next2, int next3)
+    public Dialogue(int id, string chara, string txt, string resp1, string resp2, string resp3, int next1, int next2, int next3, int next4)
     {
         dialogueID = id;
         character = chara;
@@ -30,6 +31,7 @@ public class Dialogue
         nextDialogueID1 = next1;
         nextDialogueID2 = next2;
         nextDialogueID3 = next3;
+        nextDialogueID4 = next4;
     }
 }
 
@@ -41,44 +43,74 @@ public class DialogueManager : MonoBehaviour
     public Button responseButton2; // Référence au bouton de réponse 2.
     public Button responseButton3; // Référence au bouton de réponse 3.
 
-    public List<Dialogue> dialogues; // Liste de dialogues chargée depuis le fichier externe.
+    public DialogueDataLoader dialogueDataLoader;
     private int currentDialogueIndex = 0; // Indice du dialogue en cours.
 
     private void Start()
     {
-        // Afficher le premier dialogue.
-        ShowDialogue(dialogues[currentDialogueIndex]);
+        dialogueDataLoader = FindObjectOfType<DialogueDataLoader>();
     }
 
+    private void Update()
+    {
+        if (!responseButton1.IsActive() && !responseButton2.IsActive() && !responseButton3.IsActive())
+        {
+            if (Input.GetKeyDown(KeyCode.Mouse1))
+            {
+                int nextDialogueID = dialogueDataLoader.dialogues[currentDialogueIndex].nextDialogueID4;
+                currentDialogueIndex = FindDialogueIndexByID(nextDialogueID);
+
+                // Afficher le prochain dialogue.
+                if (nextDialogueID != -1)
+                    ShowDialogue(dialogueDataLoader.dialogues[currentDialogueIndex]);
+                else
+                {
+                    Debug.Log("Je sors de la boîte de dialogue");
+                    dialogueComparator.text = string.Empty;
+                }
+            }
+        }
+    }
+
+    public TextMeshProUGUI dialogueComparator;
     public void ShowDialogue(Dialogue dialogue)
     {
         character.text = dialogue.character;
         dialogueText.text = dialogue.text;
 
-        if (dialogue.response1 != "")
+        if (dialogue.response1 != string.Empty)
         {
+            if (dialogueComparator != null && dialogue.response1 != dialogueComparator.text)
+            {
+                ColorBlock cb = responseButton1.colors;
+                cb.normalColor = Color.white;
+                cb.highlightedColor = new Color(245, 245, 245);
+                responseButton1.colors = cb;
+                responseButton2.colors = cb;
+                responseButton3.colors = cb;
+            }
             responseButton1.gameObject.SetActive(true);
-            responseButton1.GetComponentInChildren<Text>().text = dialogue.response1;
+            responseButton1.GetComponentInChildren<TextMeshProUGUI>().text = dialogue.response1;
         }
         else
         {
             responseButton1.gameObject.SetActive(false);
         }
 
-        if (dialogue.response2 != "")
+        if (dialogue.response2 != string.Empty)
         {
             responseButton2.gameObject.SetActive(true);
-            responseButton2.GetComponentInChildren<Text>().text = dialogue.response2;
+            responseButton2.GetComponentInChildren<TextMeshProUGUI>().text = dialogue.response2;
         }
         else
         {
             responseButton2.gameObject.SetActive(false);
         }
 
-        if (dialogue.response3 != "")
+        if (dialogue.response3 != string.Empty)
         {
             responseButton3.gameObject.SetActive(true);
-            responseButton3.GetComponentInChildren<Text>().text = dialogue.response3;
+            responseButton3.GetComponentInChildren<TextMeshProUGUI>().text = dialogue.response3;
         }
         else
         {
@@ -90,35 +122,57 @@ public class DialogueManager : MonoBehaviour
     {
         if (responseID == 1)
         {
-            int nextDialogueID = dialogues[currentDialogueIndex].nextDialogueID1;
-            currentDialogueIndex = FindDialogueIndexByID(nextDialogueID);
-        }
-        else if (responseID == 2)
-        {
-            int nextDialogueID = dialogues[currentDialogueIndex].nextDialogueID2;
-            currentDialogueIndex = FindDialogueIndexByID(nextDialogueID);
-        }
-        else if (responseID == 3)
-        {
-            int nextDialogueID = dialogues[currentDialogueIndex].nextDialogueID3;
+            dialogueComparator.text = dialogueDataLoader.dialogues[currentDialogueIndex].response1;
+            ColorBlock cb = responseButton1.colors;
+            cb.normalColor = Color.gray;
+            cb.highlightedColor = Color.gray;
+            responseButton1.colors = cb;
+            int nextDialogueID = dialogueDataLoader.dialogues[currentDialogueIndex].nextDialogueID1;
             currentDialogueIndex = FindDialogueIndexByID(nextDialogueID);
         }
 
-        // Afficher le prochain dialogue.
-        ShowDialogue(dialogues[currentDialogueIndex]);
+        else if (responseID == 2)
+        {
+            dialogueComparator.text = dialogueDataLoader.dialogues[currentDialogueIndex].response1;
+            ColorBlock cb = responseButton2.colors;
+            cb.normalColor = Color.gray;
+            cb.highlightedColor = Color.gray;
+            responseButton2.colors = cb;
+            int nextDialogueID = dialogueDataLoader.dialogues[currentDialogueIndex].nextDialogueID2;
+            currentDialogueIndex = FindDialogueIndexByID(nextDialogueID);
+        }
+
+        else if (responseID == 3)
+        {
+            dialogueComparator.text = dialogueDataLoader.dialogues[currentDialogueIndex].response1;
+            ColorBlock cb = responseButton3.colors;
+            cb.normalColor = Color.gray;
+            cb.highlightedColor = Color.gray;
+            responseButton3.colors = cb;
+            int nextDialogueID = dialogueDataLoader.dialogues[currentDialogueIndex].nextDialogueID3;
+            currentDialogueIndex = FindDialogueIndexByID(nextDialogueID);
+        }
+            // Afficher le prochain dialogue.
+            ShowDialogue(dialogueDataLoader.dialogues[currentDialogueIndex]);
     }
 
     // Méthode pour trouver l'indice d'un dialogue par son ID.
     private int FindDialogueIndexByID(int id)
     {
-        for (int i = 0; i < dialogues.Count; i++)
+        int newID = 0;
+        for (int i = 0; i < dialogueDataLoader.dialogues.Count; i++)
         {
-            if (dialogues[i].dialogueID == id)
+            if (dialogueDataLoader.dialogues[i].dialogueID == id)
             {
-                return i;
+                newID = i;
+                break;
+            }
+                
+            else
+            {
+                newID = -1; // Dialogue introuvable.
             }
         }
-        return -1; // Dialogue introuvable.
+        return newID;
     }
-
 }
