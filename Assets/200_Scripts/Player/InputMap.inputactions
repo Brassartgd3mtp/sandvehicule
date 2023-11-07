@@ -6,42 +6,6 @@
             "id": "92db921a-dd2d-4ebf-b22c-e44170c7a514",
             "actions": [
                 {
-                    "name": "FrontWard",
-                    "type": "Button",
-                    "id": "753595d5-6f5d-41c0-b4c2-ce0644d977ae",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Backward",
-                    "type": "Button",
-                    "id": "3724578a-f8a7-499d-bb90-05096f75ffdd",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "TurnLeft",
-                    "type": "Button",
-                    "id": "b86e16e3-5bae-4d58-bea9-3bacda479ee8",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "TurnRight",
-                    "type": "Button",
-                    "id": "c66a062d-7164-43d0-8289-a1ff486664fd",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "TurnTurretLeft",
                     "type": "Button",
                     "id": "fbd44624-94b8-4a3d-bd47-30f6c0f13fa6",
@@ -133,50 +97,6 @@
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "14477edb-141e-4a50-8853-65ac283b22b3",
-                    "path": "<Keyboard>/#(Z)",
-                    "interactions": "Press",
-                    "processors": "",
-                    "groups": "",
-                    "action": "FrontWard",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "7fd26242-c079-44b9-ad3d-ad5dcae21429",
-                    "path": "<Keyboard>/#(S)",
-                    "interactions": "Press",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Backward",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "80a0a030-47c6-4b09-b091-47a6a7490c86",
-                    "path": "<Keyboard>/#(Q)",
-                    "interactions": "Press",
-                    "processors": "",
-                    "groups": "",
-                    "action": "TurnLeft",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "29a14c01-726c-44a2-ba01-c45b4446d69f",
-                    "path": "<Keyboard>/#(D)",
-                    "interactions": "Press",
-                    "processors": "",
-                    "groups": "",
-                    "action": "TurnRight",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "",
                     "id": "c3a4cd5a-c355-4fba-98e1-6f61faa395d8",

@@ -35,6 +35,10 @@ public class Harpoon : MonoBehaviour
     public GameObject StickyPoint;
     public GameObject itemHooked;
 
+    public GameObject HarpoonParent;
+
+    public PlayerStates playerStates;
+
     public void Start()
     {
         mainCamera = Camera.main;
@@ -101,39 +105,44 @@ public class Harpoon : MonoBehaviour
 
     public void shootHarpoon()
     {
-        harpoonIsReady = false;
+        if (playerStates.states == PlayerStates.States.Exploring)
+        {
+            harpoonIsReady = false;
 
-        Debug.Log("ShootHarpon");
+            Debug.Log("ShootHarpon");
 
-        var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-        var (success, position) = GetMousePosition();
+            var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+            var (success, position) = GetMousePosition();
 
-        if (Physics.Raycast(ray, out hitOnClick, Mathf.Infinity))
-        {       
-            
+            if (Physics.Raycast(ray, out hitOnClick, Mathf.Infinity))
+            {
+
                 isShooted = true;
                 harpoonTarget = position;
+            }
         }
+
     }
 
     public void HarpoonMoveToSpot()
     {
         if (isShooted)
         {
+            transform.SetParent(null);
             transform.position = Vector3.Lerp(transform.position, harpoonTarget, harpoonSpeed * Time.deltaTime / Vector3.Distance(transform.position, harpoonTarget));
         }
     }
 
     public void harpoonBack()
     {
-        Debug.Log("HarpoonBack");
         {
-
+            
             transform.position = Vector3.Lerp(transform.position, harpoonStart.transform.position, harpoonSpeed * Time.deltaTime / Vector3.Distance(transform.position, harpoonStart.transform.position));
             transform.LookAt(harpoonTarget);
 
             if (harpoonStart.transform.position == transform.position)
             {
+                transform.SetParent(HarpoonParent.transform);
                 ResetHarpoon();
             }
         }
