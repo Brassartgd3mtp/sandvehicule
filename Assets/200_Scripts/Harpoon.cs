@@ -35,6 +35,8 @@ public class Harpoon : MonoBehaviour
     public GameObject StickyPoint;
     public GameObject itemHooked;
 
+    public GameObject HarpoonParent;
+
     public void Start()
     {
         mainCamera = Camera.main;
@@ -120,20 +122,21 @@ public class Harpoon : MonoBehaviour
     {
         if (isShooted)
         {
+            transform.SetParent(null);
             transform.position = Vector3.Lerp(transform.position, harpoonTarget, harpoonSpeed * Time.deltaTime / Vector3.Distance(transform.position, harpoonTarget));
         }
     }
 
     public void harpoonBack()
     {
-        Debug.Log("HarpoonBack");
         {
-
+            
             transform.position = Vector3.Lerp(transform.position, harpoonStart.transform.position, harpoonSpeed * Time.deltaTime / Vector3.Distance(transform.position, harpoonStart.transform.position));
             transform.LookAt(harpoonTarget);
 
             if (harpoonStart.transform.position == transform.position)
             {
+                transform.SetParent(HarpoonParent.transform);
                 ResetHarpoon();
             }
         }

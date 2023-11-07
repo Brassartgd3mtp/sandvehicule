@@ -8525,6 +8525,7 @@ MonoBehaviour:
   rb: {fileID: 1568171841}
   StickyPoint: {fileID: 1850378510}
   itemHooked: {fileID: 0}
+  HarpoonParent: {fileID: 1034579450}
 --- !u!23 &1568171839
 MeshRenderer:
   m_ObjectHideFlags: 0
