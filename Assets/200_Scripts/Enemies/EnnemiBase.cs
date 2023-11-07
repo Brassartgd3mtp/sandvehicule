@@ -40,6 +40,14 @@ public class EnnemiBase : EnnemiParent
         }
     }
 
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            atRangeOfPlayer = false;
+        }
+    }
+
     public IEnumerator isAttacking() // Déclenche la coroutine de dégat et la vitesse d'attaque de l'ennemi
     {
         do

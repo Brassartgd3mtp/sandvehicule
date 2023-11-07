@@ -13,25 +13,15 @@ public class Movement : MonoBehaviour
     [SerializeField] private float rotationSpeed;
     [SerializeField] private float minRotationSpeed, maxRotationSpeed;
 
-    [SerializeField] private float targetSteerAngle = 45;
-    [SerializeField] private float turnSpeed = 5f;
-
     [SerializeField] private UnityEngine.GameObject turret;
     [SerializeField] private float turretRotationSpeed;
     [SerializeField] private float turretRotationSpeedMax;
 
-    [SerializeField] private WheelCollider[] frontWheels;
-    [SerializeField] private WheelCollider[] backWheels;
-    [SerializeField] private WheelCollider[] wheels;
-
-    [SerializeField] private int Torque;
-    [SerializeField] private int counterTorque;
-
     private Rigidbody rb;
 
-    [SerializeField] private Vector2 inputDirection;
-    [SerializeField] private Vector3 movement;
-    [SerializeField] private bool isMoving;
+    private Vector2 inputDirection;
+    private Vector3 movement;
+    private bool isMoving;
 
     void Start()
     {

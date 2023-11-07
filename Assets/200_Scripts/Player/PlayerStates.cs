@@ -8,7 +8,7 @@ public class PlayerStates : MonoBehaviour
 
     public CameraScript CameraScript;
     public AttackManager AttackManager;
-    public enum States { Exploring, Fifhting }
+    public enum States { Exploring, Fifhting, InBase }
 
     public States states;
     public ParticleSystem projectileProjection;
@@ -16,8 +16,7 @@ public class PlayerStates : MonoBehaviour
     void Awake()
     {
         states = States.Exploring;
-        AttackManager = GetComponent<AttackManager>();
-        
+        AttackManager = GetComponent<AttackManager>();        
     }
 
     // permet de changer de states pour les tests avec les touches "& et é"
