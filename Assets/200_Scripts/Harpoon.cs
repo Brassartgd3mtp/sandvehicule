@@ -37,6 +37,8 @@ public class Harpoon : MonoBehaviour
 
     public GameObject HarpoonParent;
 
+    public PlayerStates playerStates;
+
     public void Start()
     {
         mainCamera = Camera.main;
@@ -103,19 +105,23 @@ public class Harpoon : MonoBehaviour
 
     public void shootHarpoon()
     {
-        harpoonIsReady = false;
+        if (playerStates.states == PlayerStates.States.Exploring)
+        {
+            harpoonIsReady = false;
 
-        Debug.Log("ShootHarpon");
+            Debug.Log("ShootHarpon");
 
-        var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-        var (success, position) = GetMousePosition();
+            var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+            var (success, position) = GetMousePosition();
 
-        if (Physics.Raycast(ray, out hitOnClick, Mathf.Infinity))
-        {       
-            
+            if (Physics.Raycast(ray, out hitOnClick, Mathf.Infinity))
+            {
+
                 isShooted = true;
                 harpoonTarget = position;
+            }
         }
+
     }
 
     public void HarpoonMoveToSpot()
