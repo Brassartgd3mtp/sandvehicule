@@ -9,6 +9,9 @@ public class EnnemiParent : MonoBehaviour
     public UnityEngine.GameObject gameManager;
     public WaveSystem waveSystem;
 
+    public bool canAttack;
+    public float coolDown;
+
     public Rigidbody rb;
 
     void Awake()
@@ -17,7 +20,10 @@ public class EnnemiParent : MonoBehaviour
         gameManager = UnityEngine.GameObject.Find("GameManager");
         waveSystem = gameManager.GetComponent<WaveSystem>();
         rb = GetComponent<Rigidbody>();
+        coolDown = 1 / enemyControl.attackSpeed;
     }
+
+
 
     public void TakeDamage(float damageAmount) // système de prise de dommages de l'ennemi
     {

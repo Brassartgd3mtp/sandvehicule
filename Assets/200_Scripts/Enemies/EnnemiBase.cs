@@ -18,14 +18,33 @@ public class EnnemiBase : EnnemiParent
     {
         enemyControl = GetComponent<EnemyControl>();
         player = UnityEngine.GameObject.FindGameObjectWithTag("Player");
-
+        coolDown = 0;
     }
     void FixedUpdate()
     {
+
         if (atRangeOfPlayer == false)
         {
             rb.velocity = transform.forward * enemyControl.speed;
             transform.LookAt(player.transform.position);
+        }
+
+        if (canAttack == false)
+        {
+            coolDown -= Time.deltaTime;
+        }
+
+        if (coolDown <= 0)
+        {
+            canAttack = true;
+        }
+        else canAttack = false;
+
+
+
+        if (canAttack == true && atRangeOfPlayer == true)
+        {
+            DealDamage();
         }
     }
 
@@ -34,9 +53,7 @@ public class EnnemiBase : EnnemiParent
         if (collision.gameObject.CompareTag("Player")) // récupère le script du player à la collision pour lui infliger déclencher la coroutine
         {
             playerTakeDamage = collision.gameObject.GetComponent<PlayerTakeDamage>();
-            Debug.Log("touched");
             atRangeOfPlayer = true;
-            StartCoroutine(isAttacking());
         }
     }
 
@@ -48,14 +65,11 @@ public class EnnemiBase : EnnemiParent
         }
     }
 
-    public IEnumerator isAttacking() // Déclenche la coroutine de dégat et la vitesse d'attaque de l'ennemi
+    public void DealDamage() // Déclenche la coroutine de dégat et la vitesse d'attaque de l'ennemi
     {
-        do
-        {
-            playerTakeDamage.TakeDamage(enemyControl.damage);
-            yield return new WaitForSeconds(1 / enemyControl.attackSpeed);
-        } while (atRangeOfPlayer == true);
+        playerTakeDamage.TakeDamage(enemyControl.damage);
+        canAttack = false;
+        coolDown = 1 / enemyControl.attackSpeed;
     }
-
-
 }
+    
