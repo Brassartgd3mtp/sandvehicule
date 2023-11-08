@@ -40,10 +40,9 @@ public class Movement : MonoBehaviour
 
     void FixedUpdate()
     {
+        MovePlayer();
         if (playerStates.states == PlayerStates.States.Exploring)
         {
-            MovePlayer();
-
             if (rb.velocity.magnitude > stats.maxSpeed)
             {
                 rb.velocity = Vector3.ClampMagnitude(rb.velocity, stats.maxSpeed);
