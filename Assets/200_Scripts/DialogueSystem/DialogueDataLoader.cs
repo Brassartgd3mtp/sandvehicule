@@ -5,7 +5,7 @@ using System.Linq;
 
 public class DialogueDataLoader : MonoBehaviour
 {
-    public TextAsset csvFile;
+    public TextAsset tsvFile;
     public List<Dialogue> dialogues = new List<Dialogue>(); // Liste pour stocker les dialogues.
 
     private void Start()
@@ -15,7 +15,7 @@ public class DialogueDataLoader : MonoBehaviour
 
     private void LoadDialogueData()
     {
-        string[] lines = csvFile.text.Split('\n');
+        string[] lines = tsvFile.text.Split('\n');
 
         for (int i = 1; i < lines.Length; i++)
         {
