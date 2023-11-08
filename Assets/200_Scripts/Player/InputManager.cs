@@ -9,6 +9,7 @@ public class InputManager : MonoBehaviour
     [SerializeField] private bool UIStatsIsActive;
 
     [SerializeField] private Harpoon harpoon;
+    [SerializeField] private StickAndOrbite stickAndOrbite;
 
     public void Start()
     {
@@ -56,7 +57,7 @@ public class InputManager : MonoBehaviour
         switch (context.phase) 
         {
             case InputActionPhase.Performed:
-                harpoon.isOrbited = false;
+                stickAndOrbite.isOrbited = false;
                 harpoon.isShooted = false;
                 harpoon.harpoonReadyToBack = true;
                 break;
