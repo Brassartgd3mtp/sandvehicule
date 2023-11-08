@@ -11,6 +11,8 @@ public class InputManager : MonoBehaviour
     [SerializeField] private Harpoon harpoon;
     [SerializeField] private StickAndOrbite stickAndOrbite;
 
+    [SerializeField] private PlayerStates playerStates;
+
     public void Start()
     {
         UIStatsIsActive = false;
@@ -60,6 +62,22 @@ public class InputManager : MonoBehaviour
                 stickAndOrbite.isOrbited = false;
                 harpoon.isShooted = false;
                 harpoon.harpoonReadyToBack = true;
+                break;
+        }
+    }
+
+    public void ChangeMode(InputAction.CallbackContext context)
+    {
+        switch (context.phase) 
+        {
+            case InputActionPhase.Performed:
+                if (playerStates.states == PlayerStates.States.Exploring)
+                {
+                    playerStates.ChangeStateForFighting();
+                } else if (playerStates.states == PlayerStates.States.Fifhting)
+                {
+                    playerStates.ChangeStateForExploring();
+                }
                 break;
         }
     }

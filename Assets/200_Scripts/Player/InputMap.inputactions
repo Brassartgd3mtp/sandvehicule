@@ -103,6 +103,15 @@
                     "processors": "",
                     "interactions": "Press",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ChangeMode",
+                    "type": "Button",
+                    "id": "41a7b606-9d63-42de-9077-c44dfd61a4ba",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -312,6 +321,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "ForceHarpoonBack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e4e5901b-97b7-4aa5-8db7-dbf49f6c253c",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeMode",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
