@@ -40,10 +40,9 @@ public class Movement : MonoBehaviour
 
     void FixedUpdate()
     {
+        MovePlayer();
         if (playerStates.states == PlayerStates.States.Exploring)
         {
-            MovePlayer();
-
             if (rb.velocity.magnitude > stats.maxSpeed)
             {
                 rb.velocity = Vector3.ClampMagnitude(rb.velocity, stats.maxSpeed);
@@ -83,7 +82,7 @@ public class Movement : MonoBehaviour
 
         if (isMoving == true)
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15f);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.10f);
         }
 
         transform.Translate(movement * speed * Time.deltaTime, Space.World);
