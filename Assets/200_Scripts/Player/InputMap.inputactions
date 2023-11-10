@@ -2,7 +2,7 @@
     "name": "InputMap",
     "maps": [
         {
-            "name": "Player",
+            "name": "Fighting",
             "id": "92db921a-dd2d-4ebf-b22c-e44170c7a514",
             "actions": [
                 {
@@ -111,6 +111,15 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ChangeActionMap",
+                    "type": "Button",
+                    "id": "61143ffd-c8ee-474a-91fb-b0afe02114c1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
                     "initialStateCheck": false
                 }
             ],
@@ -332,6 +341,65 @@
                     "processors": "",
                     "groups": "",
                     "action": "ChangeMode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3cebae18-150b-47aa-aeae-69a072453df2",
+                    "path": "<Keyboard>/#(M)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeActionMap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Exploring",
+            "id": "a3548b58-b847-461f-a7f6-c9f9d89487d6",
+            "actions": [
+                {
+                    "name": "Accelerate",
+                    "type": "Button",
+                    "id": "709a4bf4-a5df-42d1-8c9f-db370f754b76",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ChangeActionMap",
+                    "type": "Button",
+                    "id": "f4938401-b80e-4471-a932-6413ae7d18de",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "59f8fe2a-a665-4a13-8d29-a3975d5aac6c",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Accelerate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "912c3c8b-98b9-4295-986e-a64e5de3c5b8",
+                    "path": "<Keyboard>/#(M)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeActionMap",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

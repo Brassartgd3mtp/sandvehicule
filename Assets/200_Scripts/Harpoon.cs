@@ -171,7 +171,6 @@ public class Harpoon : MonoBehaviour
 
     public void ResetHarpoon()
     {
-
         isShooted = false;
         harpoonReadyToBack = false;
         harpoonIsReady = true;

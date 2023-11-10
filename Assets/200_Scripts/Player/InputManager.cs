@@ -13,10 +13,37 @@ public class InputManager : MonoBehaviour
 
     [SerializeField] private PlayerStates playerStates;
 
-    public void Start()
+    [SerializeField] private InputActionMapManager inputActionMapManager;
+    private void Awake()
     {
         UIStatsIsActive = false;
     }
+
+    public void ChangeActionMapForExploring(InputAction.CallbackContext context)
+    {
+        switch (context.phase)
+        {
+            case InputActionPhase.Performed:
+                Debug.Log("Exploring");
+                inputActionMapManager.playerInput.SwitchCurrentActionMap("Exploring");
+                inputActionMapManager.inputMap.Fighting.Disable();
+                inputActionMapManager.inputMap.Exploring.Enable();
+                break;
+        }
+
+    }// Permet de passer sur les contrôles d'exploration
+    public void ChangeActionMapForFighting(InputAction.CallbackContext context)
+    {
+        switch (context.phase)
+        {
+            case InputActionPhase.Performed:
+                Debug.Log("Fighting");
+                inputActionMapManager.playerInput.SwitchCurrentActionMap("Fighting");
+                inputActionMapManager.inputMap.Exploring.Disable();
+                inputActionMapManager.inputMap.Fighting.Enable();
+                break;
+        }
+    }// permet de passer sur les contrôles de combat
 
     public void OpenUIStats(InputAction.CallbackContext context) // Permet d'ouvrir et fermer la fenêtre de stats du véhicule
     {
