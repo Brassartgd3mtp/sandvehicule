@@ -10,11 +10,14 @@ public class InputActionMapManager : MonoBehaviour
     public InputMap inputMap;
     public InputActionMap currentActionMap;
 
-
     public void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
         inputMap = new InputMap();
         inputMap.Fighting.Enable();
+    }
+
+    public void Update()
+    {
     }
 }
