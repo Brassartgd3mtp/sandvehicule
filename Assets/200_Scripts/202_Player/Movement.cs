@@ -41,13 +41,13 @@ public class Movement : MonoBehaviour
     void FixedUpdate()
     {
         MovePlayer();
-        if (playerStates.states == PlayerStates.States.Exploring)
-        {
-            if (rb.velocity.magnitude > stats.maxSpeed)
-            {
-                rb.velocity = Vector3.ClampMagnitude(rb.velocity, stats.maxSpeed);
-            }
-        }
+        //if (playerStates.states == PlayerStates.States.Exploring)
+        //{
+        //    if (rb.velocity.magnitude > stats.maxSpeed)
+        //    {
+        //        rb.velocity = Vector3.ClampMagnitude(rb.velocity, stats.maxSpeed);
+        //    }
+        //}
 
         //Using turret if player is in "Fighting" State  
         if (playerStates.states == PlayerStates.States.Fifhting)

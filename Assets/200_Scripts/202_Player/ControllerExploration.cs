@@ -25,11 +25,11 @@ public class ControllerExploration : MonoBehaviour
     public bool isMoving;
 
     public float WheelsMaxAngle;
-    public Vector3 _centerOfMass;
 
     public new Rigidbody rigidbody;
 
-  
+    public float actualSpeed;
+    public Stats stats;
 
     public void Start()
     {
@@ -37,34 +37,22 @@ public class ControllerExploration : MonoBehaviour
         isBreaking = false;
 
         rigidbody.transform.parent = null;
-        rigidbody.centerOfMass = _centerOfMass;
     }
 
     public void Update()
     {
-        //if (isMoving)
-        //{
-        //    speedInput = InputManagerExploration.inputY * forwardAccel * 1000f;
-        //
-        //    rigidbody.AddForce(transform.forward * speedInput);
-        //}
-
-        Debug.Log(InputManagerExploration.inputX);
+        UpdateWheels();
     }
-
     public void FixedUpdate()
     {
-        //if (Mathf.Abs(speedInput) > 0)
-        //{
-        //    rigidbody.AddForce(transform.position * speedInput);
-        //} 
+        actualSpeed = rigidbody.velocity.sqrMagnitude;
 
-        Stearing();
-        UpdateWheels();
-
-        if (isAccelerating)
+        if (actualSpeed < stats.maxSpeed)
         {
-            ApplyTorque();
+            if (isAccelerating)
+            {
+                ApplyTorque();
+            }
         }
         else
         {
@@ -73,6 +61,11 @@ public class ControllerExploration : MonoBehaviour
             backLeftWheelCollider.motorTorque = 0;
             backRightWheelCollider.motorTorque = 0;
         }
+
+        Stearing();
+
+
+
 
         if (isBreaking)
         {
@@ -108,10 +101,9 @@ public class ControllerExploration : MonoBehaviour
             float _steerAngle = InputManagerExploration.inputX * WheelsMaxAngle;
             frontLeftWheelCollider.steerAngle = Mathf.Lerp(frontLeftWheelCollider.steerAngle, _steerAngle, 0.05f);
             frontRightWheelCollider.steerAngle = Mathf.Lerp(frontRightWheelCollider.steerAngle, _steerAngle, 0.05f);
-
     }
 
-    private void UpdateWheels()
+    public void UpdateWheels()
     {
         UpdateSingleWheel(frontLeftWheelCollider, frontLeftWheelTransform);
         UpdateSingleWheel(backLeftWheelCollider, backLeftWheelTransform);
