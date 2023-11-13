@@ -4411,7 +4411,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8296172668038571785}
   serializedVersion: 4
-  m_Mass: 2000
+  m_Mass: 1000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -8811,7 +8811,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60.000004
+  field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -8837,8 +8837,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1514449576}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5548444, y: 0, z: 0, w: 0.8319541}
-  m_LocalPosition: {x: 0, y: 22, z: -9}
+  m_LocalRotation: {x: 0.2841782, y: -1e-45, z: 0, w: 0.9587715}
+  m_LocalPosition: {x: 0, y: 9.39, z: -9.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17946,7 +17946,7 @@ WheelCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_ProvidesContacts: 0
 --- !u!1 &5348468449162077586
 GameObject:
@@ -18004,7 +18004,7 @@ WheelCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_ProvidesContacts: 0
 --- !u!33 &5717770923349377129
 MeshFilter:
@@ -18430,10 +18430,10 @@ MonoBehaviour:
   isAccelerating: 0
   isBreaking: 0
   isMoving: 0
-  forwardAccel: 0
-  reverseAccel: 0
-  maxSpeed: 0
-  turnStrenght: 0
+  forwardAccel: 8
+  reverseAccel: 4
+  maxSpeed: 50
+  turnStrenght: 180
   rigidbody: {fileID: 766553740}
 --- !u!33 &8849521606656148658
 MeshFilter:
@@ -18480,7 +18480,7 @@ WheelCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_ProvidesContacts: 0
 --- !u!23 &8921102108100008346
 MeshRenderer:
@@ -18603,7 +18603,7 @@ WheelCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_ProvidesContacts: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

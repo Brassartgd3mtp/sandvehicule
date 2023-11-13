@@ -466,28 +466,6 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""up"",
-                    ""id"": ""d7ab3ad6-c500-4284-8bb1-5a5ffb1aaa0e"",
-                    ""path"": ""<Keyboard>/#(Z)"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""268c57ba-7a52-446e-a36b-d620d7b63190"",
-                    ""path"": ""<Keyboard>/#(S)"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": ""left"",
                     ""id"": ""df10ecf5-5931-4126-b6d0-a6d701f4168f"",
                     ""path"": ""<Keyboard>/#(Q)"",

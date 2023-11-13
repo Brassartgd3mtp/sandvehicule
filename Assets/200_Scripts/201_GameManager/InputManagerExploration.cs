@@ -26,7 +26,6 @@ public class InputManagerExploration : MonoBehaviour
 
     public void Update()
     {
-        Debug.Log(move);
         move = inputMap.Exploring.Movement.ReadValue<Vector2>();
         inputX = move.x; inputY = move.y;
     }
@@ -36,10 +35,10 @@ public class InputManagerExploration : MonoBehaviour
         switch (context.phase) 
         {
             case InputActionPhase.Performed:
-                controllerExploration.isMoving = true;
+                controllerExploration.isAccelerating = true;
                 break;
             case InputActionPhase.Canceled:
-                controllerExploration.isMoving = false;
+                controllerExploration.isAccelerating = false;
                 break;            
         }
     }
