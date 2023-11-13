@@ -772,7 +772,7 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 0}
+  m_LookAt: {fileID: 5006512735956538650}
   m_Follow: {fileID: 5006512735956538650}
   m_Lens:
     FieldOfView: 60.000004
@@ -801,8 +801,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 101196532}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5548444, y: 0, z: 0, w: 0.8319541}
-  m_LocalPosition: {x: 0, y: 23.007, z: -9}
+  m_LocalRotation: {x: 0.57153875, y: 0.000000024622754, z: -0.000000017149993, w: 0.8205751}
+  m_LocalPosition: {x: 0, y: 25.567, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -968,38 +968,6 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 766553744}
-        m_TargetAssemblyTypeName: Movement, Assembly-CSharp
-        m_MethodName: RotateTurretLeft
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: fbd44624-94b8-4a3d-bd47-30f6c0f13fa6
-    m_ActionName: Player/TurnTurretLeft[/Keyboard/q]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 766553744}
-        m_TargetAssemblyTypeName: Movement, Assembly-CSharp
-        m_MethodName: RotateTurretRight
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 3e63e2df-5cd6-4f48-9a0d-e052a52029a6
-    m_ActionName: Player/TurnTurretRight[/Keyboard/e]
-  - m_PersistentCalls:
-      m_Calls:
       - m_Target: {fileID: 766553747}
         m_TargetAssemblyTypeName: PlayerStates, Assembly-CSharp
         m_MethodName: ChangeStateForFighting
@@ -1046,22 +1014,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: d1ece407-06e1-40b8-9dd1-91bdbcd3d368
     m_ActionName: Player/Shoot[/Keyboard/space]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 104647067}
-        m_TargetAssemblyTypeName: WaveSystem, Assembly-CSharp
-        m_MethodName: ActiveWave
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 98b54687-8247-4c2d-8799-66b7546e9e00
-    m_ActionName: Player/ActivateWave[/Keyboard/z]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 766553744}
@@ -1238,6 +1190,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 483b799d-3436-4f81-b1c2-78d5741987e2
     m_ActionName: Exploring/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1568171837}
+        m_TargetAssemblyTypeName: Harpoon, Assembly-CSharp
+        m_MethodName: shootHarpoon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c86934ba-1a50-4dc2-acc8-7224dcb0f7fc
+    m_ActionName: Exploring/ShootHarpoon[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 104647070}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: ForceHarpoonBack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ac108b1c-3e85-4e16-882f-f4c2c368ea2e
+    m_ActionName: Exploring/ForceHarpoonBack[/Mouse/rightButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Fighting
@@ -3371,7 +3355,7 @@ GameObject:
   - component: {fileID: 608288472}
   m_Layer: 7
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -3722,7 +3706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 22, z: -9}
+  m_FollowOffset: {x: 0, y: 24.56, z: -9}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -4716,7 +4700,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8296172668038571785}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 773d0b6a592efa343a2f4e61ca1b7ed7, type: 3}
   m_Name: 
@@ -6137,7 +6121,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1034579451
 Transform:
   m_ObjectHideFlags: 0
@@ -6147,7 +6131,7 @@ Transform:
   m_GameObject: {fileID: 1034579450}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.12, z: 0}
+  m_LocalPosition: {x: 0, y: 1.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8425,7 +8409,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1393256602}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2896633, y: 0.000000023290282, z: -0.00000000704852, w: 0.95712864}
+  m_LocalRotation: {x: 0.2896633, y: -0.000000023290289, z: 0.0000000070485218, w: 0.95712864}
   m_LocalPosition: {x: 0, y: 10.397, z: -9.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -9095,7 +9079,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1514449576}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2896633, y: 0.000000023290282, z: -0.00000000704852, w: 0.95712864}
+  m_LocalRotation: {x: 0.2896633, y: -0.000000023290289, z: 0.0000000070485218, w: 0.95712864}
   m_LocalPosition: {x: 0, y: 10.397, z: -9.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -18639,7 +18623,7 @@ MonoBehaviour:
   backLeftWheelTransform: {fileID: 1936596737}
   backRightWheelTransform: {fileID: 1578808197}
   InputManagerExploration: {fileID: 104647073}
-  torque: 4000
+  torque: 3000
   isAccelerating: 0
   isBreaking: 0
   isMoving: 0

@@ -6,24 +6,6 @@
             "id": "92db921a-dd2d-4ebf-b22c-e44170c7a514",
             "actions": [
                 {
-                    "name": "TurnTurretLeft",
-                    "type": "Button",
-                    "id": "fbd44624-94b8-4a3d-bd47-30f6c0f13fa6",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "TurnTurretRight",
-                    "type": "Button",
-                    "id": "3e63e2df-5cd6-4f48-9a0d-e052a52029a6",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "ChangeForFight",
                     "type": "Button",
                     "id": "e5f9ac35-c34f-4c45-a219-d2d3b1611103",
@@ -45,15 +27,6 @@
                     "name": "Shoot",
                     "type": "Button",
                     "id": "d1ece407-06e1-40b8-9dd1-91bdbcd3d368",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "Press",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "ActivateWave",
-                    "type": "Button",
-                    "id": "98b54687-8247-4c2d-8799-66b7546e9e00",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press",
@@ -126,28 +99,6 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "c3a4cd5a-c355-4fba-98e1-6f61faa395d8",
-                    "path": "<Keyboard>/#(A)",
-                    "interactions": "Press",
-                    "processors": "",
-                    "groups": "",
-                    "action": "TurnTurretLeft",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1a17cdbd-9c29-434b-be46-cfd1060da468",
-                    "path": "<Keyboard>/#(E)",
-                    "interactions": "Press",
-                    "processors": "",
-                    "groups": "",
-                    "action": "TurnTurretRight",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "57d23ddc-e31c-4e74-9650-95ed27648030",
                     "path": "<Keyboard>/#(&)",
                     "interactions": "Press",
@@ -176,17 +127,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Shoot",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "cb87aae5-0145-4696-abdf-87a22c44a590",
-                    "path": "<Keyboard>/#(W)",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ActivateWave",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -371,6 +311,24 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "ForceHarpoonBack",
+                    "type": "Button",
+                    "id": "ac108b1c-3e85-4e16-882f-f4c2c368ea2e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ShootHarpoon",
+                    "type": "Button",
+                    "id": "c86934ba-1a50-4dc2-acc8-7224dcb0f7fc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "ChangeActionMap",
                     "type": "Button",
                     "id": "f4938401-b80e-4471-a932-6413ae7d18de",
@@ -464,6 +422,28 @@
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "22f5084d-44b4-4b14-83e4-daf87f6aa5f4",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ShootHarpoon",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b7a199a2-acbd-4809-a6e4-2bfdb148c369",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ForceHarpoonBack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
