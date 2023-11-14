@@ -22,8 +22,6 @@ public class ControllerExploration : MonoBehaviour
     public bool isAccelerating;
     public bool isBreaking;
 
-    public bool isMoving;
-
     public float WheelsMaxAngle;
 
     public new Rigidbody rigidbody;

@@ -16,8 +16,4 @@ public class InputActionMapManager : MonoBehaviour
         inputMap = new InputMap();
         inputMap.Fighting.Enable();
     }
-
-    public void Update()
-    {
-    }
 }

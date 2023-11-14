@@ -14,7 +14,6 @@ public class InputManagerExploration : MonoBehaviour
     {
         inputMap = new InputMap();
     }
-
     public void OnEnable()
     {
         inputMap.Enable();
@@ -30,7 +29,7 @@ public class InputManagerExploration : MonoBehaviour
         inputX = move.x; inputY = move.y;
     }
 
-    public void Accelerate(InputAction.CallbackContext context)
+    public void Accelerate(InputAction.CallbackContext context) // input pour accélérer 
     {
         switch (context.phase) 
         {
@@ -43,7 +42,7 @@ public class InputManagerExploration : MonoBehaviour
         }
     }
 
-    public void Breaking(InputAction.CallbackContext context) 
+    public void Breaking(InputAction.CallbackContext context) // input pour freiner 
     {
         switch (context.phase)
         {
@@ -52,19 +51,6 @@ public class InputManagerExploration : MonoBehaviour
                 break;
             case InputActionPhase.Canceled:
                 controllerExploration.isBreaking = false;
-                break;
-        }
-    }
-
-    public void Movement(InputAction.CallbackContext context)
-    {
-        switch (context.phase)
-        {
-            case InputActionPhase.Performed:
-                controllerExploration.isMoving = true;
-                break;
-            case InputActionPhase.Canceled:
-                controllerExploration.isMoving = false;
                 break;
         }
     }

@@ -14,6 +14,7 @@ public class InputManager : MonoBehaviour
     [SerializeField] private PlayerStates playerStates;
 
     [SerializeField] private InputActionMapManager inputActionMapManager;
+   
     private void Awake()
     {
         UIStatsIsActive = false;
@@ -32,6 +33,7 @@ public class InputManager : MonoBehaviour
         }
 
     }// Permet de passer sur les contrôles d'exploration
+
     public void ChangeActionMapForFighting(InputAction.CallbackContext context)
     {
         switch (context.phase)
@@ -77,7 +79,7 @@ public class InputManager : MonoBehaviour
                 }
             break;
         }
-    }
+    } // Input pour lancer le harpon
 
     public void ForceHarpoonBack(InputAction.CallbackContext context)
     {
@@ -89,22 +91,5 @@ public class InputManager : MonoBehaviour
                 harpoon.harpoonReadyToBack = true;
                 break;
         }
-    }
-
-    //public void ChangeMode(InputAction.CallbackContext context)
-    //{
-    //    switch (context.phase) 
-    //    {
-    //        case InputActionPhase.Performed:
-    //            if (playerStates.states == PlayerStates.States.Exploring)
-    //            {
-    //                playerStates.ChangeStateForFighting();
-    //            } else if (playerStates.states == PlayerStates.States.Fifhting)
-    //            {
-    //                playerStates.ChangeStateForExploring();
-    //            }
-    //            break;
-    //    }
-    //}
-
+    } // Input pour rétracter le harpon
 }

@@ -90,33 +90,30 @@ public class Movement : MonoBehaviour
     #endregion
 
 
-    #region Rotation Tourelle
-    public void RotateTurretLeft(InputAction.CallbackContext context)
-    {
-        switch (context.phase)
-        {
-            case InputActionPhase.Performed:
-                turretRotationSpeed = -turretRotationSpeedMax;
-                break;
-            case InputActionPhase.Canceled:
-                turretRotationSpeed = 0;
-                break;
-        }
-    }
-
-    public void RotateTurretRight(InputAction.CallbackContext context)
-    {
-        switch (context.phase)
-        {
-            case InputActionPhase.Performed:
-                turretRotationSpeed = turretRotationSpeedMax;
-                break;
-            case InputActionPhase.Canceled:
-                turretRotationSpeed = 0;
-                break;
-        }
-    }
-    #endregion 
-
+    //public void RotateTurretLeft(InputAction.CallbackContext context)
+    //{
+    //    switch (context.phase)
+    //    {
+    //        case InputActionPhase.Performed:
+    //            turretRotationSpeed = -turretRotationSpeedMax;
+    //            break;
+    //        case InputActionPhase.Canceled:
+    //            turretRotationSpeed = 0;
+    //            break;
+    //    }
+    //}
+    //
+    //public void RotateTurretRight(InputAction.CallbackContext context)
+    //{
+    //    switch (context.phase)
+    //    {
+    //        case InputActionPhase.Performed:
+    //            turretRotationSpeed = turretRotationSpeedMax;
+    //            break;
+    //        case InputActionPhase.Canceled:
+    //            turretRotationSpeed = 0;
+    //            break;
+    //    }
+    //}
 
 }
