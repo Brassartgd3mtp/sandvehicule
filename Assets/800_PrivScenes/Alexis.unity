@@ -801,7 +801,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 101196532}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.57153875, y: 0.000000024622754, z: -0.000000017149993, w: 0.8205751}
+  m_LocalRotation: {x: 0.57153875, y: 0.000000024622752, z: -0.000000017149992, w: 0.8205751}
   m_LocalPosition: {x: 0, y: 25.567, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -968,54 +968,6 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 766553747}
-        m_TargetAssemblyTypeName: PlayerStates, Assembly-CSharp
-        m_MethodName: ChangeStateForFighting
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: e5f9ac35-c34f-4c45-a219-d2d3b1611103
-    m_ActionName: Player/ChangeState[/Keyboard/backquote]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 766553747}
-        m_TargetAssemblyTypeName: PlayerStates, Assembly-CSharp
-        m_MethodName: ChangeStateForExploring
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: c51012c5-0445-433b-9dc6-35d44d1ce421
-    m_ActionName: Player/ChangeForExplore[/Keyboard/2]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8296172668038571786}
-        m_TargetAssemblyTypeName: AttackManager, Assembly-CSharp
-        m_MethodName: BasicShoot
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: d1ece407-06e1-40b8-9dd1-91bdbcd3d368
-    m_ActionName: Player/Shoot[/Keyboard/space]
-  - m_PersistentCalls:
-      m_Calls:
       - m_Target: {fileID: 766553744}
         m_TargetAssemblyTypeName: Movement, Assembly-CSharp
         m_MethodName: Move
@@ -1095,19 +1047,7 @@ MonoBehaviour:
     m_ActionId: 6943b5af-c585-49a3-9bcb-8e2addc41c98
     m_ActionName: Player/ForceHarpoonBack[/Mouse/rightButton]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 104647070}
-        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
-        m_MethodName: ChangeMode
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 41a7b606-9d63-42de-9077-c44dfd61a4ba
     m_ActionName: Player/ChangeMode[/Keyboard/tab]
   - m_PersistentCalls:
@@ -1192,10 +1132,10 @@ MonoBehaviour:
     m_ActionName: Exploring/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1568171837}
-        m_TargetAssemblyTypeName: Harpoon, Assembly-CSharp
-        m_MethodName: shootHarpoon
-        m_Mode: 1
+      - m_Target: {fileID: 104647070}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: ThrowHarpoon
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1222,6 +1162,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: ac108b1c-3e85-4e16-882f-f4c2c368ea2e
     m_ActionName: Exploring/ForceHarpoonBack[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b8e41af2-018c-4cea-96c5-fa4804030c68
+    m_ActionName: Exploring/OpenUIStats[/Keyboard/p]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Fighting
@@ -9795,7 +9739,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1568171835}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac8fb539699bbe94bbde7a5eae2e5379, type: 3}
   m_Name: 

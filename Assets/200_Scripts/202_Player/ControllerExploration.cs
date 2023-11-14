@@ -52,6 +52,14 @@ public class ControllerExploration : MonoBehaviour
             if (isAccelerating)
             {
                 ApplyTorque();
+            } else
+            {
+                {
+                    frontLeftWheelCollider.motorTorque = 0;
+                    frontRightWheelCollider.motorTorque = 0;
+                    backLeftWheelCollider.motorTorque = 0;
+                    backRightWheelCollider.motorTorque = 0;
+                }
             }
         }
         else
@@ -62,6 +70,10 @@ public class ControllerExploration : MonoBehaviour
             backRightWheelCollider.motorTorque = 0;
         }
 
+        if (actualSpeed <= 1 && !isAccelerating)
+        {
+            rigidbody.velocity = Vector3.zero;
+        }
         Stearing();
 
 

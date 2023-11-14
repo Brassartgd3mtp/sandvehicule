@@ -77,8 +77,6 @@ public class InputManager : MonoBehaviour
                 }
             break;
         }
-
-
     }
 
     public void ForceHarpoonBack(InputAction.CallbackContext context)
@@ -93,20 +91,20 @@ public class InputManager : MonoBehaviour
         }
     }
 
-    public void ChangeMode(InputAction.CallbackContext context)
-    {
-        switch (context.phase) 
-        {
-            case InputActionPhase.Performed:
-                if (playerStates.states == PlayerStates.States.Exploring)
-                {
-                    playerStates.ChangeStateForFighting();
-                } else if (playerStates.states == PlayerStates.States.Fifhting)
-                {
-                    playerStates.ChangeStateForExploring();
-                }
-                break;
-        }
-    }
+    //public void ChangeMode(InputAction.CallbackContext context)
+    //{
+    //    switch (context.phase) 
+    //    {
+    //        case InputActionPhase.Performed:
+    //            if (playerStates.states == PlayerStates.States.Exploring)
+    //            {
+    //                playerStates.ChangeStateForFighting();
+    //            } else if (playerStates.states == PlayerStates.States.Fifhting)
+    //            {
+    //                playerStates.ChangeStateForExploring();
+    //            }
+    //            break;
+    //    }
+    //}
 
 }

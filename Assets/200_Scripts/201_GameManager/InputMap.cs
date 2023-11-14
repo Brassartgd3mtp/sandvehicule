@@ -28,33 +28,6 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
             ""id"": ""92db921a-dd2d-4ebf-b22c-e44170c7a514"",
             ""actions"": [
                 {
-                    ""name"": ""ChangeForFight"",
-                    ""type"": ""Button"",
-                    ""id"": ""e5f9ac35-c34f-4c45-a219-d2d3b1611103"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""ChangeForExplore"",
-                    ""type"": ""Button"",
-                    ""id"": ""c51012c5-0445-433b-9dc6-35d44d1ce421"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Shoot"",
-                    ""type"": ""Button"",
-                    ""id"": ""d1ece407-06e1-40b8-9dd1-91bdbcd3d368"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": ""Press"",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""Direction"",
                     ""type"": ""Value"",
                     ""id"": ""a8aeaf74-0019-4e58-8fa1-e5f733e1f1b3"",
@@ -119,39 +92,6 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
                 }
             ],
             ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""57d23ddc-e31c-4e74-9650-95ed27648030"",
-                    ""path"": ""<Keyboard>/#(&)"",
-                    ""interactions"": ""Press"",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ChangeForFight"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""00372ccf-fe5b-4997-a095-ba96f74ea00e"",
-                    ""path"": ""<Keyboard>/#(É)"",
-                    ""interactions"": ""Press"",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ChangeForExplore"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""4c55a14c-8d32-479f-9bd0-09d40b71cec1"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Shoot"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
                 {
                     ""name"": ""2D Vector"",
                     ""id"": ""a89113a3-64b9-4a61-a539-0d0add5f5a89"",
@@ -333,6 +273,15 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""OpenUIStats"",
+                    ""type"": ""Button"",
+                    ""id"": ""b8e41af2-018c-4cea-96c5-fa4804030c68"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press"",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""ForceHarpoonBack"",
                     ""type"": ""Button"",
                     ""id"": ""ac108b1c-3e85-4e16-882f-f4c2c368ea2e"",
@@ -466,6 +415,17 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
                     ""action"": ""ForceHarpoonBack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d38ff99c-54d5-4e2a-a7b3-9ce9a9ff5177"",
+                    ""path"": ""<Keyboard>/#(P)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""OpenUIStats"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -474,9 +434,6 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
 }");
         // Fighting
         m_Fighting = asset.FindActionMap("Fighting", throwIfNotFound: true);
-        m_Fighting_ChangeForFight = m_Fighting.FindAction("ChangeForFight", throwIfNotFound: true);
-        m_Fighting_ChangeForExplore = m_Fighting.FindAction("ChangeForExplore", throwIfNotFound: true);
-        m_Fighting_Shoot = m_Fighting.FindAction("Shoot", throwIfNotFound: true);
         m_Fighting_Direction = m_Fighting.FindAction("Direction", throwIfNotFound: true);
         m_Fighting_OpenUIStats = m_Fighting.FindAction("OpenUIStats", throwIfNotFound: true);
         m_Fighting_ShootHarpoon = m_Fighting.FindAction("ShootHarpoon", throwIfNotFound: true);
@@ -487,6 +444,7 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
         // Exploring
         m_Exploring = asset.FindActionMap("Exploring", throwIfNotFound: true);
         m_Exploring_Accelerate = m_Exploring.FindAction("Accelerate", throwIfNotFound: true);
+        m_Exploring_OpenUIStats = m_Exploring.FindAction("OpenUIStats", throwIfNotFound: true);
         m_Exploring_ForceHarpoonBack = m_Exploring.FindAction("ForceHarpoonBack", throwIfNotFound: true);
         m_Exploring_ShootHarpoon = m_Exploring.FindAction("ShootHarpoon", throwIfNotFound: true);
         m_Exploring_ChangeActionMap = m_Exploring.FindAction("ChangeActionMap", throwIfNotFound: true);
@@ -553,9 +511,6 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
     // Fighting
     private readonly InputActionMap m_Fighting;
     private List<IFightingActions> m_FightingActionsCallbackInterfaces = new List<IFightingActions>();
-    private readonly InputAction m_Fighting_ChangeForFight;
-    private readonly InputAction m_Fighting_ChangeForExplore;
-    private readonly InputAction m_Fighting_Shoot;
     private readonly InputAction m_Fighting_Direction;
     private readonly InputAction m_Fighting_OpenUIStats;
     private readonly InputAction m_Fighting_ShootHarpoon;
@@ -567,9 +522,6 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
     {
         private @InputMap m_Wrapper;
         public FightingActions(@InputMap wrapper) { m_Wrapper = wrapper; }
-        public InputAction @ChangeForFight => m_Wrapper.m_Fighting_ChangeForFight;
-        public InputAction @ChangeForExplore => m_Wrapper.m_Fighting_ChangeForExplore;
-        public InputAction @Shoot => m_Wrapper.m_Fighting_Shoot;
         public InputAction @Direction => m_Wrapper.m_Fighting_Direction;
         public InputAction @OpenUIStats => m_Wrapper.m_Fighting_OpenUIStats;
         public InputAction @ShootHarpoon => m_Wrapper.m_Fighting_ShootHarpoon;
@@ -586,15 +538,6 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_FightingActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_FightingActionsCallbackInterfaces.Add(instance);
-            @ChangeForFight.started += instance.OnChangeForFight;
-            @ChangeForFight.performed += instance.OnChangeForFight;
-            @ChangeForFight.canceled += instance.OnChangeForFight;
-            @ChangeForExplore.started += instance.OnChangeForExplore;
-            @ChangeForExplore.performed += instance.OnChangeForExplore;
-            @ChangeForExplore.canceled += instance.OnChangeForExplore;
-            @Shoot.started += instance.OnShoot;
-            @Shoot.performed += instance.OnShoot;
-            @Shoot.canceled += instance.OnShoot;
             @Direction.started += instance.OnDirection;
             @Direction.performed += instance.OnDirection;
             @Direction.canceled += instance.OnDirection;
@@ -620,15 +563,6 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
 
         private void UnregisterCallbacks(IFightingActions instance)
         {
-            @ChangeForFight.started -= instance.OnChangeForFight;
-            @ChangeForFight.performed -= instance.OnChangeForFight;
-            @ChangeForFight.canceled -= instance.OnChangeForFight;
-            @ChangeForExplore.started -= instance.OnChangeForExplore;
-            @ChangeForExplore.performed -= instance.OnChangeForExplore;
-            @ChangeForExplore.canceled -= instance.OnChangeForExplore;
-            @Shoot.started -= instance.OnShoot;
-            @Shoot.performed -= instance.OnShoot;
-            @Shoot.canceled -= instance.OnShoot;
             @Direction.started -= instance.OnDirection;
             @Direction.performed -= instance.OnDirection;
             @Direction.canceled -= instance.OnDirection;
@@ -672,6 +606,7 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Exploring;
     private List<IExploringActions> m_ExploringActionsCallbackInterfaces = new List<IExploringActions>();
     private readonly InputAction m_Exploring_Accelerate;
+    private readonly InputAction m_Exploring_OpenUIStats;
     private readonly InputAction m_Exploring_ForceHarpoonBack;
     private readonly InputAction m_Exploring_ShootHarpoon;
     private readonly InputAction m_Exploring_ChangeActionMap;
@@ -682,6 +617,7 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
         private @InputMap m_Wrapper;
         public ExploringActions(@InputMap wrapper) { m_Wrapper = wrapper; }
         public InputAction @Accelerate => m_Wrapper.m_Exploring_Accelerate;
+        public InputAction @OpenUIStats => m_Wrapper.m_Exploring_OpenUIStats;
         public InputAction @ForceHarpoonBack => m_Wrapper.m_Exploring_ForceHarpoonBack;
         public InputAction @ShootHarpoon => m_Wrapper.m_Exploring_ShootHarpoon;
         public InputAction @ChangeActionMap => m_Wrapper.m_Exploring_ChangeActionMap;
@@ -699,6 +635,9 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
             @Accelerate.started += instance.OnAccelerate;
             @Accelerate.performed += instance.OnAccelerate;
             @Accelerate.canceled += instance.OnAccelerate;
+            @OpenUIStats.started += instance.OnOpenUIStats;
+            @OpenUIStats.performed += instance.OnOpenUIStats;
+            @OpenUIStats.canceled += instance.OnOpenUIStats;
             @ForceHarpoonBack.started += instance.OnForceHarpoonBack;
             @ForceHarpoonBack.performed += instance.OnForceHarpoonBack;
             @ForceHarpoonBack.canceled += instance.OnForceHarpoonBack;
@@ -721,6 +660,9 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
             @Accelerate.started -= instance.OnAccelerate;
             @Accelerate.performed -= instance.OnAccelerate;
             @Accelerate.canceled -= instance.OnAccelerate;
+            @OpenUIStats.started -= instance.OnOpenUIStats;
+            @OpenUIStats.performed -= instance.OnOpenUIStats;
+            @OpenUIStats.canceled -= instance.OnOpenUIStats;
             @ForceHarpoonBack.started -= instance.OnForceHarpoonBack;
             @ForceHarpoonBack.performed -= instance.OnForceHarpoonBack;
             @ForceHarpoonBack.canceled -= instance.OnForceHarpoonBack;
@@ -755,9 +697,6 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
     public ExploringActions @Exploring => new ExploringActions(this);
     public interface IFightingActions
     {
-        void OnChangeForFight(InputAction.CallbackContext context);
-        void OnChangeForExplore(InputAction.CallbackContext context);
-        void OnShoot(InputAction.CallbackContext context);
         void OnDirection(InputAction.CallbackContext context);
         void OnOpenUIStats(InputAction.CallbackContext context);
         void OnShootHarpoon(InputAction.CallbackContext context);
@@ -769,6 +708,7 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
     public interface IExploringActions
     {
         void OnAccelerate(InputAction.CallbackContext context);
+        void OnOpenUIStats(InputAction.CallbackContext context);
         void OnForceHarpoonBack(InputAction.CallbackContext context);
         void OnShootHarpoon(InputAction.CallbackContext context);
         void OnChangeActionMap(InputAction.CallbackContext context);

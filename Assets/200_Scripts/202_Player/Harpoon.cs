@@ -62,8 +62,6 @@ public class Harpoon : MonoBehaviour
 
     public void Update()
     {
-
-
         if (isShooted == false)
         {
             GetMousePosition();
@@ -73,7 +71,6 @@ public class Harpoon : MonoBehaviour
         if(isShooted && !collideSomething) 
         { 
             HarpoonMoveToSpot();
-
         }
 
         if (harpoonReadyToBack)
@@ -94,7 +91,7 @@ public class Harpoon : MonoBehaviour
         }
 
         float cableLength  = Vector3.Distance(harpoonStart.transform.position, transform.position);
-        if (cableLength >= 10 && !collideSomething)
+        if (cableLength >= 10) //&& !collideSomething)
         {
             harpoonReadyToBack = true;
             isShooted = false;
@@ -128,8 +125,6 @@ public class Harpoon : MonoBehaviour
 
     public void shootHarpoon()
     {
-        if (playerStates.states == PlayerStates.States.Exploring)
-        {
             harpoonIsReady = false;
 
             var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
@@ -141,8 +136,6 @@ public class Harpoon : MonoBehaviour
                 harpoonTarget = position;
                 harpoonTarget = position;
             } 
-        }
-
     }
 
     public void HarpoonMoveToSpot()

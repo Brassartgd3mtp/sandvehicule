@@ -50,11 +50,11 @@ public class Movement : MonoBehaviour
         //}
 
         //Using turret if player is in "Fighting" State  
-        if (playerStates.states == PlayerStates.States.Fifhting)
-        {
-            turret.transform.Rotate(Vector3.up * turretRotationSpeed * Time.deltaTime);
-            rb.velocity = new Vector3(0,0,0);
-        }
+        //if (playerStates.states == PlayerStates.States.Fifhting)
+        //{
+        //    turret.transform.Rotate(Vector3.up * turretRotationSpeed * Time.deltaTime);
+        //    rb.velocity = new Vector3(0,0,0);
+        //}
     }
     #region Movement Inputs 
 
