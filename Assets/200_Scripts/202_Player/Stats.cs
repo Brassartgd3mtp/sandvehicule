@@ -5,6 +5,7 @@ using UnityEngine;
 public class Stats : MonoBehaviour
 {
     public float maxHealth = 10;
+    
     public float currentHealth;
 
     public int damage;
@@ -18,10 +19,5 @@ public class Stats : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-    }
-
-    void Update()
-    {
-        
     }
 }

@@ -7,7 +7,7 @@ public class InputManagerExploration : MonoBehaviour
 {
     public ControllerExploration controllerExploration;
     public InputMap inputMap;
-    public Vector2 move;
+    public Vector2 moveExploration;
     public float inputX, inputY;
 
     public void Awake()
@@ -25,8 +25,8 @@ public class InputManagerExploration : MonoBehaviour
 
     public void Update()
     {
-        move = inputMap.Exploring.Movement.ReadValue<Vector2>();
-        inputX = move.x; inputY = move.y;
+        moveExploration = inputMap.Exploring.Movement.ReadValue<Vector2>();
+        inputX = moveExploration.x; inputY = moveExploration.y;
     }
 
     public void Accelerate(InputAction.CallbackContext context) // input pour accélérer 

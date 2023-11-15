@@ -11,11 +11,6 @@ public class PlayerTakeDamage : MonoBehaviour
         stats = GetComponent<Stats>();
     }
 
-    void Update()
-    {
-        
-    }
-
     public void TakeDamage(float damageAmount) // système de prise de dommages par l'ennemi
     {
         stats.currentHealth -= damageAmount;

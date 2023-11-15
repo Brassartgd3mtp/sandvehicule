@@ -44,20 +44,12 @@ public class AttackManager : MonoBehaviour
     {
         switch (context.phase)
         {
-            case InputActionPhase.Performed:
-
-                if (playerStates.states == PlayerStates.States.Fifhting) // permet de tirer uniquement pendant le mode de combat 
-                {
+            case InputActionPhase.Performed:// permet de tirer uniquement pendant le mode de combat 
                     isShooting = true;
-                }
-                
-                //projectile.transform.position += transform.forward * Time.deltaTime * speed;
                 break;
+            
             case InputActionPhase.Canceled:
-                if (playerStates.states == PlayerStates.States.Fifhting)
-                {
                     isShooting = false;
-                }
                 break;
 
         }

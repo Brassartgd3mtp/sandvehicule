@@ -73,15 +73,6 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""ChangeMode"",
-                    ""type"": ""Button"",
-                    ""id"": ""41a7b606-9d63-42de-9077-c44dfd61a4ba"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""ChangeActionMap"",
                     ""type"": ""Button"",
                     ""id"": ""61143ffd-c8ee-474a-91fb-b0afe02114c1"",
@@ -237,17 +228,6 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""e4e5901b-97b7-4aa5-8db7-dbf49f6c253c"",
-                    ""path"": ""<Keyboard>/tab"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ChangeMode"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""3cebae18-150b-47aa-aeae-69a072453df2"",
                     ""path"": ""<Keyboard>/#(M)"",
                     ""interactions"": """",
@@ -300,15 +280,6 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""ChangeActionMap"",
-                    ""type"": ""Button"",
-                    ""id"": ""f4938401-b80e-4471-a932-6413ae7d18de"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": ""Press"",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""Breaking"",
                     ""type"": ""Button"",
                     ""id"": ""a58568c4-382b-446d-9da4-1dcd1f9c3a88"",
@@ -325,6 +296,15 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": ""Press"",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""ChangeActionMap"",
+                    ""type"": ""Button"",
+                    ""id"": ""f4938401-b80e-4471-a932-6413ae7d18de"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press"",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -336,17 +316,6 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Accelerate"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""912c3c8b-98b9-4295-986e-a64e5de3c5b8"",
-                    ""path"": ""<Keyboard>/#(M)"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ChangeActionMap"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -426,6 +395,17 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
                     ""action"": ""OpenUIStats"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""912c3c8b-98b9-4295-986e-a64e5de3c5b8"",
+                    ""path"": ""<Keyboard>/#(M)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeActionMap"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -439,7 +419,6 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
         m_Fighting_ShootHarpoon = m_Fighting.FindAction("ShootHarpoon", throwIfNotFound: true);
         m_Fighting_Move = m_Fighting.FindAction("Move", throwIfNotFound: true);
         m_Fighting_ForceHarpoonBack = m_Fighting.FindAction("ForceHarpoonBack", throwIfNotFound: true);
-        m_Fighting_ChangeMode = m_Fighting.FindAction("ChangeMode", throwIfNotFound: true);
         m_Fighting_ChangeActionMap = m_Fighting.FindAction("ChangeActionMap", throwIfNotFound: true);
         // Exploring
         m_Exploring = asset.FindActionMap("Exploring", throwIfNotFound: true);
@@ -447,9 +426,9 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
         m_Exploring_OpenUIStats = m_Exploring.FindAction("OpenUIStats", throwIfNotFound: true);
         m_Exploring_ForceHarpoonBack = m_Exploring.FindAction("ForceHarpoonBack", throwIfNotFound: true);
         m_Exploring_ShootHarpoon = m_Exploring.FindAction("ShootHarpoon", throwIfNotFound: true);
-        m_Exploring_ChangeActionMap = m_Exploring.FindAction("ChangeActionMap", throwIfNotFound: true);
         m_Exploring_Breaking = m_Exploring.FindAction("Breaking", throwIfNotFound: true);
         m_Exploring_Movement = m_Exploring.FindAction("Movement", throwIfNotFound: true);
+        m_Exploring_ChangeActionMap = m_Exploring.FindAction("ChangeActionMap", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -516,7 +495,6 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
     private readonly InputAction m_Fighting_ShootHarpoon;
     private readonly InputAction m_Fighting_Move;
     private readonly InputAction m_Fighting_ForceHarpoonBack;
-    private readonly InputAction m_Fighting_ChangeMode;
     private readonly InputAction m_Fighting_ChangeActionMap;
     public struct FightingActions
     {
@@ -527,7 +505,6 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
         public InputAction @ShootHarpoon => m_Wrapper.m_Fighting_ShootHarpoon;
         public InputAction @Move => m_Wrapper.m_Fighting_Move;
         public InputAction @ForceHarpoonBack => m_Wrapper.m_Fighting_ForceHarpoonBack;
-        public InputAction @ChangeMode => m_Wrapper.m_Fighting_ChangeMode;
         public InputAction @ChangeActionMap => m_Wrapper.m_Fighting_ChangeActionMap;
         public InputActionMap Get() { return m_Wrapper.m_Fighting; }
         public void Enable() { Get().Enable(); }
@@ -553,9 +530,6 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
             @ForceHarpoonBack.started += instance.OnForceHarpoonBack;
             @ForceHarpoonBack.performed += instance.OnForceHarpoonBack;
             @ForceHarpoonBack.canceled += instance.OnForceHarpoonBack;
-            @ChangeMode.started += instance.OnChangeMode;
-            @ChangeMode.performed += instance.OnChangeMode;
-            @ChangeMode.canceled += instance.OnChangeMode;
             @ChangeActionMap.started += instance.OnChangeActionMap;
             @ChangeActionMap.performed += instance.OnChangeActionMap;
             @ChangeActionMap.canceled += instance.OnChangeActionMap;
@@ -578,9 +552,6 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
             @ForceHarpoonBack.started -= instance.OnForceHarpoonBack;
             @ForceHarpoonBack.performed -= instance.OnForceHarpoonBack;
             @ForceHarpoonBack.canceled -= instance.OnForceHarpoonBack;
-            @ChangeMode.started -= instance.OnChangeMode;
-            @ChangeMode.performed -= instance.OnChangeMode;
-            @ChangeMode.canceled -= instance.OnChangeMode;
             @ChangeActionMap.started -= instance.OnChangeActionMap;
             @ChangeActionMap.performed -= instance.OnChangeActionMap;
             @ChangeActionMap.canceled -= instance.OnChangeActionMap;
@@ -609,9 +580,9 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
     private readonly InputAction m_Exploring_OpenUIStats;
     private readonly InputAction m_Exploring_ForceHarpoonBack;
     private readonly InputAction m_Exploring_ShootHarpoon;
-    private readonly InputAction m_Exploring_ChangeActionMap;
     private readonly InputAction m_Exploring_Breaking;
     private readonly InputAction m_Exploring_Movement;
+    private readonly InputAction m_Exploring_ChangeActionMap;
     public struct ExploringActions
     {
         private @InputMap m_Wrapper;
@@ -620,9 +591,9 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
         public InputAction @OpenUIStats => m_Wrapper.m_Exploring_OpenUIStats;
         public InputAction @ForceHarpoonBack => m_Wrapper.m_Exploring_ForceHarpoonBack;
         public InputAction @ShootHarpoon => m_Wrapper.m_Exploring_ShootHarpoon;
-        public InputAction @ChangeActionMap => m_Wrapper.m_Exploring_ChangeActionMap;
         public InputAction @Breaking => m_Wrapper.m_Exploring_Breaking;
         public InputAction @Movement => m_Wrapper.m_Exploring_Movement;
+        public InputAction @ChangeActionMap => m_Wrapper.m_Exploring_ChangeActionMap;
         public InputActionMap Get() { return m_Wrapper.m_Exploring; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -644,15 +615,15 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
             @ShootHarpoon.started += instance.OnShootHarpoon;
             @ShootHarpoon.performed += instance.OnShootHarpoon;
             @ShootHarpoon.canceled += instance.OnShootHarpoon;
-            @ChangeActionMap.started += instance.OnChangeActionMap;
-            @ChangeActionMap.performed += instance.OnChangeActionMap;
-            @ChangeActionMap.canceled += instance.OnChangeActionMap;
             @Breaking.started += instance.OnBreaking;
             @Breaking.performed += instance.OnBreaking;
             @Breaking.canceled += instance.OnBreaking;
             @Movement.started += instance.OnMovement;
             @Movement.performed += instance.OnMovement;
             @Movement.canceled += instance.OnMovement;
+            @ChangeActionMap.started += instance.OnChangeActionMap;
+            @ChangeActionMap.performed += instance.OnChangeActionMap;
+            @ChangeActionMap.canceled += instance.OnChangeActionMap;
         }
 
         private void UnregisterCallbacks(IExploringActions instance)
@@ -669,15 +640,15 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
             @ShootHarpoon.started -= instance.OnShootHarpoon;
             @ShootHarpoon.performed -= instance.OnShootHarpoon;
             @ShootHarpoon.canceled -= instance.OnShootHarpoon;
-            @ChangeActionMap.started -= instance.OnChangeActionMap;
-            @ChangeActionMap.performed -= instance.OnChangeActionMap;
-            @ChangeActionMap.canceled -= instance.OnChangeActionMap;
             @Breaking.started -= instance.OnBreaking;
             @Breaking.performed -= instance.OnBreaking;
             @Breaking.canceled -= instance.OnBreaking;
             @Movement.started -= instance.OnMovement;
             @Movement.performed -= instance.OnMovement;
             @Movement.canceled -= instance.OnMovement;
+            @ChangeActionMap.started -= instance.OnChangeActionMap;
+            @ChangeActionMap.performed -= instance.OnChangeActionMap;
+            @ChangeActionMap.canceled -= instance.OnChangeActionMap;
         }
 
         public void RemoveCallbacks(IExploringActions instance)
@@ -702,7 +673,6 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
         void OnShootHarpoon(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
         void OnForceHarpoonBack(InputAction.CallbackContext context);
-        void OnChangeMode(InputAction.CallbackContext context);
         void OnChangeActionMap(InputAction.CallbackContext context);
     }
     public interface IExploringActions
@@ -711,8 +681,8 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
         void OnOpenUIStats(InputAction.CallbackContext context);
         void OnForceHarpoonBack(InputAction.CallbackContext context);
         void OnShootHarpoon(InputAction.CallbackContext context);
-        void OnChangeActionMap(InputAction.CallbackContext context);
         void OnBreaking(InputAction.CallbackContext context);
         void OnMovement(InputAction.CallbackContext context);
+        void OnChangeActionMap(InputAction.CallbackContext context);
     }
 }

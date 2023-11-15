@@ -801,7 +801,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 101196532}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.57153875, y: 0.000000024622754, z: -0.000000017149993, w: 0.8205751}
+  m_LocalRotation: {x: 0.5715387, y: -0.0000000028689247, z: 0.0000000019982362, w: 0.8205751}
   m_LocalPosition: {x: 0, y: 25.567, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -823,6 +823,7 @@ GameObject:
   - component: {fileID: 104647070}
   - component: {fileID: 104647071}
   - component: {fileID: 104647073}
+  - component: {fileID: 104647074}
   - component: {fileID: 104647072}
   m_Layer: 0
   m_Name: GameManager
@@ -904,7 +905,6 @@ MonoBehaviour:
   harpoon: {fileID: 1568171837}
   stickAndOrbite: {fileID: 1568171844}
   playerStates: {fileID: 766553747}
-  inputActionMapManager: {fileID: 104647071}
 --- !u!114 &104647071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -924,6 +924,9 @@ MonoBehaviour:
     m_Asset: {fileID: 0}
     m_Actions: []
     m_Bindings: []
+  inputManagerFighting: {fileID: 104647074}
+  inputManagerExploration: {fileID: 104647073}
+  cameraScript: {fileID: 1514449581}
 --- !u!114 &104647072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -951,19 +954,7 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 766553744}
-        m_TargetAssemblyTypeName: Movement, Assembly-CSharp
-        m_MethodName: Move
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: a8aeaf74-0019-4e58-8fa1-e5f733e1f1b3
     m_ActionName: Player/Direction[/Keyboard/a]
   - m_PersistentCalls:
@@ -1000,8 +991,8 @@ MonoBehaviour:
     m_ActionName: Player/ShootHarpoon[/Mouse/leftButton]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 766553744}
-        m_TargetAssemblyTypeName: Movement, Assembly-CSharp
+      - m_Target: {fileID: 104647074}
+        m_TargetAssemblyTypeName: InputManagerFighting, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
         m_Arguments:
@@ -1031,10 +1022,6 @@ MonoBehaviour:
     m_ActionId: 6943b5af-c585-49a3-9bcb-8e2addc41c98
     m_ActionName: Player/ForceHarpoonBack[/Mouse/rightButton]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 41a7b606-9d63-42de-9077-c44dfd61a4ba
-    m_ActionName: Player/ChangeMode[/Keyboard/tab]
-  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 104647073}
         m_TargetAssemblyTypeName: InputManagerExploration, Assembly-CSharp
@@ -1052,8 +1039,8 @@ MonoBehaviour:
     m_ActionName: Exploring /Accelerate[/Keyboard/z]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104647070}
-        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+      - m_Target: {fileID: 104647071}
+        m_TargetAssemblyTypeName: InputActionMapManager, Assembly-CSharp
         m_MethodName: ChangeActionMapForExploring
         m_Mode: 0
         m_Arguments:
@@ -1068,8 +1055,8 @@ MonoBehaviour:
     m_ActionName: Fighting/ChangeActionMap[/Keyboard/comma]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104647070}
-        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+      - m_Target: {fileID: 104647071}
+        m_TargetAssemblyTypeName: InputActionMapManager, Assembly-CSharp
         m_MethodName: ChangeActionMapForFighting
         m_Mode: 0
         m_Arguments:
@@ -1140,7 +1127,7 @@ MonoBehaviour:
     m_ActionName: Exploring/OpenUIStats[/Keyboard/p]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Fighting
+  m_DefaultActionMap: Exploring
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &104647073
@@ -1156,9 +1143,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controllerExploration: {fileID: 8296172668038571793}
-  move: {x: 0, y: 0}
+  moveExploration: {x: 0, y: 0}
   inputX: 0
   inputY: 0
+--- !u!114 &104647074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104647065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c346efa65ea83a43ae7f002ecf73bda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveFighting: {x: 0, y: 0}
+  inputX: 0
+  inputY: 0
+  controllerFighting: {fileID: 8296172668038571794}
 --- !u!1001 &108948816
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3623,9 +3626,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BindingMode: 4
   m_FollowOffset: {x: 0, y: 24.56, z: -9}
-  m_XDamping: 1
-  m_YDamping: 1
-  m_ZDamping: 1
+  m_XDamping: 0.1
+  m_YDamping: 0.1
+  m_ZDamping: 0.1
   m_AngularDampingMode: 0
   m_PitchDamping: 0
   m_YawDamping: 0
@@ -3647,8 +3650,8 @@ MonoBehaviour:
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
-  m_HorizontalDamping: 0.5
-  m_VerticalDamping: 0.5
+  m_HorizontalDamping: 0
+  m_VerticalDamping: 0
   m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_DeadZoneWidth: 0
@@ -4644,8 +4647,6 @@ MonoBehaviour:
   AttackManager: {fileID: 0}
   states: 0
   projectileProjection: {fileID: 1914553574}
-  UITurret: {fileID: 1851632087}
-  UIHarpoon: {fileID: 276442657}
 --- !u!224 &767116396 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4657650488295753790, guid: 9daea7d837c46e34f897f6913c1d5cce,
@@ -7175,7 +7176,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1183619060
 Transform:
   m_ObjectHideFlags: 0
@@ -8325,7 +8326,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1393256602}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2896633, y: 0.000000023290282, z: -0.00000000704852, w: 0.95712864}
+  m_LocalRotation: {x: 0.2896633, y: -0.000000023290289, z: 0.0000000070485218, w: 0.95712864}
   m_LocalPosition: {x: 0, y: 10.397, z: -9.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8995,7 +8996,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1514449576}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.57153875, y: 0.000000024622754, z: -0.000000017149993, w: 0.8205751}
+  m_LocalRotation: {x: 0.5715387, y: -0.0000000028689247, z: 0.0000000019982362, w: 0.8205751}
   m_LocalPosition: {x: 0, y: 25.567, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -18400,13 +18401,13 @@ GameObject:
   - component: {fileID: 766553742}
   - component: {fileID: 766553744}
   - component: {fileID: 766553747}
-  - component: {fileID: 8296172668038571786}
   - component: {fileID: 8296172668038571787}
   - component: {fileID: 8296172668038571788}
   - component: {fileID: 8296172668038571789}
   - component: {fileID: 8296172668038571791}
   - component: {fileID: 8296172668038571792}
   - component: {fileID: 8296172668038571793}
+  - component: {fileID: 8296172668038571794}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -18414,26 +18415,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &8296172668038571786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8296172668038571785}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dbbbbc0daf5a86428b39346401ddd3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stats: {fileID: 0}
-  shootingPos: {fileID: 93742421}
-  BaseProjectile: {fileID: 8513764813605114113, guid: 7979df0cefe35834885c19d26e975d5d,
-    type: 3}
-  playerStates: {fileID: 0}
-  isShooting: 0
-  cooldownAttack: 0
-  speed: 10
 --- !u!114 &8296172668038571787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18542,6 +18523,21 @@ MonoBehaviour:
   rigidbody: {fileID: 766553740}
   actualSpeed: 0
   stats: {fileID: 8296172668038571788}
+--- !u!114 &8296172668038571794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8296172668038571785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba04512aeebea4e40b8dda8283c76697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMoving: 0
+  stats: {fileID: 0}
+  inputManagerFighting: {fileID: 104647074}
 --- !u!146 &8849521606656148659
 WheelCollider:
   m_ObjectHideFlags: 0

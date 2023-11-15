@@ -51,15 +51,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ChangeMode",
-                    "type": "Button",
-                    "id": "41a7b606-9d63-42de-9077-c44dfd61a4ba",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "ChangeActionMap",
                     "type": "Button",
                     "id": "61143ffd-c8ee-474a-91fb-b0afe02114c1",
@@ -215,17 +206,6 @@
                 },
                 {
                     "name": "",
-                    "id": "e4e5901b-97b7-4aa5-8db7-dbf49f6c253c",
-                    "path": "<Keyboard>/tab",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ChangeMode",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "3cebae18-150b-47aa-aeae-69a072453df2",
                     "path": "<Keyboard>/#(M)",
                     "interactions": "",
@@ -278,15 +258,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ChangeActionMap",
-                    "type": "Button",
-                    "id": "f4938401-b80e-4471-a932-6413ae7d18de",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "Press",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Breaking",
                     "type": "Button",
                     "id": "a58568c4-382b-446d-9da4-1dcd1f9c3a88",
@@ -303,6 +274,15 @@
                     "processors": "",
                     "interactions": "Press",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "ChangeActionMap",
+                    "type": "Button",
+                    "id": "f4938401-b80e-4471-a932-6413ae7d18de",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -314,17 +294,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Accelerate",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "912c3c8b-98b9-4295-986e-a64e5de3c5b8",
-                    "path": "<Keyboard>/#(M)",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ChangeActionMap",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -402,6 +371,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "OpenUIStats",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "912c3c8b-98b9-4295-986e-a64e5de3c5b8",
+                    "path": "<Keyboard>/#(M)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeActionMap",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
