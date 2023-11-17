@@ -9,47 +9,29 @@ public class CameraScript : MonoBehaviour
     public CinemachineVirtualCamera VirtualCameraFighting;
     public CinemachineVirtualCamera[] virtualCamera;
 
-    
-    public UnityEngine.GameObject Target = null;
-    public float speed;
-    public bool isExploring = true;
-
     public PlayerStates playerStates;
     void Start()
     {
         SwitchToCamera(VirtualCameraExploring);
     }
 
-    void Update()
-
-    {
-
-
-    }
-
-    #region Camera Switching
-
-    // Changing for the Exploring View
-    public void CameraForExploring()
+    public void CameraForExploring() // Changing for the Exploring View
     {
         CinemachineVirtualCamera targetCamera = VirtualCameraExploring;
         SwitchToCamera(targetCamera);
-    }
+    }  
     
-    // Changing for fighting view
-    public void CameraForFighting()
+    public void CameraForFighting() // Changing for fighting view
     {
         CinemachineVirtualCamera targetCamera = VirtualCameraFighting;
         SwitchToCamera(targetCamera);
     }
-
-    // Method for switching camera in a list
-    public void SwitchToCamera(CinemachineVirtualCamera targetCamera)
+    
+    public void SwitchToCamera(CinemachineVirtualCamera targetCamera) // Method for switching camera in a list
     {
         foreach (CinemachineVirtualCamera camera in virtualCamera)
         {
             camera.enabled = camera == targetCamera;
         }
     }
-    #endregion
 }

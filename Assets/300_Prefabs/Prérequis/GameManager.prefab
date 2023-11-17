@@ -1,0 +1,355 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3022479020024186722
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2410519941327188315}
+  - component: {fileID: 4828898513556064584}
+  - component: {fileID: 3656545503545933926}
+  - component: {fileID: 9023404815690675641}
+  - component: {fileID: 7563224049472470587}
+  - component: {fileID: 4062715948446824297}
+  - component: {fileID: 364768984596464457}
+  - component: {fileID: 4824018983371041660}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2410519941327188315
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3022479020024186722}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.640616, y: -5.695863, z: 8.176918}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4828898513556064584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3022479020024186722}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80f78fa829d964040bb218e0f90f7523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 3370896236820436003, guid: 058c50a41297b3b4b9328e56d1a03e75, type: 3}
+  player: {fileID: 0}
+  enemyCount: 0
+  Radius: 10
+  stormIsActive: 0
+  timerOfStorm: 0
+  timerSlider: {fileID: 0}
+  timeBeforeStorm: 5
+  minTimerBeforeStorm: 10
+  maxTimerBeforeStorm: 15
+  minTimerOfStorm: 0
+  maxTimerOfStorm: 0
+--- !u!114 &3656545503545933926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3022479020024186722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4623ae97ce78125458ad827566dc46d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 0}
+  maxHP: {fileID: 0}
+  Damage: {fileID: 0}
+  AttackSpeed: {fileID: 0}
+  Speed: {fileID: 0}
+--- !u!114 &9023404815690675641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3022479020024186722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edb506061aae4364da6a0c5440b43ff8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIStats: {fileID: 0}
+  UIStatsIsActive: 0
+  harpoon: {fileID: 0}
+  stickAndOrbite: {fileID: 0}
+  playerStates: {fileID: 0}
+--- !u!114 &7563224049472470587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3022479020024186722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84ad17e7f02538546b5d4c1708919f49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInput: {fileID: 4824018983371041660}
+  currentActionMap:
+    m_Name: Current
+    m_Id: 17c17b7d-d28c-4aaa-8e8b-adcdbdfebcb0
+    m_Asset: {fileID: 0}
+    m_Actions: []
+    m_Bindings: []
+  inputManagerFighting: {fileID: 364768984596464457}
+  inputManagerExploration: {fileID: 4062715948446824297}
+  cameraScript: {fileID: 0}
+--- !u!114 &4062715948446824297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3022479020024186722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a77710a1995bb7e439764b771793c598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controllerExploration: {fileID: 0}
+  moveExploration: {x: 0, y: 0}
+  inputX: 0
+  inputY: 0
+--- !u!114 &364768984596464457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3022479020024186722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c346efa65ea83a43ae7f002ecf73bda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveFighting: {x: 0, y: 0}
+  inputX: 0
+  inputY: 0
+  controllerFighting: {fileID: 0}
+--- !u!114 &4824018983371041660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3022479020024186722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: be3b6eb53cd154e4a925088d55468101,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a8aeaf74-0019-4e58-8fa1-e5f733e1f1b3
+    m_ActionName: Player/Direction[/Keyboard/a]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9023404815690675641}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: OpenUIStats
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: fdb2edce-79f1-420d-9729-41c53e82675c
+    m_ActionName: Player/OpenUIStats[/Keyboard/p]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9023404815690675641}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: ThrowHarpoon
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c27d0ac0-477d-4a78-a15a-d28d183ca2ab
+    m_ActionName: Player/ShootHarpoon[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 364768984596464457}
+        m_TargetAssemblyTypeName: InputManagerFighting, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a827a5a4-ffce-4446-ba81-b3976e8c019e
+    m_ActionName: Player/Move[/Keyboard/z,/Keyboard/s,/Keyboard/q,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9023404815690675641}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: ForceHarpoonBack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6943b5af-c585-49a3-9bcb-8e2addc41c98
+    m_ActionName: Player/ForceHarpoonBack[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4062715948446824297}
+        m_TargetAssemblyTypeName: InputManagerExploration, Assembly-CSharp
+        m_MethodName: Accelerate
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 709a4bf4-a5df-42d1-8c9f-db370f754b76
+    m_ActionName: Exploring /Accelerate[/Keyboard/z]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7563224049472470587}
+        m_TargetAssemblyTypeName: InputActionMapManager, Assembly-CSharp
+        m_MethodName: ChangeActionMapForExploring
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 61143ffd-c8ee-474a-91fb-b0afe02114c1
+    m_ActionName: Fighting/ChangeActionMap[/Keyboard/comma]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7563224049472470587}
+        m_TargetAssemblyTypeName: InputActionMapManager, Assembly-CSharp
+        m_MethodName: ChangeActionMapForFighting
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f4938401-b80e-4471-a932-6413ae7d18de
+    m_ActionName: Exploring /ChangeActionMap[/Keyboard/comma]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4062715948446824297}
+        m_TargetAssemblyTypeName: InputManagerExploration, Assembly-CSharp
+        m_MethodName: Breaking
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a58568c4-382b-446d-9da4-1dcd1f9c3a88
+    m_ActionName: Exploring/Breaking[/Keyboard/s]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 483b799d-3436-4f81-b1c2-78d5741987e2
+    m_ActionName: Exploring/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9023404815690675641}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: ThrowHarpoon
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c86934ba-1a50-4dc2-acc8-7224dcb0f7fc
+    m_ActionName: Exploring/ShootHarpoon[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9023404815690675641}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: ForceHarpoonBack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ac108b1c-3e85-4e16-882f-f4c2c368ea2e
+    m_ActionName: Exploring/ForceHarpoonBack[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b8e41af2-018c-4cea-96c5-fa4804030c68
+    m_ActionName: Exploring/OpenUIStats[/Keyboard/p]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Exploring
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}

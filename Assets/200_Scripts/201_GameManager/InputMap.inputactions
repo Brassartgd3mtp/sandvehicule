@@ -6,33 +6,6 @@
             "id": "92db921a-dd2d-4ebf-b22c-e44170c7a514",
             "actions": [
                 {
-                    "name": "ChangeForFight",
-                    "type": "Button",
-                    "id": "e5f9ac35-c34f-4c45-a219-d2d3b1611103",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "ChangeForExplore",
-                    "type": "Button",
-                    "id": "c51012c5-0445-433b-9dc6-35d44d1ce421",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Shoot",
-                    "type": "Button",
-                    "id": "d1ece407-06e1-40b8-9dd1-91bdbcd3d368",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "Press",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Direction",
                     "type": "Value",
                     "id": "a8aeaf74-0019-4e58-8fa1-e5f733e1f1b3",
@@ -78,15 +51,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ChangeMode",
-                    "type": "Button",
-                    "id": "41a7b606-9d63-42de-9077-c44dfd61a4ba",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "ChangeActionMap",
                     "type": "Button",
                     "id": "61143ffd-c8ee-474a-91fb-b0afe02114c1",
@@ -97,39 +61,6 @@
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "57d23ddc-e31c-4e74-9650-95ed27648030",
-                    "path": "<Keyboard>/#(&)",
-                    "interactions": "Press",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ChangeForFight",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "00372ccf-fe5b-4997-a095-ba96f74ea00e",
-                    "path": "<Keyboard>/#(É)",
-                    "interactions": "Press",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ChangeForExplore",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4c55a14c-8d32-479f-9bd0-09d40b71cec1",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Shoot",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "2D Vector",
                     "id": "a89113a3-64b9-4a61-a539-0d0add5f5a89",
@@ -275,17 +206,6 @@
                 },
                 {
                     "name": "",
-                    "id": "e4e5901b-97b7-4aa5-8db7-dbf49f6c253c",
-                    "path": "<Keyboard>/tab",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ChangeMode",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "3cebae18-150b-47aa-aeae-69a072453df2",
                     "path": "<Keyboard>/#(M)",
                     "interactions": "",
@@ -311,6 +231,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "OpenUIStats",
+                    "type": "Button",
+                    "id": "b8e41af2-018c-4cea-96c5-fa4804030c68",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "ForceHarpoonBack",
                     "type": "Button",
                     "id": "ac108b1c-3e85-4e16-882f-f4c2c368ea2e",
@@ -326,15 +255,6 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "ChangeActionMap",
-                    "type": "Button",
-                    "id": "f4938401-b80e-4471-a932-6413ae7d18de",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "Press",
                     "initialStateCheck": false
                 },
                 {
@@ -354,6 +274,15 @@
                     "processors": "",
                     "interactions": "Press",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "ChangeActionMap",
+                    "type": "Button",
+                    "id": "f4938401-b80e-4471-a932-6413ae7d18de",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -365,17 +294,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Accelerate",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "912c3c8b-98b9-4295-986e-a64e5de3c5b8",
-                    "path": "<Keyboard>/#(M)",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ChangeActionMap",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -442,6 +360,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "ForceHarpoonBack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d38ff99c-54d5-4e2a-a7b3-9ce9a9ff5177",
+                    "path": "<Keyboard>/#(P)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OpenUIStats",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "912c3c8b-98b9-4295-986e-a64e5de3c5b8",
+                    "path": "<Keyboard>/#(M)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeActionMap",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -13,22 +13,22 @@ MonoBehaviour:
   m_Name: CinemachineBlenderSettings
   m_EditorClassIdentifier: 
   m_CustomBlends:
-  - m_From: Virtual Camera Exploring
-    m_To: Virtual Camera Fighting
+  - m_From: Virtual Camera Fighting
+    m_To: Virtual Camera Exploring
     m_Blend:
       m_Style: 1
-      m_Time: 0.8
+      m_Time: 1
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []
         m_PreInfinity: 0
         m_PostInfinity: 0
         m_RotationOrder: 0
-  - m_From: Virtual Camera Fighting
-    m_To: Virtual Camera Exploring
+  - m_From: Virtual Camera Exploring
+    m_To: Virtual Camera Fighting
     m_Blend:
       m_Style: 1
-      m_Time: 1
+      m_Time: 0.8
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []

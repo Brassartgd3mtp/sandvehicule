@@ -10,18 +10,15 @@ using Unity.VisualScripting;
 
 public class Harpoon : MonoBehaviour
 {
-    public StickAndOrbite stickAndOrbite;
-
-    public CinemachineVirtualCamera VirtualCamera;
-
-    public Camera mainCamera;
-
     public RaycastHit hitPerma;
     public RaycastHit hitOnClick;
 
-    [SerializeField] UnityEngine.GameObject harpoonStart;
+    [SerializeField] private GameObject harpoonStart;
+    [SerializeField] private GameObject player;
 
-    [SerializeField] private UnityEngine.GameObject mainCameraPrefab;
+    public Camera mainCamera;
+    public CinemachineVirtualCamera VirtualCamera;
+    [SerializeField] private GameObject mainCameraPrefab;
 
     public bool isShooted;
     public bool harpoonReadyToBack = false;
@@ -37,16 +34,13 @@ public class Harpoon : MonoBehaviour
 
     public GameObject StickyPoint;
     public GameObject itemHooked;
-
+    public GameObject bodyVehicule;
     public GameObject HarpoonParent;
 
     public PlayerStates playerStates;
 
-    public GameObject player;
-
     public bool collideSomething;
 
-    public GameObject bodyVehicule;
     new public Collider collider;
 
     public void Start()
@@ -55,46 +49,41 @@ public class Harpoon : MonoBehaviour
         isShooted = false;
         collider = GetComponent<Collider>();
 
-        stickAndOrbite = GetComponent<StickAndOrbite>();
-
         harpoonIsReady = true;
     }
 
     public void Update()
     {
-
-
-        if (isShooted == false)
+        if (isShooted == false) // Si le harpon n'est pas tiré, permet de récupérer le click de la souris sur le screen
         {
             GetMousePosition();
             Aim();
         }  
 
-        if(isShooted && !collideSomething) 
+        if(isShooted && !collideSomething) //Le harpon va vers l'endroit clické
         { 
             HarpoonMoveToSpot();
-
         }
 
-        if (harpoonReadyToBack)
+        if (harpoonReadyToBack) // le harpon a touché sa cible ou a atteint la longeur maximale ou a été rappelé 
         { 
             harpoonBack();
         }
 
-        if(harpoonIsReady) 
+        if(harpoonIsReady) // Check si le harpon est prêt à être tiré
         {
             LR.enabled = false;
             harpoonStart.transform.position = transform.position;
         }
-        if (!harpoonIsReady ) 
+        else
         {
             LR.enabled = true;
             LR.SetPosition(0, harpoonStart.transform.position);
             LR.SetPosition(1, transform.position);
         }
 
-        float cableLength  = Vector3.Distance(harpoonStart.transform.position, transform.position);
-        if (cableLength >= 10 && !collideSomething)
+        float cableLength  = Vector3.Distance(harpoonStart.transform.position, transform.position); // taille du cable entre le bout du harpon et la base d'où il est tiré 
+        if (cableLength >= 10) // Si la taille maximum du cable est dépassé, force le harpon à être rétracté
         {
             harpoonReadyToBack = true;
             isShooted = false;
@@ -128,8 +117,6 @@ public class Harpoon : MonoBehaviour
 
     public void shootHarpoon()
     {
-        if (playerStates.states == PlayerStates.States.Exploring)
-        {
             harpoonIsReady = false;
 
             var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
@@ -141,11 +128,9 @@ public class Harpoon : MonoBehaviour
                 harpoonTarget = position;
                 harpoonTarget = position;
             } 
-        }
-
     }
 
-    public void HarpoonMoveToSpot()
+    public void HarpoonMoveToSpot() // Le harpon se dirige vers la destination clickée
     {
         if (isShooted)
         {
@@ -157,7 +142,6 @@ public class Harpoon : MonoBehaviour
 
     public void harpoonBack() // permet de rétracter le harpon vers le véhicule
     {
-            stickAndOrbite.ObjectSticked = null;
             collideSomething = false;
             transform.position = Vector3.Lerp(transform.position, harpoonStart.transform.position, harpoonSpeed * Time.deltaTime / Vector3.Distance(transform.position, harpoonStart.transform.position));
             transform.LookAt(harpoonTarget);
@@ -169,12 +153,12 @@ public class Harpoon : MonoBehaviour
             }
     }
 
-    public void ResetHarpoon()
+    public void ResetHarpoon() // Reset le harpon pour un nouveau tir 
     {
         isShooted = false;
         harpoonReadyToBack = false;
         harpoonIsReady = true;
-    }// Reset le harpon pour un nouveau tir 
+    }
 
     public void OnCollisionEnter(Collision collision)
     {
@@ -186,7 +170,7 @@ public class Harpoon : MonoBehaviour
             harpoonReadyToBack = true;
         }
 
-        if (collision.gameObject.tag == "Item") 
+        if (collision.gameObject.tag == "Item") // Stick un item et enclenche le fait de le ramener vers le véhicule 
         {
             collider.enabled = false;
             Debug.Log("detectobj");
