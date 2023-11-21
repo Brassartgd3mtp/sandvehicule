@@ -29,6 +29,7 @@ public class ControllerExploration : MonoBehaviour
     public float actualSpeed;
     public Stats stats;
 
+
     public void Start()
     {
         isAccelerating = false;
@@ -50,6 +51,7 @@ public class ControllerExploration : MonoBehaviour
             if (isAccelerating)
             {
                 ApplyTorque();
+
             } else
             {
                 {
@@ -71,7 +73,7 @@ public class ControllerExploration : MonoBehaviour
         if (actualSpeed <= 1 && !isAccelerating)
         {
             rigidbody.velocity = Vector3.zero;
-        }
+        } 
         Stearing();
 
 
@@ -129,4 +131,5 @@ public class ControllerExploration : MonoBehaviour
         wheelTransform.rotation = rot;
         wheelTransform.position = pos;
     }
+
 }
