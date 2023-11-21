@@ -32,5 +32,4 @@ public class ItemPickUp : MonoBehaviour
         }
 
     }
-
 }
