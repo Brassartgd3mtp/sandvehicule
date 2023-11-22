@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class InputManagerExploration : MonoBehaviour
 {
     public ControllerExploration controllerExploration;
+    public Controller controller;
     public InputMap inputMap;
     public Vector2 moveExploration;
     public float inputX, inputY;
@@ -35,9 +36,11 @@ public class InputManagerExploration : MonoBehaviour
         {
             case InputActionPhase.Performed:
                 controllerExploration.isAccelerating = true;
+                controller.isAccelerating = true;
                 break;
             case InputActionPhase.Canceled:
                 controllerExploration.isAccelerating = false;
+                controller.isAccelerating = false;
                 break;            
         }
     }
