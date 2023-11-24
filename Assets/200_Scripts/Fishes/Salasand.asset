@@ -9,11 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96675ca0b5587f444a93ac924a0e3c8e, type: 3}
+  m_Script: {fileID: 11500000, guid: 0011f4ba0be7304459488b1e5f7599aa, type: 3}
   m_Name: Salasand
   m_EditorClassIdentifier: 
   ID: 0
   Name: 
   Description: 
   Icon: {fileID: 0}
-  Value: 0
+  MaxStackSize: 0
+  ResourceType: 
+  GoldValue: 0
