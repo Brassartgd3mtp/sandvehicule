@@ -57,7 +57,6 @@ public class InputManager : MonoBehaviour
         switch (context.phase) 
         {
             case InputActionPhase.Performed:
-                stickAndOrbite.isOrbited = false;
                 harpoon.isShooted = false;
                 harpoon.harpoonReadyToBack = true;
                 break;

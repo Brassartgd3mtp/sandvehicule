@@ -7,7 +7,8 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(CharacterController), typeof(PlayerInput))]
 public class ThirdPerson : MonoBehaviour
 {
-    private CharacterController controller;
+    [SerializeField] private Harpoon harpoon;
+    private CharacterController controller;   
     private PlayerInput playerInput;
 
     private Vector3 playerVelocity;
@@ -22,10 +23,12 @@ public class ThirdPerson : MonoBehaviour
 
     private InputAction moveAction;
     private InputAction jumpAction;
+    private InputAction shootAction;
+    private InputAction harpoonBack;
 
 
 
-    private void Start()
+    private void Awake()
     {
         controller = gameObject.GetComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
@@ -35,6 +38,31 @@ public class ThirdPerson : MonoBehaviour
 
         moveAction = playerInput.actions["Move"];
         jumpAction = playerInput.actions["Jump"];
+        shootAction = playerInput.actions["Shoot"];
+        harpoonBack = playerInput.actions["ForceHarpoonBack"];
+    }
+
+    private void OnEnable()
+    {
+        shootAction.performed += _ => ShootHarpoon();
+        harpoonBack.performed += _ => ForceHarpoonBack();
+    }
+
+    private void OnDisable()
+    {
+        shootAction.performed -= _ => ShootHarpoon();
+        harpoonBack.performed -= _ => ForceHarpoonBack();
+    }
+
+    private void ShootHarpoon()
+    {
+        harpoon.shootHarpoon();
+    }
+
+    private void ForceHarpoonBack()
+    {
+        harpoon.isShooted = false;
+        harpoon.harpoonReadyToBack = true;
     }
 
     void Update()
