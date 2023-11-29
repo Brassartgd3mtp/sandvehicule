@@ -24,8 +24,8 @@ TagManager:
   - Interactible
   - Orbital
   - MovementCollider
-  - 
-  - 
+  - Fish
+  - InvisibleWall
   - 
   - 
   - 
