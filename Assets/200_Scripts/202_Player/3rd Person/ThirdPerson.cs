@@ -8,28 +8,41 @@ using UnityEngine.InputSystem;
 public class ThirdPerson : MonoBehaviour
 {
     [SerializeField] private Harpoon harpoon;
+    [SerializeField] private Animator animator;
     private CharacterController controller;   
     private PlayerInput playerInput;
 
     private Vector3 playerVelocity;
     private bool groundedPlayer;
+    public Rigidbody rb;
 
     private Transform cameraTransform;
+
+    private bool isPlaying;
 
     [SerializeField] private float playerSpeed = 2.0f;
     [SerializeField] private float jumpHeight = 1.0f;
     [SerializeField] private float gravityValue = -9.81f;
     [SerializeField] private float rotationSpeed = 10f;
+    [SerializeField] private float actualSpeed;
 
     private InputAction moveAction;
     private InputAction jumpAction;
     private InputAction shootAction;
     private InputAction harpoonBack;
 
+    private Vector3 prevPos;
 
+    public void Start()
+    {
+        isPlaying = true;
+        StartCoroutine(CalculateSpeed());
+    }
 
     private void Awake()
     {
+        rb = GetComponent<Rigidbody>();
+
         controller = gameObject.GetComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
         cameraTransform = Camera.main.transform;
@@ -67,6 +80,14 @@ public class ThirdPerson : MonoBehaviour
 
     void Update()
     {
+        if (actualSpeed > 0 ) 
+        {
+            animator.SetBool("isMoving", true);
+        } if (actualSpeed <= 0)
+        {
+            animator.SetBool("isMoving", false);
+        }
+
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y < 0)
         {
@@ -93,5 +114,19 @@ public class ThirdPerson : MonoBehaviour
         //Rotate towards camera direction
         Quaternion targetRotation = Quaternion.Euler(0, cameraTransform.eulerAngles.y, 0);
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+    }
+
+    IEnumerator CalculateSpeed()
+    {
+        bool isPlaying = true;
+
+        while (isPlaying) 
+        {
+            prevPos = transform.position;
+
+            yield return new WaitForFixedUpdate();
+
+            actualSpeed = Mathf.RoundToInt(Vector3.Distance(transform.position, prevPos) / Time.deltaTime);
+        }
     }
 }
