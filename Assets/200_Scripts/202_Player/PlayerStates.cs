@@ -23,13 +23,13 @@ public class PlayerStates : MonoBehaviour
     public void ChangeStateForFighting() // permet de changer de states pour les tests avec les touches "& et é"
     {
         states = PlayerStates.States.Fifhting;
-        CameraScript.CameraForFighting();
+        //CameraScript.CameraForFighting();
     }
 
     public void ChangeStateForExploring()
     {
         states = PlayerStates.States.Exploring;
-        CameraScript.CameraForExploring();
+        //CameraScript.CameraForExploring();
     }
 }
 

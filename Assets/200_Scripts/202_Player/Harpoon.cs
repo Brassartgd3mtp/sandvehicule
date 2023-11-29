@@ -17,7 +17,6 @@ public class Harpoon : MonoBehaviour
     [SerializeField] private GameObject player;
 
     public Camera mainCamera;
-    public CinemachineVirtualCamera VirtualCamera;
     [SerializeField] private GameObject mainCameraPrefab;
 
     public bool isShooted;
@@ -54,6 +53,8 @@ public class Harpoon : MonoBehaviour
 
     public void Update()
     {
+        //HarpoonParent.transform.position = player.transform.position + new Vector3(0,1.1f,0)  ;
+
         if (isShooted == false) // Si le harpon n'est pas tiré, permet de récupérer le click de la souris sur le screen
         {
             GetMousePosition();

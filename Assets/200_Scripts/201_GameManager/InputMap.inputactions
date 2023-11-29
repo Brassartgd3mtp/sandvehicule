@@ -283,6 +283,15 @@
                     "processors": "",
                     "interactions": "Press",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "CameraMovement ",
+                    "type": "PassThrough",
+                    "id": "0168a754-8af2-4f3f-805b-a91751a43faa",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -299,8 +308,30 @@
                 },
                 {
                     "name": "",
+                    "id": "d6298d14-d7f9-4c95-94e5-6ccb32c07951",
+                    "path": "<XInputController>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Accelerate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "eca1d480-9824-4e14-a690-bccbb53cff71",
                     "path": "<Keyboard>/#(S)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Breaking",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "35ac6af0-c7ad-4356-9974-9aba55fee8ad",
+                    "path": "<XInputController>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -343,6 +374,17 @@
                 },
                 {
                     "name": "",
+                    "id": "13084340-097a-44a3-93ce-2cff00c9252c",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "22f5084d-44b4-4b14-83e4-daf87f6aa5f4",
                     "path": "<Mouse>/leftButton",
                     "interactions": "Press",
@@ -382,6 +424,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "ChangeActionMap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "930cb6fb-37e4-4005-8c03-e68176158408",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CameraMovement ",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "85e13ff3-7039-42a6-a3d9-214ff1ecde6e",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CameraMovement ",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

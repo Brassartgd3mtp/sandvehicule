@@ -31,7 +31,7 @@ public class InputActionMapManager : MonoBehaviour
         switch (context.phase)
         {
             case InputActionPhase.Performed:
-                cameraScript.CameraForExploring();
+                //cameraScript.CameraForExploring();
                 inputManagerExploration.enabled = true;
                 inputManagerFighting.enabled = false;
                 playerInput.actions.FindActionMap("Exploring").Enable();
@@ -46,7 +46,7 @@ public class InputActionMapManager : MonoBehaviour
         switch (context.phase)
         {
             case InputActionPhase.Performed:
-                cameraScript.CameraForFighting();
+                //cameraScript.CameraForFighting();
                 inputManagerFighting.enabled = true;
                 inputManagerExploration.enabled = false;
                 playerInput.actions.FindActionMap("Fighting").Enable();

@@ -305,6 +305,15 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": ""Press"",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CameraMovement "",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""0168a754-8af2-4f3f-805b-a91751a43faa"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -321,8 +330,30 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""d6298d14-d7f9-4c95-94e5-6ccb32c07951"",
+                    ""path"": ""<XInputController>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Accelerate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""eca1d480-9824-4e14-a690-bccbb53cff71"",
                     ""path"": ""<Keyboard>/#(S)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Breaking"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""35ac6af0-c7ad-4356-9974-9aba55fee8ad"",
+                    ""path"": ""<XInputController>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -362,6 +393,17 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""13084340-097a-44a3-93ce-2cff00c9252c"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -406,6 +448,28 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
                     ""action"": ""ChangeActionMap"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""930cb6fb-37e4-4005-8c03-e68176158408"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CameraMovement "",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""85e13ff3-7039-42a6-a3d9-214ff1ecde6e"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CameraMovement "",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -429,6 +493,7 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
         m_Exploring_Breaking = m_Exploring.FindAction("Breaking", throwIfNotFound: true);
         m_Exploring_Movement = m_Exploring.FindAction("Movement", throwIfNotFound: true);
         m_Exploring_ChangeActionMap = m_Exploring.FindAction("ChangeActionMap", throwIfNotFound: true);
+        m_Exploring_CameraMovement = m_Exploring.FindAction("CameraMovement ", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -583,6 +648,7 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
     private readonly InputAction m_Exploring_Breaking;
     private readonly InputAction m_Exploring_Movement;
     private readonly InputAction m_Exploring_ChangeActionMap;
+    private readonly InputAction m_Exploring_CameraMovement;
     public struct ExploringActions
     {
         private @InputMap m_Wrapper;
@@ -594,6 +660,7 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
         public InputAction @Breaking => m_Wrapper.m_Exploring_Breaking;
         public InputAction @Movement => m_Wrapper.m_Exploring_Movement;
         public InputAction @ChangeActionMap => m_Wrapper.m_Exploring_ChangeActionMap;
+        public InputAction @CameraMovement => m_Wrapper.m_Exploring_CameraMovement;
         public InputActionMap Get() { return m_Wrapper.m_Exploring; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -624,6 +691,9 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
             @ChangeActionMap.started += instance.OnChangeActionMap;
             @ChangeActionMap.performed += instance.OnChangeActionMap;
             @ChangeActionMap.canceled += instance.OnChangeActionMap;
+            @CameraMovement.started += instance.OnCameraMovement;
+            @CameraMovement.performed += instance.OnCameraMovement;
+            @CameraMovement.canceled += instance.OnCameraMovement;
         }
 
         private void UnregisterCallbacks(IExploringActions instance)
@@ -649,6 +719,9 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
             @ChangeActionMap.started -= instance.OnChangeActionMap;
             @ChangeActionMap.performed -= instance.OnChangeActionMap;
             @ChangeActionMap.canceled -= instance.OnChangeActionMap;
+            @CameraMovement.started -= instance.OnCameraMovement;
+            @CameraMovement.performed -= instance.OnCameraMovement;
+            @CameraMovement.canceled -= instance.OnCameraMovement;
         }
 
         public void RemoveCallbacks(IExploringActions instance)
@@ -684,5 +757,6 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
         void OnBreaking(InputAction.CallbackContext context);
         void OnMovement(InputAction.CallbackContext context);
         void OnChangeActionMap(InputAction.CallbackContext context);
+        void OnCameraMovement(InputAction.CallbackContext context);
     }
 }

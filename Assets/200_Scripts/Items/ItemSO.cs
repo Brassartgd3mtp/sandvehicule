@@ -18,5 +18,6 @@ public class ItemSO : ScriptableObject
     public string Description;
     public Sprite Icon;
     public int MaxStackSize;
+    public string ResourceType;
     public int GoldValue;
 }
