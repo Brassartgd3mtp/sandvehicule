@@ -8,6 +8,10 @@ public class EncyclopediaEntry : MonoBehaviour
     public EncyclopediaManager encyclopediaManager;
     public LayerMask playerLayer;
 
+    //private void Start()
+    //{
+    //    encyclopediaManager = GetComponentInParent<EncyclopediaManager>();
+    //}
     private void OnTriggerEnter(Collider other)
     {
         // Vérifie si le joueur est dans le layer spécifié par le LayerMask
@@ -17,5 +21,10 @@ public class EncyclopediaEntry : MonoBehaviour
             // Ajoute d'autres actions si nécessaire (comme désactiver l'objet pour éviter une double entrée)
             Destroy(gameObject);
         }
+    }
+
+    public void InitializeEntry(GameObject associatedObject)
+    {
+        encyclopediaManager.entryGameObjectMap.Add(associatedEntryID, associatedObject);
     }
 }
