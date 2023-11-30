@@ -13,6 +13,8 @@ public class SwitchVCam : MonoBehaviour
 
     private InputAction aimAction;
 
+    [SerializeField] private Animator animator;
+
     private void Awake()
     {
         virtualCamera = GetComponent<CinemachineVirtualCamera>();
@@ -34,11 +36,12 @@ public class SwitchVCam : MonoBehaviour
     private void StartAim()
     {
         virtualCamera.Priority += priorityBoostAmount;
+        animator.SetBool("isAiming", true);
     }
 
     private void CancelAim()
     {
         virtualCamera.Priority -= priorityBoostAmount;
-
+        animator.SetBool("isAiming", false);
     }
 }

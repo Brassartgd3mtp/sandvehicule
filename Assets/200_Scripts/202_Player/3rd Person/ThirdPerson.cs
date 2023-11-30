@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(CharacterController), typeof(PlayerInput))]
 public class ThirdPerson : MonoBehaviour
 {
-    [SerializeField] private Harpoon harpoon;
+    [SerializeField] private harpoonBrain harpoon;
     [SerializeField] private Animator animator;
     private CharacterController controller;   
     private PlayerInput playerInput;
@@ -18,7 +18,6 @@ public class ThirdPerson : MonoBehaviour
 
     private Transform cameraTransform;
 
-    private bool isPlaying;
 
     [SerializeField] private float playerSpeed = 2.0f;
     [SerializeField] private float jumpHeight = 1.0f;
@@ -35,7 +34,6 @@ public class ThirdPerson : MonoBehaviour
 
     public void Start()
     {
-        isPlaying = true;
         StartCoroutine(CalculateSpeed());
     }
 
@@ -69,13 +67,13 @@ public class ThirdPerson : MonoBehaviour
 
     private void ShootHarpoon()
     {
-        harpoon.shootHarpoon();
+        harpoon.ShootHarpoon();
     }
 
     private void ForceHarpoonBack()
     {
         harpoon.isShooted = false;
-        harpoon.harpoonReadyToBack = true;
+        harpoon.isMovingBack = true;
     }
 
     void Update()
