@@ -10,12 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0011f4ba0be7304459488b1e5f7599aa, type: 3}
-  m_Name: 2-Rock
+  m_Name: 2-Ore
   m_EditorClassIdentifier: 
   ID: 2
-  Name: Pierre
-  Description: 'C''est de la pierre '
+  Name: Minerai de cuivre
+  Description: "Morceau de minerai riche en cuivre brut. Sa teinte distincte sugg\xE8re
+    qu'il peut \xEAtre trait\xE9 pour obtenir du cuivre, un mat\xE9riau pr\xE9cieux
+    utilis\xE9 dans la cr\xE9ation d'objets \xE9lectroniques, d'outils et d'artefacts."
   Icon: {fileID: 21300000, guid: 366c2f9a47cbd984d82dbf25327f17d5, type: 3}
   MaxStackSize: 3
   ResourceType: Minerai
-  GoldValue: 1
+  GoldValue: 0
