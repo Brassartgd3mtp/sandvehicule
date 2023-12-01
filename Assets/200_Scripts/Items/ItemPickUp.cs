@@ -18,9 +18,10 @@ public class ItemPickUp : MonoBehaviour
     }
 
     public void OnCollisionEnter(Collision collision)
-    {   
+    {
         if (collision.gameObject.tag == "Player")
         {
+            Debug.Log("Player");
             var inventory = collision.transform.GetComponent<PlayerInventoryHolder>();
 
             if (!inventory) return;
@@ -30,6 +31,5 @@ public class ItemPickUp : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
-
     }
 }

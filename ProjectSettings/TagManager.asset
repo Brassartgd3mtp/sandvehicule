@@ -9,6 +9,7 @@ TagManager:
   - Item
   - UI
   - Orbital
+  - PickUp
   layers:
   - Default
   - TransparentFX

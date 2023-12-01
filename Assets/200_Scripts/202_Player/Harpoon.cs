@@ -207,7 +207,7 @@ public class Harpoon : MonoBehaviour
             isShooted = false;
             harpoonReadyToBack = true;
             itemHooked = collision.gameObject;            
-            itemHooked.transform.parent = StickyPoint.transform;
+            itemHooked.transform.parent = this.transform;
         }
 
 
