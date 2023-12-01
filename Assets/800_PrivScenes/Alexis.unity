@@ -1395,10 +1395,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: b8b2d1fc1651c3d45846a68f17c455bc,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 649982056}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: b8b2d1fc1651c3d45846a68f17c455bc,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1985254308}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: b8b2d1fc1651c3d45846a68f17c455bc,
         type: 3}
@@ -1408,6 +1404,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 253071837}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: b8b2d1fc1651c3d45846a68f17c455bc,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 649982056}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b8b2d1fc1651c3d45846a68f17c455bc,
         type: 3}
@@ -3146,59 +3146,6 @@ MonoBehaviour:
   AutoEnableInputs: 1
   XYAxis: {fileID: -7543674229111684781, guid: be3b6eb53cd154e4a925088d55468101, type: 3}
   ZAxis: {fileID: 0}
---- !u!1 &367222504
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 367222505}
-  - component: {fileID: 367222506}
-  m_Layer: 8
-  m_Name: EmptyHarpoonTarget
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &367222505
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 367222504}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.747966, y: -0.16656303, z: 12}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1514449582}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &367222506
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 367222504}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!224 &368164831 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4657650488295753790, guid: 9daea7d837c46e34f897f6913c1d5cce,
@@ -4922,7 +4869,7 @@ Transform:
   m_GameObject: {fileID: 649982055}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.411, y: 1.472, z: 0.501}
+  m_LocalPosition: {x: 0.4, y: 1.5, z: 0.5}
   m_LocalScale: {x: 0.19, y: 0.19, z: 0.19}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -4998,7 +4945,7 @@ MonoBehaviour:
   harpoonSpeed: 40
   harpoonIsReady: 0
   harpoonTarget: {x: 0, y: 0, z: 0}
-  harpoonTargetEmpty: {fileID: 367222504}
+  harpoonTargetEmpty: {fileID: 0}
   LR: {fileID: 0}
   rb: {fileID: 649982060}
   StickyPoint: {fileID: 130074584}
@@ -5077,15 +5024,16 @@ MonoBehaviour:
   collider: {fileID: 853536596}
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 3200
   isShooted: 0
   isMovingOn: 0
   isMovingBack: 0
   targetObject: {x: 0, y: 0, z: 0}
   Player: {fileID: 853536594}
-  harpoonTargetEmpty: {fileID: 367222504}
+  harpoonTargetEmpty: {fileID: 1953097838}
   harpoonStart: {fileID: 1985254307}
   itemHooked: {fileID: 0}
+  harpoonStartPosition: {x: 0, y: 0, z: 0}
   LR: {fileID: 649982065}
   harpoonSpeed: 30
 --- !u!120 &649982065
@@ -5852,7 +5800,7 @@ Transform:
   m_GameObject: {fileID: 753553092}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6368004, y: -24.377718, z: 8}
+  m_LocalPosition: {x: 0.6112337, y: -24.377718, z: 8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6732,7 +6680,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &853536604
 MonoBehaviour:
@@ -7702,7 +7650,7 @@ Transform:
   m_GameObject: {fileID: 978703292}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.747966, y: -24.308435, z: 7}
+  m_LocalPosition: {x: 0.6856355, y: -24.308435, z: 7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13294,6 +13242,37 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2074659117}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1953097838
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1953097839}
+  m_Layer: 8
+  m_Name: EmptyTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1953097839
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953097838}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 20}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1514449582}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1954284571
 GameObject:
   m_ObjectHideFlags: 0
@@ -15174,7 +15153,7 @@ PrefabInstance:
     - target: {fileID: 7222035487375609208, guid: 830ff623834ddd043b1ebc37b00fb985,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.747966
+      value: 0.6856355
       objectReference: {fileID: 0}
     - target: {fileID: 7222035487375609208, guid: 830ff623834ddd043b1ebc37b00fb985,
         type: 3}
@@ -15327,7 +15306,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7222035487375609208, guid: 830ff623834ddd043b1ebc37b00fb985,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 367222505}
+      addedObject: {fileID: 1953097839}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 830ff623834ddd043b1ebc37b00fb985, type: 3}
 --- !u!1001 &3381813605345105560

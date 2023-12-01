@@ -18,17 +18,30 @@ public class harpoonBrain : MonoBehaviour
     [SerializeField] private GameObject harpoonStart;
     [SerializeField] private GameObject itemHooked;
 
+    [SerializeField] private Vector3 harpoonStartPosition;
+
     [SerializeField] LineRenderer LR;
 
     [SerializeField] float harpoonSpeed;
 
     public void Awake()
-    {
+    { 
         collider = GetComponent<Collider>();
+    }
+    public void FixedUpdate()
+    {
+
     }
 
     public void Update()
     {
+        //harpoonStartPosition = Player.transform.position + new Vector3(0.4f, 1.5f, 0.5f);
+        //
+        //if (!isShooted)
+        //{
+        //    transform.position = harpoonStartPosition;
+        //}
+
         if (isShooted && isMovingOn)
         {
             isMovingToSpot();
@@ -57,29 +70,16 @@ public class harpoonBrain : MonoBehaviour
     public void ShootHarpoon()
     {
         if (!isShooted) 
-        {
+        {          
             RaycastHit hit;
-            if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hit, 10))
+            if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hit, 20, layerMask))
             {
+                Debug.Log(hit.collider.gameObject.name);
                 targetObject = hit.point;
-                //if (hit.collider.gameObject == gameObject.CompareTag("Item"))
-                //{
-                //    Debug.Log("Item");
-                //    targetObject = collider.gameObject;
-                //}
-                //if (hit.collider.gameObject == gameObject.CompareTag("Ground"))
-                //{
-                //    Debug.Log("Ground");
-                //    targetObject = collider.gameObject;
-                //}
-                //
-                //if (hit.collider.gameObject == null)
-                //{
-                //    Debug.Log("Empty");
-                //    targetObject = harpoonTargetEmpty;
-                //}
             }
             else targetObject = harpoonTargetEmpty.transform.position;
+            harpoonTargetEmpty.transform.SetParent(null);
+
             Debug.DrawRay(mainCamera.transform.position, mainCamera.transform.forward * 10, Color.red, 2);
             isShooted = true;
             LR.enabled = true;
@@ -122,7 +122,7 @@ public class harpoonBrain : MonoBehaviour
 
     public void isMovingToPlayer()
     {
-        transform.position = Vector3.Lerp(transform.position, harpoonStart.transform.position, harpoonSpeed * Time.deltaTime / Vector3.Distance(transform.position, harpoonStart.transform.position));
+        transform.position = Vector3.Lerp(transform.position,harpoonStart.transform.position, harpoonSpeed * Time.deltaTime / Vector3.Distance(transform.position, harpoonStart.transform.position));
 
         if (harpoonStart.transform.position == transform.position)
         {
@@ -136,5 +136,7 @@ public class harpoonBrain : MonoBehaviour
         LR.enabled = false;
         isShooted = false;
         isMovingBack = false;
+        harpoonTargetEmpty.transform.SetParent(mainCamera.transform);
+        harpoonTargetEmpty.transform.localPosition = new Vector3(0, 0, 20);
     }
 }
