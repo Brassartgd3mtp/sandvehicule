@@ -4856,6 +4856,7 @@ GameObject:
   - component: {fileID: 649982058}
   - component: {fileID: 649982064}
   - component: {fileID: 649982065}
+  - component: {fileID: 649982066}
   m_Layer: 8
   m_Name: Harpoon
   m_TagString: Untagged
@@ -5143,6 +5144,18 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!114 &649982066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649982055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7910b480de2808b4c89673b537659f48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &659703084
 GameObject:
   m_ObjectHideFlags: 0
