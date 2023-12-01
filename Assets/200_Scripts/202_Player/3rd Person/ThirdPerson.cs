@@ -8,9 +8,12 @@ using UnityEngine.InputSystem;
 public class ThirdPerson : MonoBehaviour
 {
     [SerializeField] private harpoonBrain harpoon;
+    [SerializeField] private ItemPickUp itemPickUp;
     [SerializeField] private Animator animator;
     private CharacterController controller;   
     private PlayerInput playerInput;
+
+    [SerializeField] private GameObject UI_Ramasser;
 
     private Vector3 playerVelocity;
     private bool groundedPlayer;
@@ -29,6 +32,7 @@ public class ThirdPerson : MonoBehaviour
     private InputAction jumpAction;
     private InputAction shootAction;
     private InputAction harpoonBack;
+    private InputAction interact;
 
     private Vector3 prevPos;
 
@@ -51,18 +55,23 @@ public class ThirdPerson : MonoBehaviour
         jumpAction = playerInput.actions["Jump"];
         shootAction = playerInput.actions["Shoot"];
         harpoonBack = playerInput.actions["ForceHarpoonBack"];
+        interact = playerInput.actions["Interact"];
+
     }
 
     private void OnEnable()
     {
         shootAction.performed += _ => ShootHarpoon();
         harpoonBack.performed += _ => ForceHarpoonBack();
+        interact.performed += _ => Intercact();
+
     }
 
     private void OnDisable()
     {
         shootAction.performed -= _ => ShootHarpoon();
         harpoonBack.performed -= _ => ForceHarpoonBack();
+        interact.performed -= _ => Intercact();
     }
 
     private void ShootHarpoon()
@@ -125,6 +134,34 @@ public class ThirdPerson : MonoBehaviour
             yield return new WaitForFixedUpdate();
 
             actualSpeed = Mathf.RoundToInt(Vector3.Distance(transform.position, prevPos) / Time.deltaTime);
+        }
+    }
+
+    public void Intercact()
+    {
+        if (itemPickUp != null)
+        {
+            itemPickUp.PickUp();
+            UI_Ramasser.SetActive(false);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.transform.CompareTag("Item"))
+        {
+            itemPickUp = other.gameObject.GetComponent<ItemPickUp>();
+            UI_Ramasser.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.transform.CompareTag("Item"))
+        {
+            itemPickUp = null;
+            UI_Ramasser.SetActive(false);
+
         }
     }
 }
