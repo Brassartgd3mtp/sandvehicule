@@ -13,6 +13,9 @@ public class ItemPickUp : MonoBehaviour
 
     private SphereCollider myCollider;
 
+    [SerializeField] GameObject CanvaItemPicked;
+    [SerializeField] GameObject UI_NewItemPicked;
+
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -36,9 +39,9 @@ public class ItemPickUp : MonoBehaviour
 
         if (inventory.AddToInventory(itemSO, 1))
         {
+            Instantiate(UI_NewItemPicked, CanvaItemPicked.transform.parent);
+
             Destroy(this.gameObject);
-
-
         }
     }
 }
