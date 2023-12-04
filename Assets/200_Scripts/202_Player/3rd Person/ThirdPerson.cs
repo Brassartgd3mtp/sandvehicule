@@ -14,6 +14,9 @@ public class ThirdPerson : MonoBehaviour
     private PlayerInput playerInput;
 
     [SerializeField] private GameObject UI_Ramasser;
+    public Vector3 move;
+
+    public bool isAiming;
 
     private Vector3 playerVelocity;
     private bool groundedPlayer;
@@ -90,9 +93,21 @@ public class ThirdPerson : MonoBehaviour
         if (actualSpeed > 0 ) 
         {
             animator.SetBool("isMoving", true);
-        } if (actualSpeed <= 0)
+        } 
+        if (actualSpeed <= 0)
         {
             animator.SetBool("isMoving", false);
+        }
+
+        if (move.y > 0 && isAiming)
+        {
+            animator.SetBool("isMovingFront", true);
+            animator.SetBool("isMovingBack", false);
+        }
+        if (move.y < 0 && isAiming)
+        {
+            animator.SetBool("isMovingBack", true);
+            animator.SetBool("isMovingFront", false);
         }
 
         groundedPlayer = controller.isGrounded;
@@ -102,7 +117,7 @@ public class ThirdPerson : MonoBehaviour
         }
 
         Vector2 input = moveAction.ReadValue<Vector2>();
-        Vector3 move = new Vector3(input.x, 0, input.y);
+        move = new Vector3(input.x, 0, input.y);
         move = move.x * cameraTransform.right.normalized + move.z * cameraTransform.forward.normalized;
         move.y = 0f;
 

@@ -25,7 +25,6 @@ public class ItemPickUp : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Debug.Log("Player");
-
         }
     }
 

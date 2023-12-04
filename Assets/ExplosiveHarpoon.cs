@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class ExplosiveHarpoon : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    [SerializeField] harpoonBrain harpoonBrain;
+    [SerializeField] ParticleSystem explosion;
+
+    public void Awake()
     {
-        if (collision.gameObject)
-        {
-            Destroy(collision.gameObject);
-            Explosion();
-        }
+        harpoonBrain = GetComponent<harpoonBrain>();
     }
 
-    public void Explosion()
+    private void OnCollisionEnter(Collision collision)
     {
-
+        if (collision.gameObject.CompareTag("Destructible") && harpoonBrain.isHarpoonExplosive)
+        {
+            explosion.transform.position = harpoonBrain.targetObject;
+            explosion.Play();
+            Destroy(collision.gameObject);
+        }
     }
 }

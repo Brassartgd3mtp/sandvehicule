@@ -12,11 +12,13 @@ public class harpoonBrain : MonoBehaviour
     public bool isShooted;
     public bool isMovingOn, isMovingBack;
 
-    [SerializeField] Vector3 targetObject;
+    public Vector3 targetObject;
     [SerializeField] private GameObject Player;
     [SerializeField] private GameObject harpoonTargetEmpty;
     [SerializeField] private GameObject harpoonStart;
     [SerializeField] private GameObject itemHooked;
+
+    public bool isHarpoonExplosive;
 
     [SerializeField] private Vector3 harpoonStartPosition;
 
@@ -27,6 +29,7 @@ public class harpoonBrain : MonoBehaviour
     public void Awake()
     { 
         collider = GetComponent<Collider>();
+        isHarpoonExplosive = false;
     }
     public void FixedUpdate()
     {

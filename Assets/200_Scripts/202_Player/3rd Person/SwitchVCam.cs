@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class SwitchVCam : MonoBehaviour
 {
     [SerializeField] private PlayerInput playerInput;
+    [SerializeField] private ThirdPerson thirdPerson;
     private int priorityBoostAmount = 10;
 
     private CinemachineVirtualCamera virtualCamera;
@@ -35,12 +36,14 @@ public class SwitchVCam : MonoBehaviour
 
     private void StartAim()
     {
+        thirdPerson.isAiming = true;
         virtualCamera.Priority += priorityBoostAmount;
         animator.SetBool("isAiming", true);
     }
 
     private void CancelAim()
     {
+        thirdPerson.isAiming = false;   
         virtualCamera.Priority -= priorityBoostAmount;
         animator.SetBool("isAiming", false);
     }
