@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0011f4ba0be7304459488b1e5f7599aa, type: 3}
+  m_Name: 5-Fish
+  m_EditorClassIdentifier: 
+  ID: 5
+  Name: Pygonatt Mutant
+  Description: "D\xE9riv\xE9 du Pygonatt, une sorte de grand piranha prot\xE9g\xE9
+    par une \xE9paisse peau faite de roche qui s'attaque aux bancs de petits poissons
+    \xE9tant son principal r\xE9gime.\nCe sp\xE9cimen ayant mut\xE9, pour des raisons
+    non-naturelles, il pr\xE9sente maintenant une rigide armature de pierre lui offrant
+    une bien plus grande r\xE9sistance en plus de renforcer la puissance de sa m\xE2choire
+    de pr\xE9dateur. Le tout avec une couleur d'yeux inhabituelle.\nCe piskhar est
+    probablement le seul de son esp\xE8ce a poss\xE9der de telles caract\xE9ristiques.
+    C'est d'ailleurs le premier du genre \xE0 avoir \xE9t\xE9 d\xE9couvert."
+  Icon: {fileID: 21300000, guid: f73cbf6cdceee084f8f67ed473f1248b, type: 3}
+  MaxStackSize: 0
+  ResourceType: Food
+  GoldValue: 0

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0011f4ba0be7304459488b1e5f7599aa, type: 3}
+  m_Name: 7-Plant
+  m_EditorClassIdentifier: 
+  ID: 7
+  Name: Auxyl
+  Description: "Plante s\xE8che de petite taille form\xE9e de plusieurs tiges aux
+    nombreuses feuilles, le tout ressemblant \xE0 une sorte de petit buisson.\nElle
+    d\xE9gage un arome assez fort tr\xE8s proche de son go\xFBt qui est l\xE9g\xE8rement
+    amer.\nSes propri\xE9t\xE9s m\xE9dicinales renforce le syst\xE8me immunitaire
+    et aident \xE0 gu\xE9rir de petites maladies.\nIl est conseiller de la consommer
+    uniquement dans des infusions ou dans la cuisson de plat en tant qu'aromate."
+  Icon: {fileID: 21300000, guid: f73cbf6cdceee084f8f67ed473f1248b, type: 3}
+  MaxStackSize: 0
+  ResourceType: Plant
+  GoldValue: 0
