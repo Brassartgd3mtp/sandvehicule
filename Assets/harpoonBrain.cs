@@ -38,12 +38,6 @@ public class harpoonBrain : MonoBehaviour
 
     public void Update()
     {
-        //harpoonStartPosition = Player.transform.position + new Vector3(0.4f, 1.5f, 0.5f);
-        //
-        //if (!isShooted)
-        //{
-        //    transform.position = harpoonStartPosition;
-        //}
 
         if (isShooted && isMovingOn)
         {
@@ -120,7 +114,6 @@ public class harpoonBrain : MonoBehaviour
     public void isMovingToSpot()
     {
         transform.position = Vector3.Lerp(transform.position, targetObject, harpoonSpeed * Time.deltaTime / Vector3.Distance(transform.position, targetObject));
-
     }
 
     public void isMovingToPlayer()

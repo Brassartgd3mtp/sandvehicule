@@ -14,11 +14,14 @@ public class ExplosiveHarpoon : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Destructible") && harpoonBrain.isHarpoonExplosive)
+        if (harpoonBrain.isHarpoonExplosive)
         {
-            explosion.transform.position = harpoonBrain.targetObject;
-            explosion.Play();
-            Destroy(collision.gameObject);
+            if (collision.gameObject.CompareTag("Destructible"))
+            {
+                explosion.transform.position = harpoonBrain.targetObject;
+                explosion.Play();
+                Destroy(collision.gameObject);
+            }
         }
     }
 }

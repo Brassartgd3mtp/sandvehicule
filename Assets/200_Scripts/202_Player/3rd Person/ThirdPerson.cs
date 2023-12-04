@@ -97,14 +97,22 @@ public class ThirdPerson : MonoBehaviour
         if (actualSpeed <= 0)
         {
             animator.SetBool("isMoving", false);
+            animator.SetBool("isMovingBack", false);
+            animator.SetBool("isMovingFront", false);
         }
 
-        if (move.y > 0 && isAiming)
+        if (isAiming)
+        {
+            playerSpeed = 1f;
+        }
+        else if (!isAiming) playerSpeed = 4f;
+
+        if (move.z > 0 && isAiming)
         {
             animator.SetBool("isMovingFront", true);
             animator.SetBool("isMovingBack", false);
         }
-        if (move.y < 0 && isAiming)
+        if (move.z < 0 && isAiming)
         {
             animator.SetBool("isMovingBack", true);
             animator.SetBool("isMovingFront", false);

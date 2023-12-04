@@ -37,6 +37,8 @@ public class ItemPickUp : MonoBehaviour
         if (inventory.AddToInventory(itemSO, 1))
         {
             Destroy(this.gameObject);
+
+
         }
     }
 }
