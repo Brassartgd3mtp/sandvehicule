@@ -851,6 +851,7 @@ GameObject:
   - component: {fileID: 2499033756876394666}
   - component: {fileID: -6008885302098963771}
   - component: {fileID: 5420213941976899783}
+  - component: {fileID: 7224361831338323432}
   m_Layer: 10
   m_Name: 2-Copper
   m_TagString: Item
@@ -923,6 +924,23 @@ MonoBehaviour:
   CanvaItemPicked: {fileID: 0}
   UI_NewItemPicked: {fileID: 7893925526795108326, guid: a58d28ebbc57c0446977b3924800952b,
     type: 3}
+--- !u!114 &7224361831338323432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7435041665536396387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f5d9118e45f5c40b03a0ba507523dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  associatedEntryID: 2
+  encyclopediaManager: {fileID: 0}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &8082925263013901314
 GameObject:
   m_ObjectHideFlags: 0

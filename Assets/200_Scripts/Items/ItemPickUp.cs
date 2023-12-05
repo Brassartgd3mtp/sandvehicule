@@ -7,7 +7,9 @@ using UnityEngine;
 public class ItemPickUp : MonoBehaviour
 {
     public float PickUpRadius = 1f;
+
     public ItemSO itemSO;
+    public EncyclopediaEntry EncyclopediaEntry;
 
     public GameObject player;
 
@@ -16,8 +18,10 @@ public class ItemPickUp : MonoBehaviour
     [SerializeField] GameObject CanvaItemPicked;
     [SerializeField] GameObject UI_NewItemPicked;
 
+
     private void Awake()
     {
+        EncyclopediaEntry = GetComponent<EncyclopediaEntry>();
         CanvaItemPicked = GameObject.Find("CanvaRessourceFeedBack");
         myCollider = GetComponent<SphereCollider>();
         myCollider.radius = PickUpRadius;
@@ -38,6 +42,8 @@ public class ItemPickUp : MonoBehaviour
 
     public void PickUp()
     {
+        EncyclopediaEntry.InitializeEntry(gameObject);
+
         var inventory = player.GetComponent<PlayerInventoryHolder>();
 
         if (!inventory) return;
