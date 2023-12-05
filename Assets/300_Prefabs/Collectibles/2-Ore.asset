@@ -17,7 +17,8 @@ MonoBehaviour:
   Description: "Morceau de minerai riche en cuivre brut. Sa teinte distincte sugg\xE8re
     qu'il peut \xEAtre trait\xE9 pour obtenir du cuivre, un mat\xE9riau pr\xE9cieux
     utilis\xE9 dans la cr\xE9ation d'objets \xE9lectroniques, d'outils et d'artefacts."
-  Icon: {fileID: 21300000, guid: 366c2f9a47cbd984d82dbf25327f17d5, type: 3}
+  Icon: {fileID: 21300000, guid: fe63ecf687699f3449fb462f8f86a10f, type: 3}
   MaxStackSize: 3
   ResourceType: Minerai
   GoldValue: 0
+  UI_ItemPickup: {fileID: 0}

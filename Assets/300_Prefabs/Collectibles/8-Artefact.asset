@@ -19,7 +19,8 @@ MonoBehaviour:
     sous la capsule : \"ACM-P04\".\nSon contenu reste ind\xE9termin\xE9 tout comme
     son utilit\xE9.\_\nSa source est inconnue mais quelque chose ou quelqu'un semble
     l'avoir laisser ici..."
-  Icon: {fileID: 21300000, guid: f73cbf6cdceee084f8f67ed473f1248b, type: 3}
+  Icon: {fileID: 21300000, guid: c22da75834973214282fd8da9c732cb3, type: 3}
   MaxStackSize: 0
   ResourceType: Artefact
   GoldValue: 0
+  UI_ItemPickup: {fileID: 0}

@@ -20,7 +20,8 @@ MonoBehaviour:
     et gauche avec l'\xE9tonnante capacit\xE9 de gonfler son abdomen pour se propulser
     en dehors du sable et rebondir sur les roches afin d'attraper de petits insectes
     ou crustac\xE9s.\_\n\xC7a viande est tendre et tr\xE8s appr\xE9ci\xE9e."
-  Icon: {fileID: 21300000, guid: f73cbf6cdceee084f8f67ed473f1248b, type: 3}
+  Icon: {fileID: 21300000, guid: be34313275e4647488a2764e27c75a85, type: 3}
   MaxStackSize: 0
   ResourceType: Food
   GoldValue: 0
+  UI_ItemPickup: {fileID: 0}
