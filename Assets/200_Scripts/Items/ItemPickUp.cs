@@ -39,7 +39,7 @@ public class ItemPickUp : MonoBehaviour
 
         if (inventory.AddToInventory(itemSO, 1))
         {
-            Instantiate(UI_NewItemPicked, CanvaItemPicked.transform.parent);
+            Instantiate(UI_NewItemPicked, CanvaItemPicked.transform);
 
             Destroy(this.gameObject);
         }
