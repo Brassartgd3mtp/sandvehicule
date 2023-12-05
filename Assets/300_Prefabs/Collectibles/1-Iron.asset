@@ -17,7 +17,8 @@ MonoBehaviour:
   Description: "Morceau de minerai riche en fer brut. Sa teinte m\xE9tallique sugg\xE8re
     qu'il peut \xEAtre fondu pour obtenir du fer utilisable dans la fabrication d'\xE9quipements
     et de structures."
-  Icon: {fileID: 21300000, guid: e1e69b3d28ac32c479969c5c785ba371, type: 3}
+  Icon: {fileID: 21300000, guid: 12238dbbfa00c6740b2cfe0cbcf48cda, type: 3}
   MaxStackSize: 3
   ResourceType: Minerai
   GoldValue: 0
+  UI_ItemPickup: {fileID: 0}

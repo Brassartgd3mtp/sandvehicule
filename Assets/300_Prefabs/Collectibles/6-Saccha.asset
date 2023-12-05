@@ -20,7 +20,8 @@ MonoBehaviour:
     au go\xFBt proche de celui de l'ananas.\nElle est consommable \xE0 l'\xE9tat
     brut et peut \xEAtre utilis\xE9e comme compl\xE9ment alimentaire ou pour confectionner
     des boissons et des desserts."
-  Icon: {fileID: 21300000, guid: f73cbf6cdceee084f8f67ed473f1248b, type: 3}
+  Icon: {fileID: 21300000, guid: 95abc7eae5a434248a7e3fb72cb34f0f, type: 3}
   MaxStackSize: 0
   ResourceType: Plant
   GoldValue: 0
+  UI_ItemPickup: {fileID: 0}

@@ -22,7 +22,8 @@ MonoBehaviour:
     de pr\xE9dateur. Le tout avec une couleur d'yeux inhabituelle.\nCe piskhar est
     probablement le seul de son esp\xE8ce a poss\xE9der de telles caract\xE9ristiques.
     C'est d'ailleurs le premier du genre \xE0 avoir \xE9t\xE9 d\xE9couvert."
-  Icon: {fileID: 21300000, guid: f73cbf6cdceee084f8f67ed473f1248b, type: 3}
+  Icon: {fileID: 21300000, guid: a13b827b3e7027e49b669977bd14a8d1, type: 3}
   MaxStackSize: 0
   ResourceType: Food
   GoldValue: 0
+  UI_ItemPickup: {fileID: 0}

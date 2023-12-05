@@ -20,7 +20,8 @@ MonoBehaviour:
     amer.\nSes propri\xE9t\xE9s m\xE9dicinales renforce le syst\xE8me immunitaire
     et aident \xE0 gu\xE9rir de petites maladies.\nIl est conseiller de la consommer
     uniquement dans des infusions ou dans la cuisson de plat en tant qu'aromate."
-  Icon: {fileID: 21300000, guid: f73cbf6cdceee084f8f67ed473f1248b, type: 3}
+  Icon: {fileID: 21300000, guid: 2fc9cf25074716446951da307e8f6cd2, type: 3}
   MaxStackSize: 0
   ResourceType: Plant
   GoldValue: 0
+  UI_ItemPickup: {fileID: 0}
