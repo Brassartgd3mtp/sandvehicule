@@ -849,6 +849,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4021778087647165163}
+  - component: {fileID: 2779033700963816949}
+  - component: {fileID: 8712399297099963121}
+  - component: {fileID: 6710444478613368685}
   m_Layer: 0
   m_Name: 1-Iron
   m_TagString: Untagged
@@ -881,6 +884,62 @@ Transform:
   - {fileID: 875549782744870392}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &2779033700963816949
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5971314648645712078}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8712399297099963121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5971314648645712078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 488b715312896714ba692bde8e8dd673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PickUpRadius: 1
+  itemSO: {fileID: 11400000, guid: 941728d84967846488b7c6b6ef586258, type: 2}
+  player: {fileID: 0}
+  CanvaItemPicked: {fileID: 0}
+  UI_NewItemPicked: {fileID: 7893925526795108326, guid: 50ec2fdf0c0befe489bbee931de8e4e3,
+    type: 3}
+--- !u!114 &6710444478613368685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5971314648645712078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f5d9118e45f5c40b03a0ba507523dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  associatedEntryID: 1
+  encyclopediaManager: {fileID: 0}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &7102176756411744429
 GameObject:
   m_ObjectHideFlags: 0

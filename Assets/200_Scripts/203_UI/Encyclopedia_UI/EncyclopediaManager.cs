@@ -11,10 +11,20 @@ public class EntryGameObjectPair
 
 public class EncyclopediaManager : MonoBehaviour
 {
+    public static EncyclopediaManager Instance;
+
     public List<ItemSO> allEntries = new List<ItemSO>();
     public List<EntryGameObjectPair> entryGameObjectPairs = new List<EntryGameObjectPair>();
 
     public Dictionary<int, GameObject> entryGameObjectMap = new Dictionary<int, GameObject>();
+
+    public void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
     void Start()
     {
         // Remplis le dictionnaire lors du démarrage
@@ -24,17 +34,21 @@ public class EncyclopediaManager : MonoBehaviour
         }
     }
 
-    public void AddEntry(int entryID)
+    public void AddEntry(int entryID, GameObject associatedObject)
     {
-        ItemSO newEntry = GetEntryByID(entryID);
+        Debug.Log("Entry" + entryGameObjectMap.ContainsKey(entryID));
+        entryGameObjectMap[entryID].SetActive(true);
+
 
         //if (newEntry != null)
         //{
-            // Active le GameObject associé à cette entrée
-            if (entryGameObjectMap.ContainsKey(entryID))
-            {
-                entryGameObjectMap[entryID].SetActive(true);
-            }
+        //// Active le GameObject associé à cette entrée
+        //if (entryGameObjectMap.ContainsKey(entryID))
+        //    {
+        //    entryGameObjectMap.Add(entryID, associatedObject);
+
+        //    entryGameObjectMap[entryID].SetActive(true);
+        //    }
         //}
     }
 

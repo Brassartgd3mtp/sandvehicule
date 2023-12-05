@@ -7,6 +7,8 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(CharacterController), typeof(PlayerInput))]
 public class ThirdPerson : MonoBehaviour
 {
+    public static ThirdPerson Instance;
+
     [SerializeField] private harpoonBrain harpoon;
     [SerializeField] private ItemPickUp itemPickUp;
     [SerializeField] private Animator animator;
@@ -39,13 +41,15 @@ public class ThirdPerson : MonoBehaviour
 
     private Vector3 prevPos;
 
-    public void Start()
-    {
-        StartCoroutine(CalculateSpeed());
-    }
+
 
     private void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+
         rb = GetComponent<Rigidbody>();
 
         controller = gameObject.GetComponent<CharacterController>();
@@ -60,6 +64,10 @@ public class ThirdPerson : MonoBehaviour
         harpoonBack = playerInput.actions["ForceHarpoonBack"];
         interact = playerInput.actions["Interact"];
 
+    }
+    public void Start()
+    {
+        StartCoroutine(CalculateSpeed());
     }
 
     private void OnEnable()

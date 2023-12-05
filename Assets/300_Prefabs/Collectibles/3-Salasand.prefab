@@ -11,11 +11,12 @@ GameObject:
   - component: {fileID: 978738799139449406}
   - component: {fileID: 6225882380301717318}
   - component: {fileID: 5755746338011729812}
-  - component: {fileID: 8525046762545293356}
+  - component: {fileID: 1784711613001881697}
   - component: {fileID: 3176751769422360990}
-  m_Layer: 0
+  - component: {fileID: 1773465606331761499}
+  m_Layer: 10
   m_Name: 3-Salasand
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,8 +86,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8525046762545293356
-BoxCollider:
+--- !u!135 &1784711613001881697
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -104,7 +105,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3176751769422360990
 MonoBehaviour:
@@ -123,3 +124,21 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
+--- !u!114 &1773465606331761499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2313870406833098469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 488b715312896714ba692bde8e8dd673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PickUpRadius: 1
+  itemSO: {fileID: 11400000, guid: 42fd1abf1142bbe4db035ac00c62052f, type: 2}
+  player: {fileID: 0}
+  CanvaItemPicked: {fileID: 0}
+  UI_NewItemPicked: {fileID: 7893925526795108326, guid: bd7d638df228b2a4e9cf1ba29cf0a26e,
+    type: 3}
