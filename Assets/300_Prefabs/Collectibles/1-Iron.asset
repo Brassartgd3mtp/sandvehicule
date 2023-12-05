@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0011f4ba0be7304459488b1e5f7599aa, type: 3}
-  m_Name: 2-Ore
+  m_Name: 1-Iron
   m_EditorClassIdentifier: 
-  ID: 2
-  Name: Cuivre
-  Description: "Morceau de minerai riche en cuivre brut. Sa teinte distincte sugg\xE8re
-    qu'il peut \xEAtre trait\xE9 pour obtenir du cuivre, un mat\xE9riau pr\xE9cieux
-    utilis\xE9 dans la cr\xE9ation d'objets \xE9lectroniques, d'outils et d'artefacts."
-  Icon: {fileID: 21300000, guid: fe63ecf687699f3449fb462f8f86a10f, type: 3}
+  ID: 1
+  Name: Fer
+  Description: "Morceau de minerai riche en fer brut. Sa teinte m\xE9tallique sugg\xE8re
+    qu'il peut \xEAtre fondu pour obtenir du fer utilisable dans la fabrication d'\xE9quipements
+    et de structures."
+  Icon: {fileID: 21300000, guid: 12238dbbfa00c6740b2cfe0cbcf48cda, type: 3}
   MaxStackSize: 3
   ResourceType: Minerai
   GoldValue: 0
