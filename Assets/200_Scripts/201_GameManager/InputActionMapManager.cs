@@ -10,8 +10,8 @@ public class InputActionMapManager : MonoBehaviour
     public InputMap inputMap;
     public InputActionMap currentActionMap;
 
-    [SerializeField] private InputManagerFighting inputManagerFighting;
-    [SerializeField] private InputManagerExploration inputManagerExploration;
+    //[SerializeField] private InputManagerFighting inputManagerFighting;
+    //[SerializeField] private InputManagerExploration inputManagerExploration;
 
     [SerializeField] private CameraScript cameraScript;
 
@@ -19,11 +19,11 @@ public class InputActionMapManager : MonoBehaviour
     {
         playerInput = GetComponent<PlayerInput>();
         inputMap = new InputMap();
-        inputManagerExploration.enabled = true;
-        inputManagerFighting.enabled = false;
-
-        inputManagerExploration.GetComponent<InputManagerExploration>();
-        inputManagerFighting.GetComponent<InputManagerFighting>();
+        //inputManagerExploration.enabled = true;
+        //inputManagerFighting.enabled = false;
+        //
+        //inputManagerExploration.GetComponent<InputManagerExploration>();
+        //inputManagerFighting.GetComponent<InputManagerFighting>();
     }
 
     public void ChangeActionMapForExploring(InputAction.CallbackContext context)
@@ -32,8 +32,8 @@ public class InputActionMapManager : MonoBehaviour
         {
             case InputActionPhase.Performed:
                 //cameraScript.CameraForExploring();
-                inputManagerExploration.enabled = true;
-                inputManagerFighting.enabled = false;
+                //inputManagerExploration.enabled = true;
+                //inputManagerFighting.enabled = false;
                 playerInput.actions.FindActionMap("Exploring").Enable();
                 playerInput.actions.FindActionMap("Fighting").Disable();
                 break;
@@ -47,8 +47,8 @@ public class InputActionMapManager : MonoBehaviour
         {
             case InputActionPhase.Performed:
                 //cameraScript.CameraForFighting();
-                inputManagerFighting.enabled = true;
-                inputManagerExploration.enabled = false;
+                //inputManagerFighting.enabled = true;
+                //inputManagerExploration.enabled = false;
                 playerInput.actions.FindActionMap("Fighting").Enable();
                 playerInput.actions.FindActionMap("Exploring").Disable();
                 break;

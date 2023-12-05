@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/600_Mat/M_Dust.meta
+guid: d994f97d3d7ae804e9b2ee12a78456c0
+========
 guid: 23c7f9f1b84b54d47898bdfc73455fbd
+>>>>>>>> origin/Test:Assets/200_Scripts/DialogueSystem.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

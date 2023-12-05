@@ -27,6 +27,8 @@ public class Harpoon : MonoBehaviour
     public bool harpoonIsReady;
 
     public Vector3 harpoonTarget;
+    public GameObject harpoonTargetEmpty;
+
     public LineRenderer LR;
 
     public Rigidbody rb;
@@ -42,8 +44,14 @@ public class Harpoon : MonoBehaviour
 
     new public Collider collider;
 
+    public RaycastHit hit;
+
+    public LayerMask layerMask;
+
+
     public void Start()
     {
+
         mainCamera = Camera.main;
         isShooted = false;
         collider = GetComponent<Collider>();
@@ -53,12 +61,16 @@ public class Harpoon : MonoBehaviour
 
     public void Update()
     {
+
+
+
+
         //HarpoonParent.transform.position = player.transform.position + new Vector3(0,1.1f,0)  ;
 
         if (isShooted == false) // Si le harpon n'est pas tiré, permet de récupérer le click de la souris sur le screen
         {
-            GetMousePosition();
-            Aim();
+            //GetMousePosition();
+            //Aim();
         }  
 
         if(isShooted && !collideSomething) //Le harpon va vers l'endroit clické
@@ -74,7 +86,6 @@ public class Harpoon : MonoBehaviour
         if(harpoonIsReady) // Check si le harpon est prêt à être tiré
         {
             LR.enabled = false;
-            harpoonStart.transform.position = transform.position;
         }
         else
         {
@@ -91,61 +102,79 @@ public class Harpoon : MonoBehaviour
         }
     }
 
-    private (bool success, Vector3 position) GetMousePosition() // recupère la position de la souris dans l'espace
-    {
-        var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+    //private (bool success, Vector3 position) GetMousePosition() // recupère la position de la souris dans l'espace
+    //{
+    //    var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+    //
+    //    if(Physics.Raycast (ray, out var hitInfo, Mathf.Infinity)) 
+    //    {
+    //        return (success: true, position: hitInfo.point);
+    //    }
+    //    else
+    //    {
+    //        return (success: false, position: Vector3.zero);
+    //    }
+    //}
 
-        if(Physics.Raycast (ray, out var hitInfo, Mathf.Infinity)) 
-        {
-            return (success: true, position: hitInfo.point);
-        }
-        else
-        {
-            return (success: false, position: Vector3.zero);
-        }
-    }
-
-    private void Aim()
-    {
-        var (success, position) = GetMousePosition();
-        if (success)
-        {
-            var direction = position - transform.position;
-
-            transform.forward = direction;
-        }
-    }
+    //private void Aim()
+    //{
+    //    var (success, position) = GetMousePosition();
+    //    if (success)
+    //    {
+    //        var direction = position - transform.position;
+    //
+    //        transform.forward = direction;
+    //    }
+    //}
 
     public void shootHarpoon()
     {
-            harpoonIsReady = false;
+        harpoonIsReady = false;
 
-            var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-            var (success, position) = GetMousePosition();
+        if (hit.collider.gameObject == gameObject.CompareTag("Item"))
+        {
+            harpoonTarget = hit.rigidbody.transform.position;
+        }
+        else if (hit.collider.gameObject == gameObject.CompareTag("Ground"))
+        {
+            harpoonTarget = hit.point;
+        }
 
-            if (Physics.Raycast(ray, out hitOnClick, Mathf.Infinity))
-            {
-                isShooted = true;
-                harpoonTarget = position;
-                harpoonTarget = position;
-            } 
+        if (hit.collider.gameObject == null)
+        {
+            harpoonTarget = harpoonTargetEmpty.transform.position;
+        }
+        
+
+
+        isShooted = true;
+
+
+
+            //var (success, position) = GetMousePosition();
+
+            //if (Physics.Raycast(ray, out hitOnClick, Mathf.Infinity))
+            //{
+            //    isShooted = true;
+            //if (hitOnClick.collider.gameObject == gameObject.CompareTag("Item"))
+            //{
+            //    harpoonTarget = collider.gameObject.transform.position;
+            //}
+            //} 
     }
 
     public void HarpoonMoveToSpot() // Le harpon se dirige vers la destination clickée
     {
-        if (isShooted)
-        {
             collider.enabled = true;
             transform.SetParent(null);
             transform.position = Vector3.Lerp(transform.position, harpoonTarget, harpoonSpeed * Time.deltaTime / Vector3.Distance(transform.position, harpoonTarget));
-        }
     }
 
     public void harpoonBack() // permet de rétracter le harpon vers le véhicule
     {
             collideSomething = false;
             transform.position = Vector3.Lerp(transform.position, harpoonStart.transform.position, harpoonSpeed * Time.deltaTime / Vector3.Distance(transform.position, harpoonStart.transform.position));
-            transform.LookAt(harpoonTarget);
+            //transform.LookAt(harpoonTarget.transform.position);
 
             if (harpoonStart.transform.position == transform.position)
             {
@@ -178,7 +207,7 @@ public class Harpoon : MonoBehaviour
             isShooted = false;
             harpoonReadyToBack = true;
             itemHooked = collision.gameObject;            
-            itemHooked.transform.parent = StickyPoint.transform;
+            itemHooked.transform.parent = this.transform;
         }
 
 

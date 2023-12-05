@@ -20,4 +20,5 @@ public class ItemSO : ScriptableObject
     public int MaxStackSize;
     public string ResourceType;
     public int GoldValue;
+    public GameObject UI_ItemPickup;
 }
