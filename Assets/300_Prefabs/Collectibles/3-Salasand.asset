@@ -10,16 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0011f4ba0be7304459488b1e5f7599aa, type: 3}
-  m_Name: 8-Artefact
+  m_Name: 3-Salasand
   m_EditorClassIdentifier: 
-  ID: 8
-  Name: ACM-P04
-  Description: "Substance aux propri\xE9t\xE9s \xE9tranges, visible par un sombre
-    m\xE9lange de vert et de violet.\nLa seule information notable est une inscription
-    sous la capsule : \"ACM-P04\".\nSon contenu reste ind\xE9termin\xE9 tout comme
-    son utilit\xE9.\_\nSa source est inconnue mais quelque chose ou quelqu'un semble
-    l'avoir laisser ici..."
+  ID: 3
+  Name: Salasand
+  Description: "Esp\xE8ce de piskhar plut\xF4t commune qui peut vivre dans les marres
+    de sables tout comme dans les d\xE9sert.\nSa chair et son go\xFBt app\xE9tissant
+    se rapprochent fortement de ceux du saumon. Ce qui en fait la source de viande
+    non-artificielle la plus demand\xE9e par les vaisseaux-m\xE8res."
   Icon: {fileID: 21300000, guid: f73cbf6cdceee084f8f67ed473f1248b, type: 3}
   MaxStackSize: 0
-  ResourceType: Artefact
+  ResourceType: Food
   GoldValue: 0

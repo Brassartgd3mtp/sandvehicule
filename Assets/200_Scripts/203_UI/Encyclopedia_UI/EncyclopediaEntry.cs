@@ -8,10 +8,10 @@ public class EncyclopediaEntry : MonoBehaviour
     public EncyclopediaManager encyclopediaManager;
     public LayerMask playerLayer;
 
-    //private void Start()
-    //{
-    //    encyclopediaManager = GetComponentInParent<EncyclopediaManager>();
-    //}
+    private void Start()
+    {
+        encyclopediaManager = EncyclopediaManager.Instance;
+    }
     private void OnTriggerEnter(Collider other)
     {
         // Vérifie si le joueur est dans le layer spécifié par le LayerMask

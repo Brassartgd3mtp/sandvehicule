@@ -11,10 +11,20 @@ public class EntryGameObjectPair
 
 public class EncyclopediaManager : MonoBehaviour
 {
+    public static EncyclopediaManager Instance;
+
     public List<ItemSO> allEntries = new List<ItemSO>();
     public List<EntryGameObjectPair> entryGameObjectPairs = new List<EntryGameObjectPair>();
 
     public Dictionary<int, GameObject> entryGameObjectMap = new Dictionary<int, GameObject>();
+
+    public void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
     void Start()
     {
         // Remplis le dictionnaire lors du démarrage

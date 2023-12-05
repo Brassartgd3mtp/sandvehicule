@@ -372,7 +372,7 @@ GameObject:
   - component: {fileID: 1330998113084068537}
   - component: {fileID: 5284090726275656395}
   m_Layer: 5
-  m_Name: UI_Roche_ItemPicked
+  m_Name: UI_Saccha_ItemPicked
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

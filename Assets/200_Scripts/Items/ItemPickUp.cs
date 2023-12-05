@@ -18,9 +18,14 @@ public class ItemPickUp : MonoBehaviour
 
     private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        CanvaItemPicked = GameObject.Find("CanvaRessourceFeedBack");
         myCollider = GetComponent<SphereCollider>();
         myCollider.radius = PickUpRadius;
+    }
+
+    public void Start()
+    {
+        player = ThirdPerson.Instance.gameObject;
     }
 
     public void OnCollisionEnter(Collision collision)
