@@ -113,7 +113,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &6070007948960872558
 BoxCollider:
@@ -188,7 +188,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PickUpRadius: 1
   itemSO: {fileID: 11400000, guid: 16d85e72bac042244aa3671ddfd1f404, type: 2}
+  EncyclopediaEntry: {fileID: 0}
   player: {fileID: 0}
   CanvaItemPicked: {fileID: 0}
   UI_NewItemPicked: {fileID: 7893925526795108326, guid: f9bb324a08828e04a9d3653afb8cf118,
     type: 3}
+  isGrabed: 0

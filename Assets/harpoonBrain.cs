@@ -5,6 +5,8 @@ using UnityEngine.Rendering.Universal.Internal;
 
 public class harpoonBrain : MonoBehaviour
 {
+    //[SerializeField] FishBehavior fishBehavior;
+
     [SerializeField] Camera mainCamera;
     [SerializeField] new Collider collider;
     [SerializeField] public LayerMask layerMask;
@@ -29,7 +31,6 @@ public class harpoonBrain : MonoBehaviour
     public void Awake()
     { 
         collider = GetComponent<Collider>();
-        isHarpoonExplosive = false;
     }
     public void FixedUpdate()
     {
@@ -88,17 +89,18 @@ public class harpoonBrain : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+         
+        if (collision.gameObject == gameObject.CompareTag("Item"))
+        {
+            itemHooked = collision.gameObject;
+            itemHooked.transform.parent = this.transform;
+        }
+
         if (collision.gameObject == true)
         {
             isMovingOn = false;
             isMovingBack = true;
             collider.enabled = false;
-        }
-
-        if (collision.gameObject == gameObject.CompareTag("Item"))
-        {
-            itemHooked = collision.gameObject;
-            itemHooked.transform.parent = this.transform;
         }
     }
 
