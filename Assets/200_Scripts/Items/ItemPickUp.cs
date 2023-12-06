@@ -18,6 +18,8 @@ public class ItemPickUp : MonoBehaviour
     [SerializeField] GameObject CanvaItemPicked;
     [SerializeField] GameObject UI_NewItemPicked;
 
+    [SerializeField] bool isGrabed;
+
 
     private void Awake()
     {
@@ -34,9 +36,13 @@ public class ItemPickUp : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Harpoon")
         {
-            Debug.Log("Player");
+            isGrabed =true;
+        }
+        if (collision.gameObject.tag == "Player" && isGrabed)
+        {
+            PickUp();
         }
     }
 

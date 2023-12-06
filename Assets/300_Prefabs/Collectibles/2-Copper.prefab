@@ -852,6 +852,7 @@ GameObject:
   - component: {fileID: -6008885302098963771}
   - component: {fileID: 5420213941976899783}
   - component: {fileID: 7224361831338323432}
+  - component: {fileID: -8621096826194338608}
   m_Layer: 10
   m_Name: 2-Copper
   m_TagString: Item
@@ -900,11 +901,11 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 1.07
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5420213941976899783
 MonoBehaviour:
@@ -920,10 +921,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PickUpRadius: 1
   itemSO: {fileID: 11400000, guid: ccaaf5a0f64c33444802d09b213a85c3, type: 2}
+  EncyclopediaEntry: {fileID: 0}
   player: {fileID: 0}
   CanvaItemPicked: {fileID: 0}
   UI_NewItemPicked: {fileID: 7893925526795108326, guid: a58d28ebbc57c0446977b3924800952b,
     type: 3}
+  isGrabed: 0
 --- !u!114 &7224361831338323432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -941,6 +944,33 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 0
+--- !u!54 &-8621096826194338608
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7435041665536396387}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &8082925263013901314
 GameObject:
   m_ObjectHideFlags: 0
