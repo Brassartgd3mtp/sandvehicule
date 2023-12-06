@@ -5,7 +5,7 @@ using UnityEngine.Rendering.Universal.Internal;
 
 public class harpoonBrain : MonoBehaviour
 {
-    //[SerializeField] FishBehavior fishBehavior;
+    [SerializeField] FishBehavior fishBehavior;
 
     [SerializeField] Camera mainCamera;
     [SerializeField] new Collider collider;
@@ -87,13 +87,24 @@ public class harpoonBrain : MonoBehaviour
         }    
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter(Collision collision)
     {
          
-        if (collision.gameObject == gameObject.CompareTag("Item"))
+        if (collision.gameObject.CompareTag("Item"))
         {
+            Debug.Log("Touché");
             itemHooked = collision.gameObject;
             itemHooked.transform.parent = this.transform;
+        }
+
+        if (collision.gameObject.CompareTag("Fish"))
+        {
+            fishBehavior = collision.gameObject.GetComponent<FishBehavior>();
+            if (fishBehavior.isReadyToBeCaught)
+            {
+                itemHooked = collision.gameObject;
+                itemHooked.transform.parent = this.transform;
+            }
         }
 
         if (collision.gameObject == true)
