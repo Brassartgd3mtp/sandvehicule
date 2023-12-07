@@ -924,6 +924,7 @@ MonoBehaviour:
   CanvaItemPicked: {fileID: 0}
   UI_NewItemPicked: {fileID: 7893925526795108326, guid: 50ec2fdf0c0befe489bbee931de8e4e3,
     type: 3}
+  isGrabed: 0
 --- !u!114 &6710444478613368685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -940,7 +941,7 @@ MonoBehaviour:
   encyclopediaManager: {fileID: 0}
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
 --- !u!1 &7102176756411744429
 GameObject:
   m_ObjectHideFlags: 0

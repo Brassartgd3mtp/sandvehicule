@@ -12,6 +12,7 @@ TagManager:
   - PickUp
   - Destructible
   - Harpoon
+  - Fish
   layers:
   - Default
   - TransparentFX
