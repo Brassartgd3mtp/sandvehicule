@@ -5288,7 +5288,7 @@ MonoBehaviour:
   harpoonTargetEmpty: {fileID: 1953097838}
   harpoonStart: {fileID: 1985254307}
   itemHooked: {fileID: 0}
-  isHarpoonExplosive: 0
+  isHarpoonExplosive: 1
   harpoonStartPosition: {x: 0, y: 0, z: 0}
   LR: {fileID: 649982065}
   harpoonSpeed: 30
