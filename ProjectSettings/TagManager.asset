@@ -12,6 +12,7 @@ TagManager:
   - PickUp
   - Destructible
   - Harpoon
+  - Fish
   layers:
   - Default
   - TransparentFX
@@ -29,7 +30,7 @@ TagManager:
   - MovementCollider
   - Fish
   - InvisibleWall
-  - 
+  - Destructible
   - 
   - 
   - 

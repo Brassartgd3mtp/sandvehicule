@@ -7,6 +7,8 @@ public class SphernorhBehavior : MonoBehaviour
     public GameObject Carapace;
     public harpoonBrain harpoonBrain;
 
+    public FishBehavior fishBehavior;
+
     void Start()
     {
         
@@ -24,16 +26,11 @@ public class SphernorhBehavior : MonoBehaviour
         {
             harpoonBrain = collision.gameObject.GetComponent<harpoonBrain>();
 
-            if (Carapace == null)
-            {
-                Destroy(gameObject);
-            }
-
             if (harpoonBrain.isHarpoonExplosive)
             {
                 Destroy(Carapace);
+                fishBehavior.isReadyToBeCaught = true;
             }
         }
-
     }
 }
