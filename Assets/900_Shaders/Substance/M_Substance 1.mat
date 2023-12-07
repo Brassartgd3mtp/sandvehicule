@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Substance
+  m_Name: M_Substance 1
   m_Shader: {fileID: -6465566751694194690, guid: 21327bac2dc3d1340af2f18dbbe045a4,
     type: 3}
   m_Parent: {fileID: 0}
@@ -46,18 +46,17 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AlphaClipping: 0.845
+    - _AlphaClipping: 0.94
     - _DistortionAmount: 0.05
     - _DistortionScale: 5
-    - _DistortionSpeed: 0.4
+    - _DistortionSpeed: 0.2
     - _Float: 0.1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Speed: 0.12
     m_Colors:
-    - _Color: {r: 0.19428886, g: 0.74901956, b: 0, a: 0}
+    - _Color: {r: 0.19215687, g: 0, b: 0, a: 1}
     - _ExtraColor: {r: 0.49019605, g: 0, b: 0.8627451, a: 0}
-    - _ExtraColor1: {r: 1.4142135, g: 1.2478354, b: 0, a: 0}
+    - _ExtraColor1: {r: 1, g: 0.8823529, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &2295507527079145005
 MonoBehaviour:
