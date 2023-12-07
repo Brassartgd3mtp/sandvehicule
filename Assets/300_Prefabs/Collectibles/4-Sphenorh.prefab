@@ -158,9 +158,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 488b715312896714ba692bde8e8dd673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PickUpRadius: 1
+  PickUpRadius: 0
   itemSO: {fileID: 11400000, guid: a3449affa6544a54594dffebc7dd5dac, type: 2}
+  EncyclopediaEntry: {fileID: 0}
   player: {fileID: 0}
   CanvaItemPicked: {fileID: 0}
   UI_NewItemPicked: {fileID: 7893925526795108326, guid: 1627038f0447d72409a39d82a503d1c7,
     type: 3}
+  isGrabed: 0

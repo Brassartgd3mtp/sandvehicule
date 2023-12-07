@@ -13,7 +13,7 @@ public class ItemPickUp : MonoBehaviour
 
     public GameObject player;
 
-    private SphereCollider myCollider;
+    //private SphereCollider myCollider;
 
     [SerializeField] GameObject CanvaItemPicked;
     [SerializeField] GameObject UI_NewItemPicked;
@@ -25,8 +25,8 @@ public class ItemPickUp : MonoBehaviour
     {
         EncyclopediaEntry = GetComponent<EncyclopediaEntry>();
         CanvaItemPicked = GameObject.Find("CanvaRessourceFeedBack");
-        myCollider = GetComponent<SphereCollider>();
-        myCollider.radius = PickUpRadius;
+        //myCollider = GetComponent<SphereCollider>();
+        //myCollider.radius = PickUpRadius;
     }
 
     public void Start()
@@ -45,7 +45,17 @@ public class ItemPickUp : MonoBehaviour
             PickUp();
         }
     }
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == ("Harpoon"))
+        {
+            isGrabed = true;
+        }
+        if ((other.gameObject.tag == "Player" && isGrabed))
+        {
+            PickUp();
+        }
+    }
 
     public void PickUp()
     {
