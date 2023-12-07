@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Substance
-  m_Shader: {fileID: -6465566751694194690, guid: 21327bac2dc3d1340af2f18dbbe045a4,
+  m_Name: M_OutlineOut
+  m_Shader: {fileID: -6465566751694194690, guid: d555d593e0e5c694fb2953e754d752a6,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -24,14 +24,6 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _SampleTexture2D_0440f5e374db495b8c84e89c050041cf_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: a6daa5372a381d8479f76cd78161d5de, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_94266dce63164fff8082f820c4ec7ad2_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: a6daa5372a381d8479f76cd78161d5de, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -46,20 +38,15 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AlphaClipping: 0.845
-    - _DistortionAmount: 0.05
-    - _DistortionScale: 5
-    - _DistortionSpeed: 0.4
-    - _Float: 0.1
+    - _Alpha: 0.985
+    - _OutlineThickness: 0.01
+    - _OutlineThicknessOut: 0.2
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Speed: 0.12
     m_Colors:
-    - _Color: {r: 0.19428886, g: 0.74901956, b: 0, a: 0}
-    - _ExtraColor: {r: 0.49019605, g: 0, b: 0.8627451, a: 0}
-    - _ExtraColor1: {r: 1.4142135, g: 1.2478354, b: 0, a: 0}
+    - _BaseColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &2295507527079145005
+--- !u!114 &6417765415951780956
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
