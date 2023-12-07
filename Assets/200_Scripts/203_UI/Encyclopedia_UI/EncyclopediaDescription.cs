@@ -13,7 +13,7 @@ public class EncyclopediaDescription : MonoBehaviour
     public TextMeshProUGUI nameText;
     public Image objectImage;
     public TextMeshProUGUI ressourceTypeText;
-    public TextMeshProUGUI goldValueText;
+    //public TextMeshProUGUI goldValueText;
     public TextMeshProUGUI descriptionText;
 
 
@@ -26,7 +26,7 @@ public class EncyclopediaDescription : MonoBehaviour
             nameText.text = item.Name;
             objectImage.sprite = item.Icon;
             ressourceTypeText.text = "Type de ressource : " + item.ResourceType;
-            goldValueText.text = "Valeur de l'objet : " + item.GoldValue.ToString();
+            //goldValueText.text = "Valeur de l'objet : " + item.GoldValue.ToString();
             descriptionText.text = item.Description;
 
         }
