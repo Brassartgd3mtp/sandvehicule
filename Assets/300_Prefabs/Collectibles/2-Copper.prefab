@@ -915,7 +915,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.07
+  m_Radius: 1.6
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5420213941976899783
 MonoBehaviour:
@@ -929,7 +929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 488b715312896714ba692bde8e8dd673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PickUpRadius: 1
+  PickUpRadius: 0
   itemSO: {fileID: 11400000, guid: ccaaf5a0f64c33444802d09b213a85c3, type: 2}
   EncyclopediaEntry: {fileID: 0}
   player: {fileID: 0}
