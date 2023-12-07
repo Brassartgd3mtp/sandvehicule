@@ -30,7 +30,7 @@ TagManager:
   - MovementCollider
   - Fish
   - InvisibleWall
-  - 
+  - Destructible
   - 
   - 
   - 
