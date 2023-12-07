@@ -852,6 +852,7 @@ GameObject:
   - component: {fileID: 2779033700963816949}
   - component: {fileID: 8712399297099963121}
   - component: {fileID: 6710444478613368685}
+  - component: {fileID: 6008823340832055307}
   m_Layer: 10
   m_Name: 1-Iron
   m_TagString: Item
@@ -942,6 +943,27 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
+--- !u!65 &6008823340832055307
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5971314648645712078}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.780946, y: 0.84099954, z: 1.7381108}
+  m_Center: {x: -0.07236028, y: -0.07950023, z: 0.043603987}
 --- !u!1 &7102176756411744429
 GameObject:
   m_ObjectHideFlags: 0

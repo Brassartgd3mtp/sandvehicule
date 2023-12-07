@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4267221670568442383}
   - component: {fileID: -6681922223773905668}
   - component: {fileID: -4119318414460472565}
+  - component: {fileID: 512752090934506481}
   m_Layer: 14
   m_Name: Sphenorh
   m_TagString: Item
@@ -82,6 +83,7 @@ MonoBehaviour:
   Carapace: {fileID: 5052440133763718610}
   harpoonBrain: {fileID: 0}
   fishBehavior: {fileID: 0}
+  splineAnimate: {fileID: 0}
 --- !u!114 &5718904461318110060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,11 +122,11 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.4
+  m_Radius: 1.96
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4267221670568442383
 MonoBehaviour:
@@ -175,6 +177,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isReadyToBeCaught: 0
+--- !u!65 &512752090934506481
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2931828070093666327}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.7864075, z: 1.7237549}
+  m_Center: {x: 0, y: -0.010002136, z: -0.27801514}
 --- !u!1 &5052440133763718610
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,7 +292,6 @@ GameObject:
   - component: {fileID: 4017221611877354506}
   - component: {fileID: 2495881197117249004}
   - component: {fileID: 3204778912608467049}
-  - component: {fileID: 8182837619619882323}
   m_Layer: 14
   m_Name: SphenorhMesh
   m_TagString: Untagged
@@ -342,25 +364,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8182837619619882323
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6042922890237939180}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4711208715938537054, guid: 34626bd7e85f9a84084353d0479b7847, type: 3}
