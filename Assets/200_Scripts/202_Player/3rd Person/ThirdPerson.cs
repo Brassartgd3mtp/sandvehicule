@@ -143,6 +143,7 @@ public class ThirdPerson : MonoBehaviour
         // Changes the height position of the player..
         if (jumpAction.triggered && groundedPlayer)
         {
+            //animator.SetTrigger("Jump");
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
         }
 

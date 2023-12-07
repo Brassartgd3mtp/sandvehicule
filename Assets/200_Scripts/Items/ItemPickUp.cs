@@ -46,6 +46,7 @@ public class ItemPickUp : MonoBehaviour
         }
     }
 
+
     public void PickUp()
     {
         EncyclopediaEntry.InitializeEntry(gameObject);
