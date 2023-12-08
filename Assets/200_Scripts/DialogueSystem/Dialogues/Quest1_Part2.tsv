@@ -1,0 +1,4 @@
+DialogueID	Character	Text	Response1	Response2	Response3	NextDialogueID1	NextDialogueID2	NextDialogueID3	NextDialogueID4
+0	Wyatt (L'opérateur)	" Je vois que tu as rapporté tout ce qu'il nous faut, beau boulot. Je me permet de me servir dans ton sac."				-1	-1	-1	1
+1	Wyatt (L'opérateur)	" Du coup je t'invite à aller voir Cheyenne au hangar pour qu'elle t'équipe. "				-1	-1	-1	2
+2	Wyatt (L'opérateur)	" Dès que ce sera fait j'aurais besoin que tu ailles voir ce qui se trouve sur l'autre corniche que tu as vu. "	" Je m'en occupe. "			-1	-1	-1	-1

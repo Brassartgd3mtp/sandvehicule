@@ -1,0 +1,6 @@
+DialogueID	Character	Text	Response1	Response2	Response3	NextDialogueID1	NextDialogueID2	NextDialogueID3	NextDialogueID4
+0	4.L.4.N	" OH !!! "				-1	-1	-1	1
+1	4.L.4.N	" Merci ! Bonhomme poilu fort ! "	" Appel-moi Juan de préférence... "			2	-1	-1	-1
+2	4.L.4.N	" [Appellation enregistrée.] "				-1	-1	-1	3
+3	4.L.4.N	" Juan pouvoir aider 4.L.4.N à récolter cuivre et fer ? "				-1	-1	-1	4
+4	4.L.4.N	" Minerais être dans alentours. "	" Je vais voir ce que je peux faire. "			-1	-1	-1	-1

@@ -1,0 +1,4 @@
+DialogueID	Character	Text	Response1	Response2	Response3	NextDialogueID1	NextDialogueID2	NextDialogueID3	NextDialogueID4
+0	???	" [Bonhomme poilu détecté. Spécimen n°8 comptabilisé. Enregistrement d'analyse linguistique activé.] "				-1	-1	-1	1
+1	???	" Bonjour. "	" Qu'est...Qu'est-ce que vous faites ? "			2	-1	-1	-1
+2	4.L.4.N	" 4.L.4.N frappe minerai avec outil pour récupérer. Mais ici 4.L.4.N trop petit. "	" Hmm... je vais essayer avec mon harpon. "			-1	-1	-1	-1
