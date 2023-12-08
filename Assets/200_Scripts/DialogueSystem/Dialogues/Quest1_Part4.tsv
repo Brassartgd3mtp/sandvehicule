@@ -1,0 +1,8 @@
+DialogueID	Character	Text	Response1	Response2	Response3	NextDialogueID1	NextDialogueID2	NextDialogueID3	NextDialogueID4
+0	Eugénie (La Géobiologiste)	" Tu as réussi ! Je me suis un peu inquiété mais tu es de retour. "				-1	-1	-1	1
+1	Eugénie (La Géobiologiste)	" Voyons donc voir ce piskhar que tu m'as apporter. "				-1	-1	-1	2
+2	Eugénie (La Géobiologiste)	" Oula... Sacré bête ! Et... Oh... Hmm... On dirais un Pygonatt mais largement différent... "				-1	-1	-1	3
+3	Eugénie (La Géobiologiste)	" Cette couleur d'yeux... Cette taille... Cette grande armature de roche... Ce n'est pas naturel... "				-1	-1	-1	4
+4	Eugénie (La Géobiologiste)	" J'ai bien peur que quelque chose ou quelqu'un soit derrière ça et ce n'est sûrement pas le seul spécimen touché. "				-1	-1	-1	5
+5	Eugénie (La Géobiologiste)	" Je vais prévenir les autres, si ce phénomène se propage cela va vite devenir problématique. "				-1	-1	-1	6
+6	Eugénie (La Géobiologiste)	" Et on va donc devoir trouver la source du problème au plus vite. "				-1	-1	-1	-1

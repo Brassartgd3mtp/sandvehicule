@@ -1,0 +1,5 @@
+DialogueID	Character	Text	Response1	Response2	Response3	NextDialogueID1	NextDialogueID2	NextDialogueID3	NextDialogueID4
+0	4.L.4.N	" Juan avoir beaucoup aidé 4.L.4.N. "				-1	-1	-1	1
+1	4.L.4.N	" Grand merci."				-1	-1	-1	2
+2	4.L.4.N	" [Récolte complétée. Acheminement engagé.] "				-1	-1	-1	3
+3	4.L.4.N	" 4.L.4.N doit partir mais 4.L.4.N espérer vous revoir. "	" Fais attention à toi. "			-1	-1	-1	-1
