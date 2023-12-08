@@ -19,6 +19,7 @@ public class ThirdPerson : MonoBehaviour
     public Vector3 move;
 
     public bool isAiming;
+    public bool isRunning;
 
     private Vector3 playerVelocity;
     private bool groundedPlayer;
@@ -38,6 +39,10 @@ public class ThirdPerson : MonoBehaviour
     private InputAction shootAction;
     private InputAction harpoonBack;
     private InputAction interact;
+    private InputAction showEncyclopedia;
+    private InputAction run;
+
+    [SerializeField] private GameObject targetObjectEncyclopedia;
 
     private Vector3 prevPos;
 
@@ -63,6 +68,8 @@ public class ThirdPerson : MonoBehaviour
         shootAction = playerInput.actions["Shoot"];
         harpoonBack = playerInput.actions["ForceHarpoonBack"];
         interact = playerInput.actions["Interact"];
+        showEncyclopedia = playerInput.actions["ShowEncyclopedia"];
+        run = playerInput.actions["Run"];
 
     }
     public void Start()
@@ -75,7 +82,9 @@ public class ThirdPerson : MonoBehaviour
         shootAction.performed += _ => ShootHarpoon();
         harpoonBack.performed += _ => ForceHarpoonBack();
         interact.performed += _ => Intercact();
-
+        showEncyclopedia.performed += _ => ShowEncyclopedia();
+        run.performed += _ => StartRun();
+        run.canceled += _ => CancelRun();
     }
 
     private void OnDisable()
@@ -83,6 +92,9 @@ public class ThirdPerson : MonoBehaviour
         shootAction.performed -= _ => ShootHarpoon();
         harpoonBack.performed -= _ => ForceHarpoonBack();
         interact.performed -= _ => Intercact();
+        showEncyclopedia.performed -= _ => ShowEncyclopedia();
+        run.performed -= _ => StartRun();
+        run.canceled -= _ => CancelRun();
     }
 
     private void ShootHarpoon()
@@ -109,11 +121,26 @@ public class ThirdPerson : MonoBehaviour
             animator.SetBool("isMovingFront", false);
         }
 
+        Vector2 input = moveAction.ReadValue<Vector2>();
+        move = new Vector3(input.x, 0, input.y);
+        move = move.x * cameraTransform.right.normalized + move.z * cameraTransform.forward.normalized;
+        move.y = 0f;
+
+        controller.Move(move * Time.deltaTime * playerSpeed);
+
+        if (isRunning)
+        {
+            playerSpeed = 8f;
+        }
+        else if (!isRunning)
+        {
+            playerSpeed = 4f;
+        }
+
         if (isAiming)
         {
             playerSpeed = 1f;
         }
-        else if (!isAiming) playerSpeed = 4f;
 
         if (move.z > 0 && isAiming)
         {
@@ -131,14 +158,6 @@ public class ThirdPerson : MonoBehaviour
         {
             playerVelocity.y = 0f;
         }
-
-        Vector2 input = moveAction.ReadValue<Vector2>();
-        move = new Vector3(input.x, 0, input.y);
-        move = move.x * cameraTransform.right.normalized + move.z * cameraTransform.forward.normalized;
-        move.y = 0f;
-
-        controller.Move(move * Time.deltaTime * playerSpeed);
-
 
         // Changes the height position of the player..
         if (jumpAction.triggered && groundedPlayer)
@@ -169,12 +188,35 @@ public class ThirdPerson : MonoBehaviour
         }
     }
 
+    public void StartRun()
+    {
+        isRunning = true;
+    }
+
+    public void CancelRun()
+    {
+        isRunning = false;
+    }
+
     public void Intercact()
     {
         if (itemPickUp != null)
         {
             itemPickUp.PickUp();
             UI_Ramasser.SetActive(false);
+        }
+    }
+
+    public void ShowEncyclopedia()
+    {
+        if (targetObjectEncyclopedia != null)
+        {
+            targetObjectEncyclopedia.SetActive(!targetObjectEncyclopedia.activeSelf);
+
+            if (Cursor.lockState == CursorLockMode.Locked)
+            {
+                Cursor.lockState = CursorLockMode.None;
+            } else Cursor.lockState = CursorLockMode.Locked;
         }
     }
 
