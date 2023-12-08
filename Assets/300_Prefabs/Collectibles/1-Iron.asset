@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 1-Iron
   m_EditorClassIdentifier: 
   ID: 1
-  Name: Fer
+  Name: Morceau de Fer
   Description: "Morceau de minerai riche en fer brut. Sa teinte m\xE9tallique sugg\xE8re
     qu'il peut \xEAtre fondu pour obtenir du fer utilisable dans la fabrication d'\xE9quipements
     et de structures."

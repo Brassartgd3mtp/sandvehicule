@@ -7818,7 +7818,7 @@ PrefabInstance:
     - target: {fileID: 8291915622990490413, guid: 51147adfa5356564191d2d8a16b4ad63,
         type: 3}
       propertyPath: m_Radius
-      value: 1.58
+      value: 4.96
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12571,7 +12571,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1731667771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18884,6 +18884,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6681922223773905668, guid: 575c5b5b246b7d443a6926399914509e,
+        type: 3}
+      propertyPath: associatedEntryID
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2931828070093666327, guid: 575c5b5b246b7d443a6926399914509e,
         type: 3}
       propertyPath: m_Name
@@ -18904,6 +18909,18 @@ PrefabInstance:
       propertyPath: fishBehavior
       value: 
       objectReference: {fileID: 6765615563119204133}
+    - target: {fileID: 4267221670568442383, guid: 575c5b5b246b7d443a6926399914509e,
+        type: 3}
+      propertyPath: itemSO
+      value: 
+      objectReference: {fileID: 11400000, guid: a3449affa6544a54594dffebc7dd5dac,
+        type: 2}
+    - target: {fileID: 4267221670568442383, guid: 575c5b5b246b7d443a6926399914509e,
+        type: 3}
+      propertyPath: UI_NewItemPicked
+      value: 
+      objectReference: {fileID: 7893925526795108326, guid: 1627038f0447d72409a39d82a503d1c7,
+        type: 3}
     - target: {fileID: 5052440133763718610, guid: 575c5b5b246b7d443a6926399914509e,
         type: 3}
       propertyPath: m_Layer

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Splines;
 
 public class SphernorhBehavior : MonoBehaviour
 {
@@ -9,9 +10,15 @@ public class SphernorhBehavior : MonoBehaviour
 
     public FishBehavior fishBehavior;
 
+    public SplineAnimate splineAnimate;
+
+    public Collider triggerItem;
+
     void Start()
     {
-        
+        splineAnimate = GetComponent<SplineAnimate>();
+        triggerItem = GetComponent<Collider>();
+        triggerItem.enabled = false;
     }
 
     // Update is called once per frame
@@ -22,6 +29,12 @@ public class SphernorhBehavior : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.CompareTag("Harpoon") && fishBehavior.isReadyToBeCaught)
+        {
+            Destroy(splineAnimate);
+            triggerItem.enabled = true;
+        }
+
         if (collision.gameObject.CompareTag("Harpoon"))
         {
             harpoonBrain = collision.gameObject.GetComponent<harpoonBrain>();
