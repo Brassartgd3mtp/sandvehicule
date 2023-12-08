@@ -16406,6 +16406,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1452581342145300370, guid: a4794dc632513ed4a976c81a752a8160,
         type: 3}
+      propertyPath: jumpHeight
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1452581342145300370, guid: a4794dc632513ed4a976c81a752a8160,
+        type: 3}
       propertyPath: UI_Ramasser
       value: 
       objectReference: {fileID: 1654101909}

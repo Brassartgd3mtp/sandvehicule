@@ -130,15 +130,18 @@ public class ThirdPerson : MonoBehaviour
 
         if (isRunning)
         {
+            animator.SetBool("isRunning", true);
             playerSpeed = 8f;
         }
         else if (!isRunning)
         {
+            animator.SetBool("isRunning", false);
             playerSpeed = 4f;
         }
 
         if (isAiming)
         {
+            isRunning = false;
             playerSpeed = 1f;
         }
 
@@ -162,7 +165,7 @@ public class ThirdPerson : MonoBehaviour
         // Changes the height position of the player..
         if (jumpAction.triggered && groundedPlayer)
         {
-            //animator.SetTrigger("Jump");
+            animator.SetBool("isJumping", true);
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
         }
 
