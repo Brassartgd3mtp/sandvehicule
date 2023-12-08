@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 2-Copper
   m_EditorClassIdentifier: 
   ID: 2
-  Name: Cuivre
+  Name: Morceau de Cuivre
   Description: "Morceau de minerai riche en cuivre brut. Sa teinte distincte sugg\xE8re
     qu'il peut \xEAtre trait\xE9 pour obtenir du cuivre, un mat\xE9riau pr\xE9cieux
     utilis\xE9 dans la cr\xE9ation d'objets \xE9lectroniques, d'outils et d'artefacts."
