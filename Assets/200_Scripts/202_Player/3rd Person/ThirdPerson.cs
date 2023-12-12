@@ -241,4 +241,13 @@ public class ThirdPerson : MonoBehaviour
 
         }
     }
+
+    public void PlayFootstepsSand()
+    {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        int[] soundsIdsSand = { 12, 13, 14, 15 };
+        int randomIndexSand = Random.Range(0, soundsIdsSand.Length);
+        int randomSoundIdSand = soundsIdsSand[randomIndexSand];
+        AudioManager.Instance.PlaySound(randomSoundIdSand, audioSource);
+    }
 }
