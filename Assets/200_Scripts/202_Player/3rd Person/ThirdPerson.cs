@@ -79,8 +79,8 @@ public class ThirdPerson : MonoBehaviour
 
     private void OnEnable()
     {
-        shootAction.performed += _ => ShootHarpoon();
-        harpoonBack.performed += _ => ForceHarpoonBack();
+        shootAction.performed += ShootHarpoon;
+        harpoonBack.performed +=ForceHarpoonBack;
         interact.performed += _ => Intercact();
         showEncyclopedia.performed += _ => ShowEncyclopedia();
         run.performed += _ => StartRun();
@@ -89,20 +89,20 @@ public class ThirdPerson : MonoBehaviour
 
     private void OnDisable()
     {
-        shootAction.performed -= _ => ShootHarpoon();
-        harpoonBack.performed -= _ => ForceHarpoonBack();
+        shootAction.performed -= ShootHarpoon;
+        harpoonBack.performed -= ForceHarpoonBack;
         interact.performed -= _ => Intercact();
         showEncyclopedia.performed -= _ => ShowEncyclopedia();
         run.performed -= _ => StartRun();
         run.canceled -= _ => CancelRun();
     }
 
-    private void ShootHarpoon()
+    private void ShootHarpoon(InputAction.CallbackContext _context)
     {
         harpoon.ShootHarpoon();
     }
 
-    private void ForceHarpoonBack()
+    private void ForceHarpoonBack(InputAction.CallbackContext _context)
     {
         harpoon.isShooted = false;
         harpoon.isMovingBack = true;

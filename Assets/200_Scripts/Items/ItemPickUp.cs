@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 
 [RequireComponent(typeof(SphereCollider))]
-public class ItemPickUp : MonoBehaviour
+public class ItemPickUp : ItemParent
 {
     public float PickUpRadius = 1f;
 
-    public ItemSO itemSO;
     public EncyclopediaEntry EncyclopediaEntry;
 
     public GameObject player;
@@ -68,6 +67,11 @@ public class ItemPickUp : MonoBehaviour
         if (inventory.AddToInventory(itemSO, 1))
         {
             Instantiate(UI_NewItemPicked, CanvaItemPicked.transform);
+            
+            if (TryGetComponent(out QuestItem questItem))
+            {
+                questItem.UpdateQuest(itemSO.ID);
+            }
 
             Destroy(this.gameObject);
         }

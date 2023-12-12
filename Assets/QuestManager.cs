@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class QuestManager : MonoBehaviour
 {
@@ -29,5 +30,12 @@ public class QuestManager : MonoBehaviour
     
     { 
         quest3.SetActive(true);
+    }
+
+    [SerializeField] private UnityEvent questEvent;
+
+    public void AddOUI(int _oui)
+    {
+
     }
 }

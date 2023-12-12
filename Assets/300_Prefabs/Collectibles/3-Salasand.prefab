@@ -14,8 +14,10 @@ GameObject:
   - component: {fileID: 1784711613001881697}
   - component: {fileID: 3176751769422360990}
   - component: {fileID: 1773465606331761499}
-  - component: {fileID: 9088465620104683051}
   - component: {fileID: 8633828501462562795}
+  - component: {fileID: 4174226384449225153}
+  - component: {fileID: 1248139838152712304}
+  - component: {fileID: -6917484187003198610}
   m_Layer: 10
   m_Name: 3-Salasand
   m_TagString: Item
@@ -138,27 +140,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 488b715312896714ba692bde8e8dd673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PickUpRadius: 0
   itemSO: {fileID: 11400000, guid: 42fd1abf1142bbe4db035ac00c62052f, type: 2}
+  PickUpRadius: 0
   EncyclopediaEntry: {fileID: 0}
   player: {fileID: 0}
   CanvaItemPicked: {fileID: 0}
   UI_NewItemPicked: {fileID: 7893925526795108326, guid: bd7d638df228b2a4e9cf1ba29cf0a26e,
     type: 3}
   isGrabed: 0
---- !u!114 &9088465620104683051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2313870406833098469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bf189a341bb82a4f80f3e37f0ae1fe6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isReadyToBeCaught: 1
 --- !u!64 &8633828501462562795
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -181,3 +170,50 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -1550514412580984892, guid: e4b28cefab9ea5343a19f4e49d44e0b3, type: 3}
+--- !u!114 &4174226384449225153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2313870406833098469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4368adae31feae499a1d73cd7243f0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemSO: {fileID: 11400000, guid: 42fd1abf1142bbe4db035ac00c62052f, type: 2}
+  isReadyToBeCaught: 1
+--- !u!95 &1248139838152712304
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2313870406833098469}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 153db5bff8c1b7542a0c0e58cec090ea, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-6917484187003198610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2313870406833098469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b4e22fe191153e4d84a4d0ae1143a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

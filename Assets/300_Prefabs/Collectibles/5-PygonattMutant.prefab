@@ -158,8 +158,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 488b715312896714ba692bde8e8dd673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PickUpRadius: 0
   itemSO: {fileID: 11400000, guid: 7ac830fd04425144d88df3cff194ac56, type: 2}
+  PickUpRadius: 0
   EncyclopediaEntry: {fileID: 0}
   player: {fileID: 0}
   CanvaItemPicked: {fileID: 0}

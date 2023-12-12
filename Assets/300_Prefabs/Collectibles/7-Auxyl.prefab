@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 8291915622990490413}
   - component: {fileID: -6926413261170450697}
   - component: {fileID: 8996459674575012281}
+  - component: {fileID: 4826491229855952166}
+  - component: {fileID: 4082256947029793786}
   m_Layer: 10
   m_Name: 7-Auxyl
   m_TagString: Item
@@ -167,8 +169,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 488b715312896714ba692bde8e8dd673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PickUpRadius: 0
   itemSO: {fileID: 11400000, guid: 16d85e72bac042244aa3671ddfd1f404, type: 2}
+  PickUpRadius: 0
   EncyclopediaEntry: {fileID: 0}
   player: {fileID: 0}
   CanvaItemPicked: {fileID: 0}
@@ -197,3 +199,28 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 1840141b5d3f43e49a5c7980d5c40da4, type: 3}
+--- !u!114 &4826491229855952166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608807165775527391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aa871796620faf4e92937412fd1cff8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemSO: {fileID: 0}
+--- !u!114 &4082256947029793786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608807165775527391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b4e22fe191153e4d84a4d0ae1143a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
