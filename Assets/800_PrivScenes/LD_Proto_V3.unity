@@ -49582,6 +49582,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wyatt
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 1fed2b15de53623419a0233fe26e7709,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 8c4ddd5ae768fac4cae677476c9ea445, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -65296,6 +65301,11 @@ PrefabInstance:
         type: 3}
       propertyPath: ShapeModule.m_Scale.z
       value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 1641843690513643753, guid: 9faf03330ccbdfd439f017030efb25d3,
+        type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
       objectReference: {fileID: 0}
     - target: {fileID: 1641843690513643753, guid: 9faf03330ccbdfd439f017030efb25d3,
         type: 3}
@@ -85094,6 +85104,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cheyenne
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 4af912780a8889848bf8c09ec0659a00,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 8c4ddd5ae768fac4cae677476c9ea445, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
