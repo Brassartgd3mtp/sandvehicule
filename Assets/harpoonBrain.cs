@@ -7,7 +7,6 @@ public class harpoonBrain : MonoBehaviour
 {
     [SerializeField] FishBehavior fishBehavior;
     [SerializeField] ItemPickUp itemPickUp;
-    [SerializeField] ItemParent itemParent;
 
     [SerializeField] Camera mainCamera;
     [SerializeField] new Collider collider;
@@ -64,7 +63,6 @@ public class harpoonBrain : MonoBehaviour
                 isMovingBack = true;
             }
         }
-
     }
 
     public void ShootHarpoon()
@@ -96,9 +94,14 @@ public class harpoonBrain : MonoBehaviour
            //itemHooked.transform.parent = this.transform;
         
 
-        if (collision.collider.TryGetComponent(out itemParent))
+       //if (collision.collider.TryGetComponent(out ItemParent itemParent))
+       //{
+       //    itemParent.CatchItem(transform);
+       //}
+
+        if (collision.collider.TryGetComponent(out FishBehavior fishBehavior))
         {
-            itemParent.CatchItem(transform);
+            fishBehavior.CatchItem(transform);
         }
 
        //if (collision.collider.TryGetComponent(out itemParent))
@@ -139,7 +142,7 @@ public class harpoonBrain : MonoBehaviour
 
         if (harpoonStart.transform.position == transform.position)
         {
-            transform.SetParent(Player.transform);
+            transform.SetParent(harpoonStart.transform);
             ResetHarpoon();
         }
     }

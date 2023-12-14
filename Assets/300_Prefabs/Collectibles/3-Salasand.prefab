@@ -34,7 +34,7 @@ Transform:
   m_GameObject: {fileID: 2313870406833098469}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.79, y: 3.1357813, z: 2.7889903}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -184,6 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSO: {fileID: 11400000, guid: 42fd1abf1142bbe4db035ac00c62052f, type: 2}
   isReadyToBeCaught: 1
+  animator: {fileID: 0}
 --- !u!95 &1248139838152712304
 Animator:
   serializedVersion: 5

@@ -17,7 +17,6 @@ public class ItemPickUp : ItemParent
     [SerializeField] GameObject CanvaItemPicked;
     [SerializeField] GameObject UI_NewItemPicked;
 
-    [SerializeField] bool isGrabed;
 
 
     private void Awake()
@@ -33,23 +32,21 @@ public class ItemPickUp : ItemParent
         player = ThirdPerson.Instance.gameObject;
     }
 
-    public void OnCollisionEnter(Collision collision)
+    public void Update()
     {
-        if (collision.gameObject.tag == "Harpoon")
-        {
-            isGrabed =true;
-        }
-        if (collision.gameObject.tag == "Player" && isGrabed)
-        {
-            PickUp();
-        }
+
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    { 
+        
+        //if (collision.gameObject.tag == "Player" && isGrabed)
+        //{
+        //    PickUp();
+        //}
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == ("Harpoon"))
-        {
-            isGrabed = true;
-        }
         if ((other.gameObject.tag == "Player" && isGrabed))
         {
             PickUp();
