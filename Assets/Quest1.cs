@@ -30,7 +30,7 @@ public class Quest1 : MonoBehaviour
         Text_Salasand.text = $"Pêcher 5 Salasands {nbrSalasand}/ 5";
         Text_Auxyls.text = $" Récupérer 3 Auxyls {nbrAuxyls}/ 3";
         
-        if (nbrSalasand == 5 && nbrAuxyls == 3)
+        if (nbrSalasand >= 5 && nbrAuxyls >= 3)
         {
             QuestItem.OnQuestItemPickUp -= AddItem;
 
