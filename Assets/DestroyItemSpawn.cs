@@ -15,7 +15,6 @@ public class DestroyItemSpawn : MonoBehaviour
             if (harpoonBrain.isHarpoonExplosive)
             {
                 Instantiate(itemToSpawn, this.transform.position, transform.rotation);
-                Instantiate(itemToSpawn, this.transform.position, transform.rotation);
                 Destroy(this.gameObject);
             }
         }

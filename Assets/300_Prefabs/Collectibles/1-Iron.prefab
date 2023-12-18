@@ -864,6 +864,7 @@ GameObject:
   - component: {fileID: 8712399297099963121}
   - component: {fileID: 6710444478613368685}
   - component: {fileID: 6008823340832055307}
+  - component: {fileID: 2043307045818431589}
   m_Layer: 10
   m_Name: 1-Iron
   m_TagString: Item
@@ -929,14 +930,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 488b715312896714ba692bde8e8dd673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PickUpRadius: 0
   itemSO: {fileID: 11400000, guid: 941728d84967846488b7c6b6ef586258, type: 2}
+  isGrabed: 0
+  PickUpRadius: 0
   EncyclopediaEntry: {fileID: 0}
   player: {fileID: 0}
   CanvaItemPicked: {fileID: 0}
   UI_NewItemPicked: {fileID: 7893925526795108326, guid: 50ec2fdf0c0befe489bbee931de8e4e3,
     type: 3}
-  isGrabed: 0
 --- !u!114 &6710444478613368685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -975,6 +976,33 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.780946, y: 0.84099954, z: 1.7381108}
   m_Center: {x: -0.07236028, y: -0.07950023, z: 0.043603987}
+--- !u!54 &2043307045818431589
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5971314648645712078}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7102176756411744429
 GameObject:
   m_ObjectHideFlags: 0
