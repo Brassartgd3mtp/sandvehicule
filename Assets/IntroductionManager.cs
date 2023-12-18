@@ -1,11 +1,16 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class IntroductionManager : MonoBehaviour
 {
     public ThirdPerson thirdPerson;
     public List<GameObject> text;
+    public Button button;
+    public CinemachineVirtualCamera WyattCamera;
+
     public void Start()
     {
         Cursor.lockState = CursorLockMode.None;
@@ -17,7 +22,14 @@ public class IntroductionManager : MonoBehaviour
         
         if (text.Count == 0)
         {
+            WyattCamera.Priority = 0;
+            Cursor.lockState = CursorLockMode.Locked;
             Destroy(gameObject);
+        }
+
+        if (text.Count <= 14)
+        {
+            button.image.color = new Color(1f, 1f, 1f,0);
         }
 
     }

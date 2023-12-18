@@ -84,6 +84,7 @@ MonoBehaviour:
   harpoonBrain: {fileID: 0}
   fishBehavior: {fileID: 0}
   splineAnimate: {fileID: 0}
+  triggerItem: {fileID: 0}
 --- !u!114 &5718904461318110060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,13 +141,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 488b715312896714ba692bde8e8dd673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemSO: {fileID: 11400000, guid: a3449affa6544a54594dffebc7dd5dac, type: 2}
+  isGrabed: 0
   PickUpRadius: 0
-  itemSO: {fileID: 0}
   EncyclopediaEntry: {fileID: 0}
   player: {fileID: 0}
   CanvaItemPicked: {fileID: 0}
   UI_NewItemPicked: {fileID: 0}
-  isGrabed: 0
 --- !u!114 &-6681922223773905668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,7 +177,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bf189a341bb82a4f80f3e37f0ae1fe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemSO: {fileID: 0}
+  isGrabed: 0
   isReadyToBeCaught: 0
+  animator: {fileID: 0}
 --- !u!65 &512752090934506481
 BoxCollider:
   m_ObjectHideFlags: 0
