@@ -16,6 +16,8 @@ public class ThirdPerson : MonoBehaviour
     private PlayerInput playerInput;
 
     [SerializeField] private GameObject UI_Ramasser;
+    [SerializeField] private GameObject UI_Parler;
+
     public Vector3 move;
 
     public bool isAiming;
@@ -43,6 +45,10 @@ public class ThirdPerson : MonoBehaviour
     private InputAction run;
 
     [SerializeField] private GameObject targetObjectEncyclopedia;
+
+    private bool canSpeakToWyatt = false;
+    [SerializeField] DialogueWyatt dialogueWyatt;
+    [SerializeField] DialogueCheyenne dialogueCheyenne;
 
     private Vector3 prevPos;
 
@@ -208,6 +214,17 @@ public class ThirdPerson : MonoBehaviour
             itemPickUp.PickUp();
             UI_Ramasser.SetActive(false);
         }
+
+        if (dialogueWyatt.canSpeak)
+        {
+            dialogueWyatt.StartDialogue2Wyatt();
+        }
+
+        if(dialogueCheyenne.canSpeak) 
+        {
+            Debug.Log("La");
+            dialogueCheyenne.StartDialogue2Cheyenne();
+        }
     }
 
     public void ShowEncyclopedia()
@@ -229,6 +246,15 @@ public class ThirdPerson : MonoBehaviour
         {
             itemPickUp = other.gameObject.GetComponent<ItemPickUp>();
             UI_Ramasser.SetActive(true);
+        }
+
+        if (other.gameObject.TryGetComponent(out DialogueWyatt dialogueWyatt))
+        {
+            if (dialogueWyatt.canSpeak)
+            {
+                dialogueWyatt.StartDialogue2Wyatt();
+            }
+
         }
     }
 

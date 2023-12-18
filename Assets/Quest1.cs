@@ -9,6 +9,8 @@ public class Quest1 : MonoBehaviour
     public TextMeshProUGUI Text_Auxyls;
     public TextMeshProUGUI Text_Part2;
 
+    public DialogueWyatt dialogueWyatt;
+
     private int nbrSalasand, nbrAuxyls;
 
     public bool questIsCompleted;
@@ -77,6 +79,6 @@ public class Quest1 : MonoBehaviour
         Text_Auxyls.enabled = false;
         Text_Part2.text = "Donner les Pishkars et les plantes à Wyatt";
         Text_Part2.gameObject.SetActive(true);
-
+        dialogueWyatt.EnableColliderForSpeaking();
     }
 }

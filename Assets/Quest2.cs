@@ -12,9 +12,9 @@ public class Quest2 : MonoBehaviour
     {
         questManager =QuestManager.Instance;
 
-        text_Part1 = GetComponent<TextMeshProUGUI>();
-        text_Part2 = GetComponent<TextMeshProUGUI>();
-        text_Part3 = GetComponent<TextMeshProUGUI>();
+        //text_Part1 = GetComponent<TextMeshProUGUI>();
+        //text_Part2 = GetComponent<TextMeshProUGUI>();
+        //text_Part3 = GetComponent<TextMeshProUGUI>();
     }
 
     public void UpdtaQuest()

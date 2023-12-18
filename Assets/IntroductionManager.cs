@@ -27,7 +27,7 @@ public class IntroductionManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (text.Count <= 14)
+        if (text.Count <= 10)
         {
             button.image.color = new Color(1f, 1f, 1f,0);
         }
