@@ -43,7 +43,14 @@ public class SphernorhBehavior : MonoBehaviour
             {
                 Destroy(Carapace);
                 fishBehavior.isReadyToBeCaught = true;
+                PlayDestroyArmorSound();
             }
         }
+    }
+
+    private void PlayDestroyArmorSound()
+    {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        AudioManager.Instance.PlaySound(32, audioSource);
     }
 }
