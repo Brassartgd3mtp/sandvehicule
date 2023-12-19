@@ -29,6 +29,7 @@ public class harpoonBrain : MonoBehaviour
 
     [SerializeField] float harpoonSpeed;
 
+    public float harpoonDistance = 10f;
     public void Awake()
     { 
         collider = GetComponent<Collider>();
@@ -57,7 +58,7 @@ public class harpoonBrain : MonoBehaviour
             LR.SetPosition(1, transform.position);
 
             float cableLength = Vector3.Distance(harpoonStart.transform.position, transform.position); // taille du cable entre le bout du harpon et la base d'où il est tiré 
-            if (cableLength >= 10) // Si la taille maximum du cable est dépassé, force le harpon à être rétracté
+            if (cableLength >= harpoonDistance) // Si la taille maximum du cable est dépassé, force le harpon à être rétracté
             {
                 isMovingOn = false;
                 isMovingBack = true;

@@ -23,7 +23,7 @@ public class PygonattJump : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         parentAnimator.speed = 1;
-
+        animator.SetBool("Jump", false);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

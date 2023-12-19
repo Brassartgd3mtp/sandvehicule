@@ -17,6 +17,7 @@ public class DialogueCheyenne : MonoBehaviour
     public GameObject actualQuest;
     public GameObject NextQuest;
 
+    public harpoonBrain harpoonBrain;
     public CinemachineVirtualCamera CheyenneCamera;
 
     public List<GameObject> text;
@@ -65,7 +66,7 @@ public class DialogueCheyenne : MonoBehaviour
 
     public void EndDialogue()
     {
-        
+        harpoonBrain.isHarpoonExplosive = true;
         NextQuest.SetActive(true);
         CheyenneCamera.Priority = 0;
         Destroy(CanvaQuest);
