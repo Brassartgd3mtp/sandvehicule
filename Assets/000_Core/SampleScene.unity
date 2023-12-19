@@ -60169,6 +60169,7 @@ MonoBehaviour:
   - {fileID: 182196070}
   - {fileID: 802862679}
   - {fileID: 549629897}
+  timer: 0
   isActived: 0
 --- !u!1 &1135866247
 GameObject:
@@ -82870,19 +82871,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1619618354}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1135832946}
-        m_TargetAssemblyTypeName: TriggerQuetePart3, Assembly-CSharp
-        m_MethodName: PassNextDialogue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1619618354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89511,7 +89500,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1770979616
 MonoBehaviour:
   m_ObjectHideFlags: 0

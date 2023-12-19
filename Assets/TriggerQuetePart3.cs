@@ -9,6 +9,8 @@ public class TriggerQuetePart3 : MonoBehaviour
 
     public List<GameObject> text;
 
+    public float timer = 4;
+
     public bool isActived = false;
 
     private void OnTriggerEnter(Collider other)
@@ -35,6 +37,18 @@ public class TriggerQuetePart3 : MonoBehaviour
             nextQuest.SetActive(true);
             Destroy(gameObject);
         }
+
+        if (isActived)
+        {
+            timer -= Time.deltaTime;
+        }
+
+        if (timer <= 0)
+        {
+            PassNextDialogue();
+            timer = 4;
+        }
+
     }
 
     public void PassNextDialogue()
