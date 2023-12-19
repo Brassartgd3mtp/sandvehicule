@@ -2,26 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerQuetePart3 : MonoBehaviour
+public class TriggerRocherPasserelle : MonoBehaviour
 {
-    public GameObject canvaQuest;
-    public GameObject actualQuest, nextQuest;
-
     public List<GameObject> text;
 
     public float timer = 4;
 
     public bool isActived = false;
 
+    public GameObject CanvaToActivate;
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.TryGetComponent(out ThirdPerson thirdPerson))
         {
-            if(!isActived) 
+            if (!isActived)
             {
                 isActived = true;
-                actualQuest.SetActive(false);
-                canvaQuest.SetActive(true);
+                CanvaToActivate.SetActive(true);
                 text[0].SetActive(true);
             }
 
@@ -32,7 +31,6 @@ public class TriggerQuetePart3 : MonoBehaviour
     {
         if (text.Count == 0)
         {
-            nextQuest.SetActive(true);
             Destroy(gameObject);
         }
 

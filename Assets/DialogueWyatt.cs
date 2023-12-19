@@ -25,19 +25,25 @@ public class DialogueWyatt : MonoBehaviour
     public GameObject CanvaQuest;
     public GameObject actualQuest;
     public GameObject nextQuest;
+    public GameObject nextText;
+
+    public bool isEnded;
 
 
     public DialogueCheyenne dialogueCheyenne;
 
     public void Update()
     {
-        if (text.Count == 0)
+        if (text.Count == 0 && !isEnded)
         {
+            isEnded = true;
             dialogueCheyenne.readyToSpeak = true;
             dialogueCheyenne.collider.enabled = true;
             canSpeak = false;
             WyattCamera.Priority = 0;
             nextQuest.SetActive(true);
+            nextText.SetActive(true);
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
     public void PassNextDialogue()
@@ -47,13 +53,11 @@ public class DialogueWyatt : MonoBehaviour
         if (text.Count >= 1)
         {
             text[0].SetActive(true); 
-
         }
     }
 
     public void EndDialogue()
     {
-        Cursor.lockState = CursorLockMode.Locked;
         Destroy(CanvaQuest);
         this.enabled = false;
     }
@@ -73,6 +77,7 @@ public class DialogueWyatt : MonoBehaviour
             text[0].SetActive(true);
         }
         Cursor.lockState = CursorLockMode.None;
+        Debug.Log("la");
         WyattCamera.Priority = 15;
     }
 

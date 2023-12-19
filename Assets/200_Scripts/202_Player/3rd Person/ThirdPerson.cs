@@ -215,10 +215,10 @@ public class ThirdPerson : MonoBehaviour
             UI_Ramasser.SetActive(false);
         }
 
-        if (dialogueWyatt.canSpeak)
-        {
-            dialogueWyatt.StartDialogue2Wyatt();
-        }
+        //if (dialogueWyatt.canSpeak)
+        //{
+        //    dialogueWyatt.StartDialogue2Wyatt();
+        //}
 
         if(dialogueCheyenne.canSpeak) 
         {
@@ -264,7 +264,6 @@ public class ThirdPerson : MonoBehaviour
         {
             itemPickUp = null;
             UI_Ramasser.SetActive(false);
-
         }
     }
 

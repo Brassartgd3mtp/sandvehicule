@@ -24,10 +24,13 @@ public class EncyclopediaDescription : MonoBehaviour
         {
             // Affecte le texte ou l'image du ScriptableObject au TextMeshPro ou à l'Image
             nameText.text = item.Name;
+            nameText.color = Color.black;
             objectImage.sprite = item.Icon;
             ressourceTypeText.text = "Type de ressource : " + item.ResourceType;
+            ressourceTypeText.color = Color.black;
             //goldValueText.text = "Valeur de l'objet : " + item.GoldValue.ToString();
             descriptionText.text = item.Description;
+            descriptionText.color = Color.black;
 
         }
         else
