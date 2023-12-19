@@ -52,6 +52,7 @@ public class DialogueCheyenne : MonoBehaviour
 
     public void StartDialogue2Cheyenne()
     {
+        Cursor.lockState = CursorLockMode.None;
         actualQuest.SetActive(false);
         CanvaQuest.SetActive(true);
         CheyenneCamera.Priority = 15;
@@ -59,7 +60,7 @@ public class DialogueCheyenne : MonoBehaviour
         {
             text[0].SetActive(true);
         }
-        Cursor.lockState = CursorLockMode.None;
+
     }
 
     public void EndDialogue()

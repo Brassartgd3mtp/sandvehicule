@@ -264,7 +264,6 @@ public class ThirdPerson : MonoBehaviour
         {
             itemPickUp = null;
             UI_Ramasser.SetActive(false);
-
         }
     }
 
