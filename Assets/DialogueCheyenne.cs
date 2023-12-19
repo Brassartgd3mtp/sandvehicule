@@ -69,6 +69,7 @@ public class DialogueCheyenne : MonoBehaviour
         CheyenneCamera.Priority = 0;
         Destroy(CanvaQuest);
         this.enabled = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
     public void PassNextDialogue()
     {

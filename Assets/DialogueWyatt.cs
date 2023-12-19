@@ -47,7 +47,6 @@ public class DialogueWyatt : MonoBehaviour
         if (text.Count >= 1)
         {
             text[0].SetActive(true); 
-
         }
     }
 
@@ -73,6 +72,7 @@ public class DialogueWyatt : MonoBehaviour
             text[0].SetActive(true);
         }
         Cursor.lockState = CursorLockMode.None;
+        Debug.Log("la");
         WyattCamera.Priority = 15;
     }
 
