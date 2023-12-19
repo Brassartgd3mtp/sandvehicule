@@ -38,7 +38,6 @@ public class DialogueWyatt : MonoBehaviour
             canSpeak = false;
             WyattCamera.Priority = 0;
             nextQuest.SetActive(true);
-            WyattCamera.Priority = 0;
         }
     }
     public void PassNextDialogue()

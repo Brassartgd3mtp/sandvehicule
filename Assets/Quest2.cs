@@ -56,5 +56,4 @@ public class Quest2 : MonoBehaviour
     {
         text_Part3.enabled = false;
     }
-
 }
