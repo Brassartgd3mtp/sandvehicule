@@ -44,6 +44,8 @@ public class MenuPause : MonoBehaviour
         Time.timeScale = 0f;
         isPaused = true;
         PauseDisplay.gameObject.SetActive(true);
+        LockCursor(false); // Libère le curseur
+
     }
 
     void ResumeGame()
@@ -51,12 +53,16 @@ public class MenuPause : MonoBehaviour
         Time.timeScale = 1f;
         isPaused = false;
         PauseDisplay.gameObject.SetActive(false);
+        LockCursor(true); // Capture le curseur
+
     }
 
     public void ResumeButton()
     {
         Time.timeScale = 1f;
         PauseDisplay.gameObject.SetActive(false);
+        LockCursor(true); // Capture le curseur
+
     }
     public void InputButton()
     {
@@ -70,6 +76,13 @@ public class MenuPause : MonoBehaviour
     }
     public void QuitGameButton()
     {
+        LockCursor(true); // Capture le curseur
         Application.Quit();
+    }
+
+    private void LockCursor(bool shouldLock)
+    {
+        Cursor.lockState = shouldLock ? CursorLockMode.Locked : CursorLockMode.None;
+        Cursor.visible = !shouldLock;
     }
 }
